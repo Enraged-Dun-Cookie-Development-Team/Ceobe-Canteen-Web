@@ -1,0 +1,216 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI-Regular';
+}
+
+.pt5 {
+  padding-top: 5px;
+}
+
+.pr5 {
+  padding-right: 5px;
+}
+
+.pb5 {
+  padding-bottom: 5px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.m20 {
+  margin-left: 20px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.ta-r {
+  text-align: right;
+}
+
+.ta-l {
+  text-align: right;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.flex3 {
+  flex: 3;
+}
+
+.flex4 {
+  flex: 4;
+}
+
+.flex5 {
+  flex: 5;
+}
+
+.flex6 {
+  flex: 6;
+}
+
+.flex7 {
+  flex: 7;
+}
+
+.flex8 {
+  flex: 8;
+}
+
+.flex9 {
+  flex: 9;
+}
+
+.flex10 {
+  flex: 10;
+}
+
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-between-center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around-center {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-start-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end-center {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+.font-size-14 {
+  font-size: 14px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;;
+}
+
+.font-size-18 {
+  font-size: 18px !important;;
+}
+
+.font-size-20 {
+  font-size: 20px !important;;
+}
+
+.font-size-22 {
+  font-size: 22px !important;;
+}
+
+.font-size-24 {
+  font-size: 24px !important;;
+}
+
+.font-size-26 {
+  font-size: 26px !important;;
+}
