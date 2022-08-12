@@ -1,7 +1,23 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI-Regular';
+}
+
+.color-yellow {
+  color: #FEBB52;
+}
+
+.color-red {
+  color: #FD794F;
+}
+
+.color-blue {
+  color: #33A9F2
+}
+
+.p10 {
+  padding: 10px;
 }
 
 .pt5 {
@@ -213,4 +229,25 @@
 
 .font-size-26 {
   font-size: 26px !important;;
+}
+
+@font-face {
+  font-family: 'douyu';
+  src: url('@/assets/font/DOUYUfont.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'xiaomi';
+  src: url('@/assets/font/MiSans-Normal.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'xiaomi';
+  src: url('@/assets/font/MiSans-ExtraLight.ttf');
+  font-weight: 100;
+  font-style: normal;
 }
