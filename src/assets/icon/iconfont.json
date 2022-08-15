@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "816628",
+      "name": "跳转",
+      "font_class": "tiaozhuan",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
       "icon_id": "4539358",
       "name": "爱心",
       "font_class": "aixin",

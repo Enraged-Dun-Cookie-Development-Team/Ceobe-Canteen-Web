@@ -1,6 +1,6 @@
 <template>
   <div class="flex page-two" :style="{height:state.twoHeight+'px'}">
-    <div class="h100 menu ta-c">
+    <div class="h100 menu ta-c" v-if="false">
       <div class="title">首页</div>
       <div style="padding-left: 70px">
         <div v-for="item in state.menu" class="flex flex-start-center menu-item">
@@ -17,7 +17,7 @@
     </div>
     <div class="flex9 content">
       <div class="back"></div>
-      <div class="info flex">
+      <div v-if="false" class="info flex">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
           <div class="speak flex flex-column flex-center-center">
             <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="info flex">
+      <div v-if="false" class="info flex">
         <div class="flex1">
           <img src="@/assets/image/pageTwo/interface/2.jpg">
         </div>
@@ -53,11 +53,24 @@
       </div>
 
       <div class="box install p30">
-        <div class="title-box ta-l pl5 color-yellow">
+        <div class="box-title ta-l pl5 color-yellow">
           <span class="iconfont icon-xiangmu"></span>
           <span class="title ml10">插件端安装指南</span>
         </div>
+        <div class="box-content p30">
+          <div class="box-content-subtitle ta-l pl5">安装教程</div>
+          <div class="box-content-once">
+            <div class="box-content-once-name">Google浏览器</div>
+            <div class="box-content-once-go"><i class="iconfont icon-tiaozhuan"></i></div>
+            <img class="box-content-once-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
+          </div>
+          <!--          <div v-for="item in state.installInfo">-->
+          <!--            <img :src="require('@/assets/image/pageTwo/logo/'+item.icon)">-->
+          <!--          </div>-->
+        </div>
       </div>
+
+
     </div>
   </div>
 </template>
@@ -66,12 +79,48 @@
 import {onMounted, reactive, ref} from "vue";
 
 interface state {
-  menu: Array<any>,
+  menu: Array<[string, string]>,
+  installInfo: Array<{
+    icon: string,
+    name: string,
+    tutorialURL: string, //教程地址
+    storeUrl?: string //应用商店地址
+  }>,
   twoHeight: number
 }
 
-let state: state = reactive({
+let state = reactive<state>({
   menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
+  installInfo: [{
+    name: 'Chrome浏览器',
+    icon: 'chrome.png',
+    tutorialURL: '',
+    storeUrl: ''
+  },
+    {
+      name: '360浏览器',
+      icon: '360.png',
+      tutorialURL: '',
+      storeUrl: ''
+    },
+    {
+      name: 'Edge浏览器',
+      icon: 'edge.png',
+      tutorialURL: '',
+      storeUrl: ''
+    },
+    {
+      name: 'QQ浏览器',
+      icon: 'qq.png',
+      tutorialURL: '',
+      storeUrl: ''
+    },
+    {
+      name: '火狐浏览器',
+      icon: 'firefox.png',
+      tutorialURL: '',
+      storeUrl: ''
+    }],
   twoHeight: 0,
 })
 
@@ -152,7 +201,7 @@ onMounted(() => {
 
     .box {
 
-      .title-box {
+      .box-title {
         font-size: 28px;
 
         .iconfont {
@@ -178,6 +227,64 @@ onMounted(() => {
             width: 60%;
           }
 
+        }
+      }
+
+      .box-content {
+
+        .box-content-subtitle {
+          position: relative;
+          color: #FF784E;
+          font-weight: bold;
+
+          &::before {
+            position: absolute;
+            background: #FF784E;
+            content: ' ';
+            top: 4px;
+            height: 14px;
+            width: 3px;
+            left: -5px;
+          }
+        }
+
+        .box-content-once {
+          border: 1px solid #39A0F7;
+          width: 200px;
+          height: 200px;
+          overflow: hidden;
+          position: relative;
+
+          .box-content-once-name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 26px;
+          }
+
+          .box-content-once-go {
+            position: absolute;
+            font-size: 26px;
+            background: #39A0F7;
+            color: #ffffff;
+            border-radius: 50%;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+          }
+
+          .box-content-once-icon {
+            position: absolute;
+            left: -30px;
+            bottom: -30px;
+            width: 130px;
+            height: 130px;
+            opacity: 0.5;
+            z-index: -1;
+          }
         }
       }
 
