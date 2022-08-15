@@ -1,10 +1,10 @@
 <template>
-  <div class="flex page-two" :style="{height:twoHeight+'px'}">
+  <div class="flex page-two" :style="{height:state.twoHeight+'px'}">
     <div class="h100 menu ta-c">
       <div class="title">首页</div>
       <div style="padding-left: 70px">
-        <div v-for="item in menu" class="flex flex-start-center menu-item">
-          <img :src="require('@/assets/image/pageTwo/menuIcon/'+item[0])">
+        <div v-for="item in state.menu" class="flex flex-start-center menu-item">
+          <span class="iconfont icon-xiangmu"></span>
           <span class="ml10">{{ item[1] }}</span>
         </div>
       </div>
@@ -18,10 +18,12 @@
     <div class="flex9 content">
       <div class="back"></div>
       <div class="info flex">
-        <div class="flex1 speak flex flex-column flex-center-center flex-align-end">
-          <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
-          <div class="line-2">活动资源提示</div>
-          <div class="line-3">合理规划<span class="color-red">理智</span></div>
+        <div class="flex flex1 flex-column flex-center-center flex-align-end">
+          <div class="speak flex flex-column flex-center-center">
+            <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
+            <div class="line-2">活动资源提示</div>
+            <div class="line-3">合理规划<span class="color-red">理智</span></div>
+          </div>
           <div class="devil-speaking color-blue line-4 flex flex-column flex-center-center flex-align-end">
             <div>博士，理智还没有耗完</div>
             <div>现在还不可以休息哦</div>
@@ -36,27 +38,45 @@
         <div class="flex1">
           <img src="@/assets/image/pageTwo/interface/2.jpg">
         </div>
-        <div class="flex1 speak flex flex-column flex-center-center flex-align-start">
-          <div class="line-1">各类<span class="color-yellow">常用工具</span></div>
-          <div class="line-2">便捷使用，提高养成效率</div>
-          <div class="line-3"><span class="color-red">活动攻略</span>在线推送</div>
-          <div class="devil-speaking color-blue line-4 flex flex-column flex-center-center flex-align-end">
+        <div class="flex1 flex flex-column flex-center-center flex-align-start">
+          <div class=" speak flex flex-column flex-center-center">
+            <div class="line-1">各类<span class="color-yellow">常用工具</span></div>
+            <div class="line-2">便捷使用，提高养成效率</div>
+            <div class="line-3"><span class="color-red">活动攻略</span>在线推送</div>
+
+          </div>
+          <div class="devil-speaking color-blue line-4">
             再也不用担心打不过杰斯顿了
           </div>
         </div>
 
+      </div>
+
+      <div class="box install p30">
+        <div class="title-box ta-l pl5 color-yellow">
+          <span class="iconfont icon-xiangmu"></span>
+          <span class="title ml10">插件端安装指南</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {onMounted, ref} from "vue";
+import {onMounted, reactive, ref} from "vue";
 
-let menu = [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']]
-let twoHeight = ref(0);
+interface state {
+  menu: Array<any>,
+  twoHeight: number
+}
+
+let state: state = reactive({
+  menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
+  twoHeight: 0,
+})
+
 onMounted(() => {
-  twoHeight.value = window.innerHeight
+  state.twoHeight = window.innerHeight
 })
 </script>
 
@@ -104,7 +124,7 @@ onMounted(() => {
 
 
     .info {
-      font-family: 'xiaomi';
+      font-family: 'sucai';
       margin-top: 50px;
 
 
@@ -128,6 +148,39 @@ onMounted(() => {
       img {
         width: 80%;
       }
+    }
+
+    .box {
+
+      .title-box {
+        font-size: 28px;
+
+        .iconfont {
+          font-size: 28px;
+        }
+
+        .title {
+          position: relative;
+
+          &::after, &::before {
+            height: 2px;
+            content: ' ';
+            position: absolute;
+            bottom: -5px;
+            width: 100%;
+            right: 0;
+            background: #FE913E;
+          }
+
+          &::before {
+            bottom: -10px;
+            right: 5px;
+            width: 60%;
+          }
+
+        }
+      }
+
     }
   }
 }
