@@ -58,12 +58,7 @@
           <span class="title ml10">插件端安装指南</span>
         </div>
         <div class="box-content p30">
-          <div class="box-content-subtitle ta-l pl5">安装教程</div>
-          <div class="box-content-once">
-            <div class="box-content-once-name">Google浏览器</div>
-            <div class="box-content-once-go"><i class="iconfont icon-tiaozhuan"></i></div>
-            <img class="box-content-once-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
-          </div>
+          <install-browser></install-browser>
           <!--          <div v-for="item in state.installInfo">-->
           <!--            <img :src="require('@/assets/image/pageTwo/logo/'+item.icon)">-->
           <!--          </div>-->
@@ -77,6 +72,7 @@
 
 <script lang="ts" setup>
 import {onMounted, reactive, ref} from "vue";
+import InstallBrowser from "@/components/installBrowser.vue";
 
 interface state {
   menu: Array<[string, string]>,
@@ -232,60 +228,8 @@ onMounted(() => {
 
       .box-content {
 
-        .box-content-subtitle {
-          position: relative;
-          color: #FF784E;
-          font-weight: bold;
 
-          &::before {
-            position: absolute;
-            background: #FF784E;
-            content: ' ';
-            top: 4px;
-            height: 14px;
-            width: 3px;
-            left: -5px;
-          }
-        }
 
-        .box-content-once {
-          border: 1px solid #39A0F7;
-          width: 200px;
-          height: 200px;
-          overflow: hidden;
-          position: relative;
-
-          .box-content-once-name {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 26px;
-          }
-
-          .box-content-once-go {
-            position: absolute;
-            font-size: 26px;
-            background: #39A0F7;
-            color: #ffffff;
-            border-radius: 50%;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-          }
-
-          .box-content-once-icon {
-            position: absolute;
-            left: -30px;
-            bottom: -30px;
-            width: 130px;
-            height: 130px;
-            opacity: 0.5;
-            z-index: -1;
-          }
-        }
       }
 
     }
