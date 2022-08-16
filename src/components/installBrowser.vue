@@ -1,26 +1,26 @@
 <template>
   <div class="install-browser">
-    <div class="box">
+    <div class="box" :class="windowIsOpen?'active':''">
       <div class="box-name">Google浏览器</div>
+      <div class="box-go pointer" @click="open"><i class="xiaoke icon-xiaoke-xiayibu"></i></div>
+      <div class="box-close pointer" @click="close"><i class="xiaoke icon-xiaoke-fanhui"></i></div>
       <img class="box-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
-    </div>
-    <div class="box-card">
-      <div class="flipper">
-        <div class="front">
-          哈哈哈
-          <div class="box-content-once-go"><i class="iconfont icon-tiaozhuan"></i></div>
-        </div>
-        <div class="back">
-          方法
-        </div>
+      <div class="box-content">
+        内容
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "installBrowser"
+<script lang="ts" setup>
+import {ref} from "vue";
+
+let windowIsOpen = ref(false);
+let open = () => {
+  windowIsOpen.value = true;
+}
+let close = () => {
+  windowIsOpen.value = false;
 }
 </script>
 
@@ -34,15 +34,18 @@ export default {
     height: 200px;
     overflow: hidden;
     position: relative;
+    transition: 1s all;
 
     .box-name {
       position: absolute;
       top: 20px;
       left: 20px;
       font-size: 26px;
+      transition: 1s all;
     }
 
     .box-icon {
+      transition: 1s all;
       position: absolute;
       left: -30px;
       bottom: -30px;
@@ -50,55 +53,50 @@ export default {
       height: 130px;
       opacity: 0.5;
       z-index: -1;
-    }
-  }
-
-  .box-card {
-    perspective: 1000px;
-    width: 200px;
-    height: 200px;
-
-    &:hover .flipper {
-      transform: rotateY(180deg);
+      transform: rotate(-30deg);
     }
 
-    .flipper {
-      transition: 0.6s;
-      transition-timing-function:ease-out;
-      transform-style: preserve-3d;
-      position: relative;
+    .box-go, .box-close {
+      transition: 1s all;
+      position: absolute;
+      font-size: 26px;
+      background: #39A0F7;
+      color: #ffffff;
+      border-radius: 50%;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
 
-      .front, .back {
-        width: 200px;
-        height: 200px;
-        backface-visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
+    .box-close {
+      top: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 1s all;
+    }
+
+    &.active {
+      width: 100%;
+      height: 500px;
+
+      .box-icon {
+        transform: rotate(0);
+        left: 10px;
+        bottom: 10px;
+        opacity: 1;
       }
 
-      .front {
-        z-index: 2;
-        background: red;
-
-        .box-go {
-          position: absolute;
-          font-size: 26px;
-          background: #39A0F7;
-          color: #ffffff;
-          border-radius: 50%;
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
-          line-height: 50px;
-          text-align: center;
-        }
+      .box-go {
+        opacity: 0;
+        pointer-events: none;
       }
 
-      .back {
-        background: blue;
-        transform: rotateY(180deg);
+      .box-close {
+        opacity: 1;
+        pointer-events: auto;
       }
     }
   }
