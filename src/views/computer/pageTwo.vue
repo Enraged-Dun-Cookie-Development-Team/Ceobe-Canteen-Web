@@ -227,9 +227,7 @@ onMounted(() => {
       }
 
       .box-content {
-
-
-
+        display: none;
       }
 
     }

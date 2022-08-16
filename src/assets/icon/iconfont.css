@@ -1,28 +1,38 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1660551747282') format('truetype');
+  font-family: "xiaoke"; /* Project id 883053 */
+  src: url('iconfont.woff2?t=1660617744358') format('woff2'),
+       url('iconfont.woff?t=1660617744358') format('woff'),
+       url('iconfont.ttf?t=1660617744358') format('truetype');
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
+.xiaoke {
+  font-family: "xiaoke" !important;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tiaozhuan:before {
-  content: "\e641";
+.icon-xiaoke-xiayibu:before {
+  content: "\e6ba";
 }
 
-.icon-aixin:before {
+.icon-xiaoke-fanhui:before {
+  content: "\e6ff";
+}
+
+.icon-xiaoke-a-lianhe2:before {
+  content: "\e603";
+}
+
+.icon-xiaoke-a-lianhe1:before {
+  content: "\e604";
+}
+
+.icon-xiaoke-a-lianhe4:before {
   content: "\e605";
 }
 
-.icon-jurassic_user:before {
-  content: "\e6a4";
-}
-
-.icon-xiangmu:before {
-  content: "\e613";
+.icon-xiaoke-a-lianhe3:before {
+  content: "\e606";
 }
 
