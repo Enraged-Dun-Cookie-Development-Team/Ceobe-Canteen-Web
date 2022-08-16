@@ -1,42 +1,87 @@
 <template>
-  <div class="install-browser">
-    <div class="box" :class="windowIsOpen?'active':''">
-      <div class="box-name">Google浏览器</div>
-      <div class="box-go pointer" @click="open"><i class="xiaoke icon-xiaoke-xiayibu"></i></div>
-      <div class="box-close pointer" @click="close"><i class="xiaoke icon-xiaoke-fanhui"></i></div>
-      <img class="box-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
-      <div class="box-content">
-        内容
+  <v-card width="200" height="200">
+    <div class="install-browser">
+      <div class="install-browser-content flex">
+        <div class="install-name">Google浏览器</div>
+        <v-btn
+            class="install-go pointer"
+            icon="mdi-chevron-right"
+            @click="open"
+        ></v-btn>
+        <img class="install-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
       </div>
     </div>
-  </div>
+  </v-card>
+
+  <v-dialog
+      transition="dialog-bottom-transition"
+      v-model="state.windowIsOpen"
+      scrollable
+  >
+    <div style="width: 1000px;height: 500px;">
+      <v-card>
+        <v-carousel
+            progress="primary"
+            hide-delimiters
+            v-model="carouselData.carouselIndex">
+          <v-carousel-item
+              v-for="(color, i) in carouselData.colors"
+              :key="color"
+          >
+            <v-sheet
+                :color="color"
+                height="100%"
+                tile
+            >
+              <div class="flex flex-center-center">
+                第 {{ i + 1 }} 步
+              </div>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card>
+    </div>
+  </v-dialog>
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 
-let windowIsOpen = ref(false);
+let state = reactive({
+  windowIsOpen: false,
+
+})
+
+let carouselData = reactive({
+  carouselIndex: 0,
+  colors: [
+    'primary',
+    'secondary',
+    'yellow darken-2',
+    'red',
+    'orange',
+  ]
+})
+
 let open = () => {
-  windowIsOpen.value = true;
+  state.windowIsOpen = true;
+  carouselData.carouselIndex = 0;
 }
-let close = () => {
-  windowIsOpen.value = false;
-}
+
 </script>
 
 <style lang="scss">
 .install-browser {
   position: relative;
 
-  .box {
-    border: 1px solid #39A0F7;
+  .install-browser-content {
     width: 200px;
     height: 200px;
     overflow: hidden;
     position: relative;
     transition: 1s all;
 
-    .box-name {
+    .install-name {
       position: absolute;
       top: 20px;
       left: 20px;
@@ -44,7 +89,7 @@ let close = () => {
       transition: 1s all;
     }
 
-    .box-icon {
+    .install-icon {
       transition: 1s all;
       position: absolute;
       left: -30px;
@@ -56,7 +101,7 @@ let close = () => {
       transform: rotate(-30deg);
     }
 
-    .box-go, .box-close {
+    .install-go {
       transition: 1s all;
       position: absolute;
       font-size: 26px;
@@ -71,33 +116,10 @@ let close = () => {
       text-align: center;
     }
 
-    .box-close {
-      top: 20px;
+    .install-right {
+      transition: 1s all;
       opacity: 0;
       pointer-events: none;
-      transition: 1s all;
-    }
-
-    &.active {
-      width: 100%;
-      height: 500px;
-
-      .box-icon {
-        transform: rotate(0);
-        left: 10px;
-        bottom: 10px;
-        opacity: 1;
-      }
-
-      .box-go {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .box-close {
-        opacity: 1;
-        pointer-events: auto;
-      }
     }
   }
 }

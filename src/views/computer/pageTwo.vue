@@ -52,12 +52,12 @@
 
       </div>
 
-      <div class="box install p30">
-        <div class="box-title ta-l pl5 color-yellow">
+      <div class="install p30">
+        <div v-if="false" class="box-title ta-l pl5 color-yellow">
           <span class="iconfont icon-xiangmu"></span>
           <span class="title ml10">插件端安装指南</span>
         </div>
-        <div class="box-content p30">
+        <div class="install-content p30">
           <install-browser></install-browser>
           <!--          <div v-for="item in state.installInfo">-->
           <!--            <img :src="require('@/assets/image/pageTwo/logo/'+item.icon)">-->
@@ -195,7 +195,7 @@ onMounted(() => {
       }
     }
 
-    .box {
+    .install {
 
       .box-title {
         font-size: 28px;
@@ -226,8 +226,8 @@ onMounted(() => {
         }
       }
 
-      .box-content {
-        display: none;
+      .install-content {
+        //display: none;
       }
 
     }
