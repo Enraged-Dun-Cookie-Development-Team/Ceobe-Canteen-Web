@@ -52,16 +52,16 @@
 
       </div>
 
-      <div v-if="false" class="install pa-8">
+      <div class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
-        <div class="install-content pa-8">
+        <div class="install-content pa-8 flex flex-around-center">
           <install-browser v-for="install in state.installInfo"
                            :key="install.name"
                            :browser="install"></install-browser>
         </div>
       </div>
 
-      <div class="donate pa-8">
+      <div v-if="false" class="donate pa-8">
         <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
         <div class="mt-7">
           <h3>感谢大家对小刻食堂的支持</h3>
