@@ -1,11 +1,11 @@
 <template>
   <div class="flex page-two" :style="{height:state.twoHeight+'px'}">
-    <div class="h100 menu ta-c" v-if="false">
+    <div class="h100 menu ta-c pt-5" v-if="false">
       <div class="title">首页</div>
-      <div style="padding-left: 70px">
+      <div class="pl-16">
         <div v-for="item in state.menu" class="flex flex-start-center menu-item">
           <span class="iconfont icon-xiangmu"></span>
-          <span class="ml10">{{ item[1] }}</span>
+          <span class="ml-3">{{ item[1] }}</span>
         </div>
       </div>
       <img class="qr-code" src="@/assets/image/pageTwo/menuIcon/qrCode.png">
@@ -52,7 +52,7 @@
 
       </div>
 
-      <div class="install pa-8">
+      <div v-if="false" class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8 flex flex-around-center">
           <install-browser v-for="install in state.installInfo"
@@ -85,13 +85,13 @@
           </div>
         </div>
         <div class="mt-7">
-          <v-btn @click="toLink('')" style="color: #fff" color="#D07D00">收支一览表</v-btn>
+          <v-btn @click="toLink('')" class="color-fff" color="#D07D00">收支一览表</v-btn>
         </div>
       </div>
 
       <div class="us pa-8">
         <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
-
+        <team :team-info="team" v-for="team in state.teamList"></team>
       </div>
     </div>
 
@@ -100,11 +100,13 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, reactive, ref} from "vue";
+import {computed, onMounted, reactive, ref} from "vue";
 import InstallBrowser from "@/components/installBrowser";
 import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
+import {TEAM_LIST} from "@/assets/constant/team"
 import BoxTitle from "@/components/boxTitle.vue";
+import Team from "@/components/team.vue";
 
 interface state {
   menu: Array<[string, string]>,
@@ -114,14 +116,16 @@ interface state {
     help: object
   }>,
   twoHeight: number,
-  donateList: Array<any>
+  donateList: Array<any>,
+  teamList: Array<any>,
 }
 
 let state = reactive<state>({
   menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
   installInfo: PC_INSTALL_HELP_LIST,
   twoHeight: 0,
-  donateList: DONATE_LIST
+  donateList: DONATE_LIST,
+  teamList: TEAM_LIST
 })
 
 onMounted(() => {
@@ -131,6 +135,7 @@ onMounted(() => {
 let toLink = (url: string) => {
   window.open(url, "_black")
 }
+
 </script>
 
 <style lang="scss">
@@ -141,7 +146,6 @@ let toLink = (url: string) => {
     background: #FEB850;
     width: 300px;
     color: #ffffff;
-    padding-top: 20px;
 
     .title {
       font-size: 22px;
