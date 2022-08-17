@@ -52,34 +52,50 @@
 
       </div>
 
-      <div class="install pa-8">
+      <div v-if="false" class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8">
-          <!--          <install-browser v-for="install in state.installInfo"-->
-          <!--                           :key="install.name"-->
-          <!--                           :browser="install"></install-browser>-->
+          <install-browser v-for="install in state.installInfo"
+                           :key="install.name"
+                           :browser="install"></install-browser>
         </div>
       </div>
 
       <div class="donate pa-8">
         <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
-        <div class="flex flex-around-center">
+        <div class="mt-7">
+          <h3>感谢大家对小刻食堂的支持</h3>
+          <h4>由于捐助列表是程序自动生成，捐助的备注一定要以<span style="color: #D07D00">刻</span>字开头哦！</h4>
+          未成年刀客塔请勿捐款，三连我们的账号就可以啦。<br/>
+          如果在收支一览表内没有发现自己的捐助，那就是我们理智涣散，来群里面找我们添加！
+        </div>
+        <div class="flex flex-around-center mt-7">
           <div class="donate-box" v-for="donate in state.donateList">
             <v-card>
               <img class="w100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
               <v-card-actions v-if="donate.link">
-                <v-btn class="w100" @click="toLink(donate.link)">{{ donate.text }}</v-btn>
+                <v-btn block
+                       variant="outlined"
+                       color="#D07D00"
+                       @click="toLink(donate.link)">{{ donate.text }}
+                </v-btn>
               </v-card-actions>
               <v-card-text v-else>{{ donate.text }}</v-card-text>
             </v-card>
           </div>
         </div>
         <div class="mt-7">
-          感谢大家对小刻食堂的支持，捐助我们会记录备注的！
-          未成年刀客塔请勿捐款，三连我们的账号就可以啦
+          <v-btn @click="toLink('')" style="color: #fff" color="#D07D00">收支一览表</v-btn>
         </div>
       </div>
+
+      <div class="us pa-8">
+        <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
+
+      </div>
     </div>
+
+
   </div>
 </template>
 
