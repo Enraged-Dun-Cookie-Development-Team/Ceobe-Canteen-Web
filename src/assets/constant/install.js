@@ -43,6 +43,4 @@ const INSTALL_CHROME = {
 }
 const PC_INSTALL_HELP_LIST = [INSTALL_CHROME];
 
-export default {
-    PC_INSTALL_HELP_LIST
-}
+export {PC_INSTALL_HELP_LIST}
