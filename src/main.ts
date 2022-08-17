@@ -18,6 +18,7 @@ import {fa} from 'vuetify/lib/iconsets/fa'
 import '@mdi/font/css/materialdesignicons.css'
 
 // https://materialdesignicons.com/ 图标字体
+// https://fontawesome.com/
 
 const vuetify = createVuetify({
     components,

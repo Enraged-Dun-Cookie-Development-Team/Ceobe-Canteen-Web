@@ -4,7 +4,8 @@
       <div class="install-browser-content flex">
         <div class="install-name">{{ props.browser.name }}</div>
         <v-btn
-            class="install-go pointer"
+            class="install-go pointer color-fff"
+            color="#D07D00"
             icon="mdi-chevron-right"
             @click="open"
         ></v-btn>
@@ -114,7 +115,6 @@ let toLink = (url: string) => {
       position: absolute;
       font-size: 26px;
       background: #39A0F7;
-      color: #ffffff;
       border-radius: 50%;
       bottom: 20px;
       right: 20px;
