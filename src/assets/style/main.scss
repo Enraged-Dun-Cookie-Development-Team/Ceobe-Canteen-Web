@@ -15,16 +15,18 @@
   color: #33A9F2
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
 .p10 {
   padding: 10px;
 }
+
 .p30 {
   padding: 30px;
 }
+
 .pt5 {
   padding-top: 5px;
 }
@@ -209,4 +211,12 @@
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
 }

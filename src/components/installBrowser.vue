@@ -2,13 +2,13 @@
   <v-card width="200" height="200">
     <div class="install-browser">
       <div class="install-browser-content flex">
-        <div class="install-name">Google浏览器</div>
+        <div class="install-name">{{ props.browser.name }}</div>
         <v-btn
             class="install-go pointer"
             icon="mdi-chevron-right"
             @click="open"
         ></v-btn>
-        <img class="install-icon" src="@/assets/image/pageTwo/logo/chrome.png"/>
+        <img class="install-icon" :src="require('@/assets/image/pageTwo/logo/'+props.browser.icon)"/>
       </div>
     </div>
   </v-card>
@@ -18,25 +18,33 @@
       v-model="state.windowIsOpen"
       scrollable
   >
-    <div style="width: 1000px;height: 500px;">
+    <div class="install-browser-dialog">
       <v-card>
         <v-carousel
-            progress="primary"
+            progress="#D07D00"
             hide-delimiters
             v-model="carouselData.carouselIndex">
           <v-carousel-item
-              v-for="(color, i) in carouselData.colors"
-              :key="color"
+              v-for="(data, i) in carouselData.data"
+              :key="i"
           >
-            <v-sheet
-                :color="color"
-                height="100%"
-                tile
-            >
-              <div class="flex flex-center-center">
-                第 {{ i + 1 }} 步
+            <div class="flex flex-center-center flex-column h100 px-10 mx-15 relative">
+              <div class="flex carousel-content" :class="data.flex">
+                <div class="flex flex-start-center flex-column">
+                  <h3 v-html="data.html"></h3>
+                  <div v-if="data.btn" class="mt-5 flex flex-column">
+                    <v-btn color="#FCDDAB" style="color: #D07D00" class="mt-2" @click="toLink(btn.link)"
+                           v-for="btn in data.btn">{{
+                        btn.text
+                      }}
+                    </v-btn>
+                  </div>
+                </div>
+                <img :class="data.imageWidth||'w-100'" class="mt-5" v-if="data.image"
+                     :src="require('@/assets/image/pageTwo/install/'+data.image)">
+                <v-chip class="mt-5" v-if="data.tag">{{ data.tag }}</v-chip>
               </div>
-            </v-sheet>
+            </div>
           </v-carousel-item>
         </v-carousel>
       </v-card>
@@ -45,7 +53,9 @@
 </template>
 
 <script lang="ts" setup>
-import {reactive, ref} from "vue";
+import {defineProps, reactive, ref} from "vue";
+
+const props = defineProps({browser: {type: Object}});
 
 let state = reactive({
   windowIsOpen: false,
@@ -54,18 +64,16 @@ let state = reactive({
 
 let carouselData = reactive({
   carouselIndex: 0,
-  colors: [
-    'primary',
-    'secondary',
-    'yellow darken-2',
-    'red',
-    'orange',
-  ]
+  data: props.browser?.help
 })
 
 let open = () => {
   state.windowIsOpen = true;
   carouselData.carouselIndex = 0;
+}
+
+let toLink = (url: string) => {
+  window.open(url, "_black")
 }
 
 </script>
@@ -124,4 +132,22 @@ let open = () => {
   }
 }
 
+.install-browser-dialog {
+  width: 1000px;
+  height: 500px;
+
+  .carousel-title {
+    top: 30px;
+    left: 30px;
+    font-size: 20px;
+  }
+
+  .carousel-content {
+    h3 {
+      span {
+        color: #FEC568;
+      }
+    }
+  }
+}
 </style>
