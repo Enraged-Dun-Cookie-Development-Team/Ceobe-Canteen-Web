@@ -52,27 +52,43 @@
 
       </div>
 
-      <div class="install p30">
-        <div v-if="false" class="box-title ta-l pl5 color-yellow">
-          <span class="iconfont icon-xiangmu"></span>
-          <span class="title ml10">插件端安装指南</span>
-        </div>
-        <div class="install-content p30">
-          <install-browser v-for="install in state.installInfo"
-                           :key="install.name"
-                           :browser="install"></install-browser>
+      <div class="install pa-8">
+        <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
+        <div class="install-content pa-8">
+          <!--          <install-browser v-for="install in state.installInfo"-->
+          <!--                           :key="install.name"-->
+          <!--                           :browser="install"></install-browser>-->
         </div>
       </div>
 
-
+      <div class="donate pa-8">
+        <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
+        <div class="flex flex-around-center">
+          <div class="donate-box" v-for="donate in state.donateList">
+            <v-card>
+              <img class="w100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
+              <v-card-actions v-if="donate.link">
+                <v-btn class="w100" @click="toLink(donate.link)">{{ donate.text }}</v-btn>
+              </v-card-actions>
+              <v-card-text v-else>{{ donate.text }}</v-card-text>
+            </v-card>
+          </div>
+        </div>
+        <div class="mt-7">
+          感谢大家对小刻食堂的支持，捐助我们会记录备注的！
+          未成年刀客塔请勿捐款，三连我们的账号就可以啦
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import {onMounted, reactive, ref} from "vue";
-import InstallBrowser from "@/components/installBrowser.vue";
-import install from "@/assets/constant/install.js"
+import InstallBrowser from "@/components/installBrowser";
+import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
+import {DONATE_LIST} from "@/assets/constant/donate"
+import BoxTitle from "@/components/boxTitle.vue";
 
 interface state {
   menu: Array<[string, string]>,
@@ -81,18 +97,24 @@ interface state {
     name: string,
     help: object
   }>,
-  twoHeight: number
+  twoHeight: number,
+  donateList: Array<any>
 }
 
 let state = reactive<state>({
   menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
-  installInfo: install.PC_INSTALL_HELP_LIST,
+  installInfo: PC_INSTALL_HELP_LIST,
   twoHeight: 0,
+  donateList: DONATE_LIST
 })
 
 onMounted(() => {
   state.twoHeight = window.innerHeight
 })
+
+let toLink = (url: string) => {
+  window.open(url, "_black")
+}
 </script>
 
 <style lang="scss">
@@ -167,40 +189,18 @@ onMounted(() => {
 
     .install {
 
-      .box-title {
-        font-size: 28px;
-
-        .iconfont {
-          font-size: 28px;
-        }
-
-        .title {
-          position: relative;
-
-          &::after, &::before {
-            height: 2px;
-            content: ' ';
-            position: absolute;
-            bottom: -5px;
-            width: 100%;
-            right: 0;
-            background: #FE913E;
-          }
-
-          &::before {
-            bottom: -10px;
-            right: 5px;
-            width: 60%;
-          }
-
-        }
-      }
-
       .install-content {
         //display: none;
       }
 
     }
   }
+
+  .donate {
+    .donate-box {
+      width: 200px;
+    }
+  }
+
 }
 </style>
