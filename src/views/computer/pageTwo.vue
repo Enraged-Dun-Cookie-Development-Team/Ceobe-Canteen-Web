@@ -58,10 +58,9 @@
           <span class="title ml10">插件端安装指南</span>
         </div>
         <div class="install-content p30">
-          <install-browser></install-browser>
-          <!--          <div v-for="item in state.installInfo">-->
-          <!--            <img :src="require('@/assets/image/pageTwo/logo/'+item.icon)">-->
-          <!--          </div>-->
+          <install-browser v-for="install in state.installInfo"
+                           :key="install.name"
+                           :browser="install"></install-browser>
         </div>
       </div>
 
@@ -73,50 +72,21 @@
 <script lang="ts" setup>
 import {onMounted, reactive, ref} from "vue";
 import InstallBrowser from "@/components/installBrowser.vue";
+import install from "@/assets/constant/install.js"
 
 interface state {
   menu: Array<[string, string]>,
   installInfo: Array<{
     icon: string,
     name: string,
-    tutorialURL: string, //教程地址
-    storeUrl?: string //应用商店地址
+    help: object
   }>,
   twoHeight: number
 }
 
 let state = reactive<state>({
   menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
-  installInfo: [{
-    name: 'Chrome浏览器',
-    icon: 'chrome.png',
-    tutorialURL: '',
-    storeUrl: ''
-  },
-    {
-      name: '360浏览器',
-      icon: '360.png',
-      tutorialURL: '',
-      storeUrl: ''
-    },
-    {
-      name: 'Edge浏览器',
-      icon: 'edge.png',
-      tutorialURL: '',
-      storeUrl: ''
-    },
-    {
-      name: 'QQ浏览器',
-      icon: 'qq.png',
-      tutorialURL: '',
-      storeUrl: ''
-    },
-    {
-      name: '火狐浏览器',
-      icon: 'firefox.png',
-      tutorialURL: '',
-      storeUrl: ''
-    }],
+  installInfo: install.PC_INSTALL_HELP_LIST,
   twoHeight: 0,
 })
 
