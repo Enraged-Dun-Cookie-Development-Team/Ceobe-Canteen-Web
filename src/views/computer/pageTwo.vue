@@ -1,6 +1,6 @@
 <template>
   <div class="flex page-two" :style="{height:state.twoHeight+'px'}">
-    <div class="h100 menu ta-c pt-5" v-if="false">
+    <div class="h100 menu ta-c pt-5">
       <div class="title">首页</div>
       <div class="pl-16">
         <div v-for="item in state.menu" class="flex flex-start-center menu-item">
@@ -16,8 +16,10 @@
       </div>
     </div>
     <div class="flex9 content">
-      <div class="back"></div>
-      <div v-if="false" class="info flex">
+      <div class="back w-100 position-absolute">
+        <img class="w-100" src="@/assets/image/pageTwo/page-bg.png">
+      </div>
+      <div class="info flex">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
           <div class="speak flex flex-column flex-center-center">
             <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
@@ -33,8 +35,7 @@
           <img src="@/assets/image/pageTwo/interface/1.jpg">
         </div>
       </div>
-
-      <div v-if="false" class="info flex">
+      <div class="info flex">
         <div class="flex1">
           <img src="@/assets/image/pageTwo/interface/2.jpg">
         </div>
@@ -51,8 +52,7 @@
         </div>
 
       </div>
-
-      <div v-if="false" class="install pa-8">
+      <div class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8 flex flex-around-center">
           <install-browser v-for="install in state.installInfo"
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div v-if="false" class="donate pa-8">
+      <div class="donate pa-8">
         <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
         <div class="mt-7">
           <h3>感谢大家对小刻食堂的支持</h3>
@@ -91,10 +91,11 @@
 
       <div class="us pa-8">
         <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
-        <team :team-info="team" v-for="team in state.teamList"></team>
+        <div class="flex flex-row flex-wrap flex-between-center">
+          <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
+        </div>
       </div>
     </div>
-
 
   </div>
 </template>
@@ -144,7 +145,7 @@ let toLink = (url: string) => {
 
   .menu {
     background: #FEB850;
-    width: 300px;
+    width: 250px;
     color: #ffffff;
 
     .title {
@@ -171,14 +172,24 @@ let toLink = (url: string) => {
     }
   }
 
+
   .content {
     position: relative;
     overflow: auto;
-    //background: no-repeat center /cover;
-    //background-image:cross-fade(url("@/assets/image/pageTwo/page-bg.png"));
-    //background-image: -webkit-cross-fade( url("@/assets/image/pageTwo/page-bg.png") 0%, url("@/assets/image/pageTwo/page-bg.png"), 50%);
-    //background-image: cross-fade(url("@/assets/image/pageTwo/page-bg.png"), url("@/assets/image/pageTwo/page-bg.png"), 50%);
 
+    .back {
+      z-index: -1;
+      opacity: 0.3;
+      //background: no-repeat top /cover scroll;
+      //background-image: -webkit-cross-fade(
+      //        url("@/assets/image/transparent.png"),
+      //        url("@/assets/image/pageTwo/page-bg.png"),
+      //        30%);
+      //background-image: cross-fade(
+      //        url("@/assets/image/transparent.png"),
+      //        url("@/assets/image/pageTwo/page-bg.png"),
+      //        30%);
+    }
 
     .info {
       font-family: 'sucai';
@@ -207,20 +218,13 @@ let toLink = (url: string) => {
       }
     }
 
-    .install {
-
-      .install-content {
-        //display: none;
+    .donate {
+      .donate-box {
+        width: 200px;
       }
-
     }
   }
 
-  .donate {
-    .donate-box {
-      width: 200px;
-    }
-  }
 
 }
 </style>

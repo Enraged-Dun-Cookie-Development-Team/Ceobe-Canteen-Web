@@ -1,5 +1,5 @@
 const INSTALL_CHROME = {
-    name: 'Google浏览器',
+    name: 'Chrome',
     icon: 'chrome.png',
     help: [{
         html: '下载插件端压缩包，并解压到任意文件夹',

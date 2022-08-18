@@ -1,5 +1,5 @@
 <template>
-  <v-card width="200" height="200">
+  <v-card width="180" height="180">
     <div class="install-browser">
       <div class="install-browser-content flex">
         <div class="install-name">{{ props.browser.name }}</div>
@@ -84,8 +84,8 @@ let toLink = (url: string) => {
   position: relative;
 
   .install-browser-content {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     overflow: hidden;
     position: relative;
     transition: 1s all;
