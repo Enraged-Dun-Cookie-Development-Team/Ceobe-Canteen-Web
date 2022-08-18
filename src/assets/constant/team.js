@@ -53,7 +53,7 @@ const TEAM_LIST = [{
                 value: "插件开发"
             },
             {
-                type: "front",
+                type: "application",
                 value: "后台管理开发"
             },
             {
@@ -208,46 +208,49 @@ const JOBS_ICON = [{
     iconName: 'fa-brands fa-github'
 }, {
     type: 'founder',
-    iconName: 'fa-thin fa-person-carry-box'
+    iconName: 'mdi mdi-account-heart'
 }, {
     type: 'front',
-    iconName: 'fa-thin fa-puzzle-piece-simple'
+    iconName: 'mdi mdi-puzzle'
 }, {
     type: 'android',
-    iconName: 'fa-thin fa-android'
+    iconName: 'mdi mdi-android'
 }, {
     type: 'web',
-    iconName: 'fa-thin fa-photo-film-music'
+    iconName: 'mdi mdi-web-sync'
 }, {
     type: 'leader',
-    iconName: 'fa-thin fa-book-open-reader'
+    iconName: 'mdi mdi-account-group'
 }, {
     type: 'backend',
-    iconName: 'fa-thin fa-send-back'
+    iconName: 'mdi mdi-box-shadow'
 }, {
     type: 'art',
-    iconName: 'fa-thin fa-palette'
+    iconName: 'fa fa-palette'
 }, {
     type: 'ui',
-    iconName: 'fa-thin fa-paintbrush-pencil'
+    iconName: 'fa fa-pencil'
 }, {
     type: 'spokes',
-    iconName: 'fa-thin fa-microphone'
+    iconName: 'fa fa-microphone'
 }, {
     type: 'operation',
-    iconName: 'fa-thin fa-server'
+    iconName: 'fa fa-server'
 }, {
     type: 'product',
-    iconName: 'fa-thin fa-brain-circuit'
+    iconName: 'mdi mdi-head-snowflake'
 }, {
     type: 'ios',
-    iconName: 'fa-brands fa-app-store-ios'
+    iconName: 'fa-brands fa-apple'
 }, {
     type: 'help',
-    iconName: 'fa-thin fa-people-carry-box'
+    iconName: 'fa fa-people-carry-box'
 }, {
     type: 'personal',
-    iconName: 'fa-thin fa-blog'
+    iconName: 'mdi mdi-post'
+}, {
+    type: 'application',
+    iconName: 'mdi mdi-application-settings'
 }]
 
 export {TEAM_LIST, JOBS_ICON}
