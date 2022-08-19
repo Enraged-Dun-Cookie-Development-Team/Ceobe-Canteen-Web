@@ -1,0 +1,28 @@
+<template>
+  <div class="brain-background w-1024 h-1024 position-absolute">
+  </div>
+</template>
+
+<script lang="ts">
+</script>
+
+<style lang="scss">
+$ceobe_color: #ffba4b;
+.brain-background {
+  background: $ceobe_color;
+  clip-path: polygon(
+    62% 0,
+    93% 18%,
+    99% 46%,
+    92% 71%,
+    55% 69%,
+    14% 99%,
+    20% 70%,
+    4% 61%,
+    11% 44%,
+    7% 29%,
+    14% 9%,
+    46% 0
+  );
+}
+</style>
