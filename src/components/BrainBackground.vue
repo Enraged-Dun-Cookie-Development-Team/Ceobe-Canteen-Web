@@ -1,14 +1,19 @@
 <template>
   <div class="brain-background w-1024 h-1024 position-absolute">
+    <p>aca</p>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+
 </script>
 
 <style lang="scss">
 $ceobe_color: #ffba4b;
 .brain-background {
+  position: absolute 500;
+  width: 1024px;
+  height: 1024px;
   background: $ceobe_color;
   clip-path: polygon(
     62% 0,
