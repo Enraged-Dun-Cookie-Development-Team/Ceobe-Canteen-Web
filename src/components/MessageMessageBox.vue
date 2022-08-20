@@ -13,6 +13,7 @@
         marginTop: to_px(args.mask_y),
         marginLeft: to_px(args.mask_x),
         backgroundColor: 'rgba(255, 255, 255, ' + args.transparent + ')',
+        zIndex: args.mask_z,
       }"
     ></div>
     <div
@@ -22,6 +23,7 @@
         width: to_px(args.block_w),
         marginTop: to_px(args.block_y),
         marginLeft: to_px(args.block_x),
+        zIndex: args.block_z,
       }"
     ></div>
     <div
@@ -31,7 +33,14 @@
         width: to_px(area_size.width),
       }"
     >
-      <ul class="msg-list">
+      <ul
+        class="msg-list"
+        :style="{
+          left:to_px( args.txt_x),
+          top: to_px(args.txt_y),
+          zIndex: args.txt_z,
+        }"
+      >
         <li class="msg-elem">
           {{ args.line1 }}
         </li>
@@ -58,19 +67,33 @@ export interface Args {
   block_w?: number;
   block_h?: number;
   transparent?: number;
+
+  txt_x?: number;
+  txt_y?: number;
+
+  block_z?: number;
+  mask_z?: number;
+  txt_z?: number;
 }
 
 const args = withDefaults(defineProps<Args>(), {
   mask_x: 0,
   mask_y: 25,
-  mask_w: 128,
-  mask_h: 128,
+  mask_w: 226,
+  mask_h: 160,
   // block
   block_x: 25,
   block_y: 0,
-  block_w: 128,
-  block_h: 128,
+  block_w: 258,
+  block_h: 165,
   transparent: 0.1,
+
+  txt_x: 50,
+  txt_y: 50,
+
+  block_z: 1,
+  mask_z: 2,
+  txt_z: 3,
 });
 
 interface AreaSize {
@@ -98,12 +121,11 @@ const area_size = computed<AreaSize>(() => {
 .mask {
   position: relative;
   float: left;
-  z-index: 2;
 }
 .block {
-  background-color: brown;
+  background-color: #DE5F18;
   position: relative;
-  z-index: 1;
+  box-shadow: 0px 3px 6px 1px #683A19;
 }
 .text-area {
   background-color: transparent;
@@ -111,20 +133,16 @@ const area_size = computed<AreaSize>(() => {
   top: 0;
   left: 0;
   margin-left: 0px;
-  z-index: 3;
 }
 
 .msg-list {
   height: fit-content;
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
 }
 .msg-elem {
   list-style: none;
   font-weight: 800;
+  font-size: 40px;
+  color: white;
 }
 </style>
