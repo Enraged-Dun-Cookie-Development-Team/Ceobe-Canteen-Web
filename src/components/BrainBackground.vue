@@ -9,8 +9,9 @@
 </script>
 
 <style lang="scss">
-$ceobe_color: #ffba4b;
+$ceobe_color: #ffffff;
 .brain-background {
+  z-index: -1;
   position: absolute 500;
   width: 1024px;
   height: 1024px;

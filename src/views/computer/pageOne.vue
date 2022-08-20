@@ -5,9 +5,8 @@
       <function-message-box class="for-cookie" label="蹲饼！" />
       <function-message-box class="utils" label="常用工具" />
     </div>
-
     <div>
-      <brain-background></brain-background>
+      <brain-background />
       <img src="@/assets/image/icon.png" alt="" width="128" height="128" />
       <img src="@/assets/image/pageOne/load-success.png" alt="" height="128" />
       <img src="@/assets/image/pageOne/bubble-find.png" alt="" height="64" />
@@ -17,14 +16,43 @@
       <p>用于实时抓取兔兔发的动态</p>
     </div>
     <div>
-      <div>
-        <p>饼源消息</p>
-        <p>即刻推送</p>
-      </div>
-      <div>
-        <p>多类工具</p>
-        <p>即刻体验</p>
-      </div>
+    <message-message-box
+      class="cookie-src"
+      line1="饼源消息"
+      line2="即刻推送"
+      :mask_x="80"
+      :mask_y="0"
+      :block_x="0"
+      :block_y="13"
+      :txt_x="89"
+      :txt_y="29"
+      :txt_z="5"
+    />
+    <message-message-box
+    class="multi-tools"
+    line1="多类工具"
+    line2="即刻体验"
+    :block_x="0"
+    :block_y="0"
+    :mask_x="50"
+    :mask_y="15"
+    :txt_x="71"
+    :txt_y="30"
+    :txt_z="5"
+    />
+    <message-message-box
+    class="doc-emo"
+    line1="博士，理智"
+    line2="又满了哦"
+    :block_x="0"
+    :block_y="0"
+    :mask_x="22"
+    :mask_y="10"
+    :txt_x="46"
+    :txt_y="31"
+    :txt_z="5"
+    />
+      
       <div>
         <p>博士，理智</p>
         <p>又满了哦</p>
@@ -47,11 +75,15 @@
 <script lang="ts" setup>
 import HeaderBtn from "@/components/headerBtn.vue";
 import FunctionMessageBox from "@/components/FunctionMessageBox.vue";
-
+import MessageMessageBox from "@/components/MessageMessageBox.vue";
+import BrainBackground from "@/components/BrainBackground.vue";
 name: "pageTop";
 </script>
 
 <style lang="css">
+body {
+  background-color: #FFBB4E;
+}
 .page-one {
   height: 1024px;
 }
@@ -70,5 +102,20 @@ name: "pageTop";
   position: absolute;
   top: 71%;
   left: 18%;
+}
+.cookie-src {
+  position: absolute;
+  top: 40px;
+  right: 301px;
+}
+.multi-tools{
+  position: absolute;
+  top: 191px;
+  right: 171px;
+}
+.doc-emo{
+  position: absolute;
+  top: 356px;
+  right: 233px;
 }
 </style>
