@@ -33,10 +33,10 @@ export interface Args {
 }
 
 const props = withDefaults(defineProps<Args>(), {
-  v_offset: 25,
-  h_offset: 25,
-  height: 36,
-  width: 100,
+  v_offset: 58,
+  h_offset: 37,
+  height: 77,
+  width: 260,
 });
 </script>
 
@@ -47,20 +47,22 @@ const props = withDefaults(defineProps<Args>(), {
   width: max-content;
 }
 .behind {
-  background-color: aqua;
+  background-color: #8f8d8d;
   position: relative;
   z-index: 1;
 }
 .label {
-  background-color: cadetblue;
+  background-color: #5e5e5e;
   position: relative;
   float: right;
   z-index: 2;
 
   text-align: center;
+  font-size: 40px;
+  color: white;
   font-weight: 800;
 }
 .shadow-with {
-  box-shadow: 0px 0px 10px 3px rgb(77, 77, 77);
+  box-shadow: 5px 5px 10px 1px rgba(78, 78, 78, 0.52);
 }
 </style>
