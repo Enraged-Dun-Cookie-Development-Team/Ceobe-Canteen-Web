@@ -1,71 +1,60 @@
 <template>
   <div class="page-one">
-    <div>
-      <function-message-box class="doc-terminal" label="博士终端" />
-      <function-message-box class="for-cookie" label="蹲饼！" />
-      <function-message-box class="utils" label="常用工具" />
-    </div>
-    <div>
-      <brain-background />
-      <img src="@/assets/image/icon.png" alt="" width="128" height="128" />
-      <img src="@/assets/image/pageOne/load-success.png" alt="" height="128" />
-      <img src="@/assets/image/pageOne/bubble-find.png" alt="" height="64" />
-
-      <hr />
-
-      <p>用于实时抓取兔兔发的动态</p>
-    </div>
-    <div>
-    <message-message-box
-      class="cookie-src"
-      line1="饼源消息"
-      line2="即刻推送"
-      :mask_x="80"
-      :mask_y="0"
-      :block_x="0"
-      :block_y="13"
-      :txt_x="89"
-      :txt_y="29"
-      :txt_z="5"
-    />
-    <message-message-box
-    class="multi-tools"
-    line1="多类工具"
-    line2="即刻体验"
-    :block_x="0"
-    :block_y="0"
-    :mask_x="50"
-    :mask_y="15"
-    :txt_x="71"
-    :txt_y="30"
-    :txt_z="5"
-    />
-    <message-message-box
-    class="doc-emo"
-    line1="博士，理智"
-    line2="又满了哦"
-    :block_x="0"
-    :block_y="0"
-    :mask_x="22"
-    :mask_y="10"
-    :txt_x="46"
-    :txt_y="31"
-    :txt_z="5"
-    />
-      
+    <div class="header"></div>
+    <div class="header-body">
       <div>
-        <p>博士，理智</p>
-        <p>又满了哦</p>
+        <function-message-box class="doc-terminal" label="博士终端" />
+        <function-message-box class="for-cookie" label="蹲饼！" />
+        <function-message-box class="utils" label="常用工具" />
       </div>
-
       <div>
-        <a href="http://">支持我们</a>
-        <a href="http://">关于我们</a>
+        <brain-background class="brain" />
       </div>
-    </div>
-
-    <div>
-      <p>双端蹲饼，一个饼也不错过</p>
+      <div>
+        <message-message-box
+          class="cookie-src"
+          line1="饼源消息"
+          line2="即刻推送"
+          :mask_x="80"
+          :mask_y="0"
+          :block_x="0"
+          :block_y="13"
+          :txt_x="89"
+          :txt_y="29"
+          :txt_z="5"
+        />
+        <message-message-box
+          class="multi-tools"
+          line1="多类工具"
+          line2="即刻体验"
+          :block_x="0"
+          :block_y="0"
+          :mask_x="50"
+          :mask_y="15"
+          :txt_x="71"
+          :txt_y="30"
+          :txt_z="5"
+        />
+        <message-message-box
+          class="doc-emo"
+          line1="博士，理智"
+          line2="又满了哦"
+          :block_x="0"
+          :block_y="0"
+          :mask_x="22"
+          :mask_y="10"
+          :txt_x="46"
+          :txt_y="31"
+          :txt_z="5"
+        />
+        <div>
+          <support
+            class="support-u"
+            about-us-uri="/acc"
+            support-us-uri="/support"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -77,45 +66,66 @@ import HeaderBtn from "@/components/headerBtn.vue";
 import FunctionMessageBox from "@/components/FunctionMessageBox.vue";
 import MessageMessageBox from "@/components/MessageMessageBox.vue";
 import BrainBackground from "@/components/BrainBackground.vue";
+import Support from "@/components/support.vue";
 name: "pageTop";
 </script>
 
 <style lang="css">
-body {
-  background-color: #FFBB4E;
+.brain {
+  position: absolute;
+  left: 414px;
+  top: 60px;
+}
+
+.header-body {
+  height: 1099px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 126px;
+  background-color: #353535;
 }
 .page-one {
-  height: 1024px;
+  background-image: linear-gradient(to right, #ffbb4e, #ff8448);
+  height: fit-content;
 }
 .doc-terminal {
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 312px;
+  left: 137px;
 }
 .for-cookie {
   position: absolute;
-  top: 45%;
-  left: 18%;
+  top: 481px;
+  left: 195px;
 }
 
 .utils {
   position: absolute;
-  top: 71%;
-  left: 18%;
+  top: 656px;
+  left: 137px;
 }
 .cookie-src {
   position: absolute;
-  top: 40px;
+  top: 166px;
   right: 301px;
 }
-.multi-tools{
+.multi-tools {
   position: absolute;
-  top: 191px;
+  top: 317px;
   right: 171px;
 }
-.doc-emo{
+.doc-emo {
   position: absolute;
-  top: 356px;
+  top: 482px;
   right: 233px;
+}
+.support-u {
+  position: absolute;
+  top: 753px;
+  left: 1473px;
 }
 </style>
