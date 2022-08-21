@@ -19,6 +19,7 @@
       <div class="back w-100 position-absolute">
         <img class="w-100" src="@/assets/image/pageTwo/page-bg.png">
       </div>
+
       <div class="info flex">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
           <div class="speak flex flex-column flex-center-center">
@@ -35,6 +36,7 @@
           <img src="@/assets/image/pageTwo/interface/1.jpg">
         </div>
       </div>
+
       <div class="info flex">
         <div class="flex1">
           <img src="@/assets/image/pageTwo/interface/2.jpg">
@@ -52,6 +54,7 @@
         </div>
 
       </div>
+
       <div class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8 flex flex-around-center">
@@ -95,6 +98,7 @@
           <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -176,6 +180,8 @@ let toLink = (url: string) => {
   .content {
     position: relative;
     overflow: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 
     .back {
       z-index: -1;
