@@ -70,7 +70,7 @@ import Support from "@/components/support.vue";
 name: "pageTop";
 </script>
 
-<style lang="css">
+<style lang="scss">
 .brain {
   position: absolute;
   left: 414px;
