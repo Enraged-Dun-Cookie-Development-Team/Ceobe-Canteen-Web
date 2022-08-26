@@ -1,6 +1,6 @@
 <template>
   <div class="flex page-two" :style="{height:state.twoHeight+'px'}">
-    <div class="h100 menu ta-c pt-5">
+    <div class="h-100 menu ta-c pt-5">
       <div class="title">首页</div>
       <div class="pl-16">
         <div v-for="item in state.menu" class="flex flex-start-center menu-item">
@@ -75,7 +75,7 @@
         <div class="flex flex-around-center mt-7">
           <div class="donate-box" v-for="donate in state.donateList">
             <v-card>
-              <img class="w100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
+              <img class="w-100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
               <v-card-actions v-if="donate.link">
                 <v-btn block
                        variant="outlined"

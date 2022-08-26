@@ -8,6 +8,7 @@
     >
       {{ props.label }}
     </div>
+    <div class="back"></div>
   </div>
 </template>
 
@@ -21,8 +22,8 @@ export interface Args {
 }
 
 const props = withDefaults(defineProps<Args>(), {
-  height: 77,
-  width: 260,
+  height: 50,
+  width: 180,
 });
 </script>
 
@@ -35,16 +36,16 @@ $shadown: 5px 5px 10px 1px rgba(78, 78, 78, 0.52);
 
   .label {
     background-color: #5e5e5e;
-    font-size: 40px;
-    z-index: 1;
+    font-size: 26px;
+    z-index: 5;
     box-shadow: $shadown;
   }
 
-  &::after {
+  .back {
     content: ' ';
     position: absolute;
-    left: -60px;
-    top: 40px;
+    left: -30px;
+    top: 30px;
     background-color: #8f8d8d;
     width: 100%;
     height: 100%;
