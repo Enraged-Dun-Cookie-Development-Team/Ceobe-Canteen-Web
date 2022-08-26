@@ -79,21 +79,21 @@ export interface Args {
 const args = withDefaults(defineProps<Args>(), {
   mask_x: 0,
   mask_y: 25,
-  mask_w: 226,
-  mask_h: 160,
+  mask_w: 140,
+  mask_h: 110,
   // block
   block_x: 25,
   block_y: 0,
-  block_w: 258,
-  block_h: 165,
+  block_w: 198,
+  block_h: 115,
   transparent: 0.1,
 
   txt_x: 50,
   txt_y: 50,
 
-  block_z: 1,
-  mask_z: 2,
-  txt_z: 3,
+  block_z: 3,
+  mask_z: 4,
+  txt_z: 5,
 });
 
 interface AreaSize {
@@ -142,7 +142,7 @@ const area_size = computed<AreaSize>(() => {
 .msg-elem {
   list-style: none;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 26px;
   color: white;
 }
 </style>

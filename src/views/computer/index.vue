@@ -2,9 +2,7 @@
   <div id="full-page">
     <page-one/>
 <!--    <div class="section">Some section</div>-->
-    <div class="section">
-      <page-two></page-two>
-    </div>
+    <page-two></page-two>
   </div>
 </template>
 
