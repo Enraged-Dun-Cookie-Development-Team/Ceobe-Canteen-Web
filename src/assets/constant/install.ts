@@ -1,4 +1,4 @@
-const INSTALL_CHROME = {
+const INSTALL_CHROME: Object = {
     name: 'Chrome',
     icon: 'chrome.png',
     help: [{
@@ -41,7 +41,7 @@ const INSTALL_CHROME = {
         }
     ]
 }
-const INSTALL_EDGE = {
+const INSTALL_EDGE: Object = {
     name: 'edge浏览器',
     icon: 'edge.png',
     help: [{
@@ -83,7 +83,7 @@ const INSTALL_EDGE = {
         }
     ]
 }
-const INSTALL_FIREFOX = {
+const INSTALL_FIREFOX: Object = {
     name: 'Firefox浏览器',
     icon: 'firefox.png',
     help: [{
@@ -118,7 +118,7 @@ const INSTALL_FIREFOX = {
         }
     ]
 }
-const INSTALL_QQ = {
+const INSTALL_QQ: Object = {
     name: 'QQ浏览器',
     icon: 'qq.png',
     help: [{
@@ -153,7 +153,7 @@ const INSTALL_QQ = {
         }
     ]
 }
-const INSTALL_360 = {
+const INSTALL_360: Object = {
     name: '360浏览器',
     icon: '360.png',
     help: [{
@@ -188,6 +188,6 @@ const INSTALL_360 = {
         }
     ]
 }
-const PC_INSTALL_HELP_LIST = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
+const PC_INSTALL_HELP_LIST: object[] = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
 
 export {PC_INSTALL_HELP_LIST}
