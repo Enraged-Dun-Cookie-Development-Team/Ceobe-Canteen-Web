@@ -4,20 +4,21 @@
       <div class="title">首页</div>
       <div class="pl-16">
         <div v-for="item in state.menu" class="flex flex-start-center menu-item">
-          <span class="iconfont icon-xiangmu"></span>
-          <span class="ml-3">{{ item[1] }}</span>
+          <span v-if="item.icon" class="xiaoke" :class="item.icon"></span>
+<!--          <span v-if="item.img!=null"><img :src="require('@/assets/image/detailsContent/menuIcon/'+item.img)"></span>-->
+          <span class="ml-3">{{ item.text }}</span>
         </div>
       </div>
-      <img class="qr-code" src="@/assets/image/pageTwo/menuIcon/qrCode.png">
+      <img class="qr-code" src="@/assets/image/detailsContent/menuIcon/qrCode.png">
       <div class="down-btn ta-c">
-        <img src="@/assets/image/pageTwo/menuIcon/appleDown.png">
-        <img src="@/assets/image/pageTwo/menuIcon/androidDown.png">
-        <img src="@/assets/image/pageTwo/menuIcon/cjDown.png">
+        <img src="@/assets/image/detailsContent/menuIcon/appleDown.png">
+        <img src="@/assets/image/detailsContent/menuIcon/androidDown.png">
+        <img src="@/assets/image/detailsContent/menuIcon/cjDown.png">
       </div>
     </div>
     <div class="flex9 content" ref="contentDom">
       <div class="back w-100 position-absolute">
-        <img class="w-100" src="@/assets/image/pageTwo/page-bg.png">
+        <img class="w-100" src="@/assets/image/detailsContent/page-bg.png">
       </div>
       <div class="info flex">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
@@ -32,12 +33,12 @@
           </div>
         </div>
         <div class="flex1">
-          <img src="@/assets/image/pageTwo/interface/1.jpg">
+          <img src="@/assets/image/detailsContent/interface/1.jpg">
         </div>
       </div>
       <div class="info flex">
         <div class="flex1">
-          <img src="@/assets/image/pageTwo/interface/2.jpg">
+          <img src="@/assets/image/detailsContent/interface/2.jpg">
         </div>
         <div class="flex1 flex flex-column flex-center-center flex-align-start">
           <div class=" speak flex flex-column flex-center-center">
@@ -71,7 +72,7 @@
         <div class="flex flex-around-center mt-7">
           <div class="donate-box" v-for="donate in state.donateList">
             <v-card>
-              <img class="w-100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
+              <img class="w-100" :src="require('@/assets/image/detailsContent/donate/'+donate.img)">
               <v-card-actions v-if="donate.link">
                 <v-btn style="width:calc(100% - 16px)"
                        variant="outlined"
@@ -94,22 +95,24 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script lang="ts" setup>
 import {onMounted, reactive, ref, watch} from "vue";
 import InstallBrowser from "@/components/installBrowser";
+
 import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
+import {MENU_LIST} from "@/assets/constant/menu"
+
 import BoxTitle from "@/components/boxTitle.vue";
 import Team from "@/components/team.vue";
 
 
 interface state {
-  menu: Array<[string, string]>,
+  menu: Array<any>,
   installInfo: Array<any>,
   twoHeight: number,
   donateList: Array<any>,
@@ -117,7 +120,7 @@ interface state {
 }
 
 let state = reactive<state>({
-  menu: [['xk.png', '蹲饼'], ['cygj.png', '常用工具'], ['cygj.png', '博士的终端'], ['cygj.png', '支持我们'], ['cygj.png', '关于我们']],
+  menu: MENU_LIST,
   installInfo: PC_INSTALL_HELP_LIST,
   twoHeight: 0,
   donateList: DONATE_LIST,
@@ -188,6 +191,7 @@ let toLink = (url: string) => {
     overflow: auto;
     max-width: 1200px;
     margin: 0 auto;
+    transition: all 0.5s;
 
     .back {
       z-index: -1;
@@ -195,11 +199,11 @@ let toLink = (url: string) => {
       //background: no-repeat top /cover scroll;
       //background-image: -webkit-cross-fade(
       //        url("@/assets/image/transparent.png"),
-      //        url("@/assets/image/pageTwo/page-bg.png"),
+      //        url("@/assets/image/detailsContent/page-bg.png"),
       //        30%);
       //background-image: cross-fade(
       //        url("@/assets/image/transparent.png"),
-      //        url("@/assets/image/pageTwo/page-bg.png"),
+      //        url("@/assets/image/detailsContent/page-bg.png"),
       //        30%);
     }
 

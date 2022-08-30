@@ -18,7 +18,7 @@ let props = defineProps({
 .box-title {
   font-size: 28px;
 
-  .iconfont {
+  .xiaoke {
     font-size: 28px;
   }
 

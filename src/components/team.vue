@@ -1,7 +1,7 @@
 <template>
   <div class="team position-relative">
     <div class="team-cover rounded-circle position-absolute overflow-hidden flex flex-center-center">
-      <img class="w-100" :src="require('@/assets/image/pageTwo/team/'+info.coverImg)">
+      <img class="w-100" :src="require('@/assets/image/detailsContent/team/'+info.coverImg)">
     </div>
     <div class="team-link position-absolute">
       <div v-for="link in info.link" :style="{left: link.x+'px', top: link.y+'px'}"
