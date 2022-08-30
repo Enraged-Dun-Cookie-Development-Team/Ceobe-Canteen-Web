@@ -15,11 +15,10 @@
         <img src="@/assets/image/pageTwo/menuIcon/cjDown.png">
       </div>
     </div>
-    <div class="flex9 content">
+    <div class="flex9 content" ref="contentDom">
       <div class="back w-100 position-absolute">
         <img class="w-100" src="@/assets/image/pageTwo/page-bg.png">
       </div>
-
       <div class="info flex">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
           <div class="speak flex flex-column flex-center-center">
@@ -36,7 +35,6 @@
           <img src="@/assets/image/pageTwo/interface/1.jpg">
         </div>
       </div>
-
       <div class="info flex">
         <div class="flex1">
           <img src="@/assets/image/pageTwo/interface/2.jpg">
@@ -54,7 +52,6 @@
         </div>
 
       </div>
-
       <div class="install pa-8">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8 flex flex-around-center">
@@ -63,7 +60,6 @@
                            :browser="install"></install-browser>
         </div>
       </div>
-
       <div class="donate pa-8">
         <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
         <div class="mt-7">
@@ -91,27 +87,26 @@
           <v-btn @click="toLink('')" class="color-fff" color="#D07D00">收支一览表</v-btn>
         </div>
       </div>
-
       <div class="us pa-8">
         <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
         <div class="flex flex-row flex-wrap flex-between-center">
           <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
         </div>
       </div>
-
     </div>
 
   </div>
 </template>
 
 <script lang="ts" setup>
-import {computed, onMounted, reactive, ref} from "vue";
+import {onMounted, reactive, ref, watch} from "vue";
 import InstallBrowser from "@/components/installBrowser";
 import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
 import BoxTitle from "@/components/boxTitle.vue";
 import Team from "@/components/team.vue";
+
 
 interface state {
   menu: Array<[string, string]>,
@@ -133,13 +128,28 @@ let state = reactive<state>({
   teamList: TEAM_LIST
 })
 
+const emit = defineEmits(['heightToZero'])
+
+let contentDom: any = ref(null);
+let pageHeight = ref(0)
+
 onMounted(() => {
-  state.twoHeight = window.innerHeight
+  state.twoHeight = window.innerHeight;
+  contentDom.value.addEventListener('scroll', () => {
+    pageHeight.value = contentDom.value.scrollTop
+  })
 })
+
+watch(pageHeight, (data: number, oldData: number) => {
+  if (data == 0) {
+    emit('heightToZero');
+  }
+});
 
 let toLink = (url: string) => {
   window.open(url, "_black")
 }
+
 
 </script>
 
