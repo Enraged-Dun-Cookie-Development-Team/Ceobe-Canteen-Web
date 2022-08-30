@@ -10,6 +10,7 @@ import '@/assets/style/font.scss'
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'vuetify/dist/vuetify.css'
 
+
 import * as components from 'vuetify/lib/components/index'
 import * as directives from 'vuetify/lib/directives/index'
 import {aliases, mdi} from 'vuetify/lib/iconsets/mdi'
