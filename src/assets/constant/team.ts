@@ -187,17 +187,6 @@ const TEAM_LIST:object[] = [{
                 value: "产品"
             }
         ]
-    },
-    {
-        coverImg: 'wyx.jpg',
-        name: '饼?我tm吃吃吃',
-        link: [],
-        jobs: [
-            {
-                type: "help",
-                value: "数据整理"
-            }
-        ]
     }];
 
 const JOBS_ICON = [{
