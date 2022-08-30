@@ -10,10 +10,10 @@
         :noSwiping="true"
     >
       <swiper-slide class="swiper-slide-page page1">
-        <page-one/>
+        <introduce/>
       </swiper-slide>
       <swiper-slide class="swiper-slide-page page2">
-        <page-two @heightToZero="heightToZero"/>
+        <details-content @heightToZero="heightToZero"/>
       </swiper-slide>
     </swiper>
   </div>
@@ -26,8 +26,8 @@ import "swiper/scss";
 
 
 import {onMounted, ref,} from "vue";
-import PageTwo from "@/views/computer/pageTwo.vue";
-import PageOne from './pageOne.vue';
+import DetailsContent from "./details.vue";
+import Introduce from './introduce.vue';
 
 onMounted(() => {
 })
@@ -52,13 +52,6 @@ const modules = [Mousewheel]
   height: 100vh;
 
   .swiper-slide-page {
-    //&.page1 {
-    //  background: #5892e0;
-    //}
-    //
-    //&.page2 {
-    //  background: #65b587;
-    //}
   }
 }
 </style>

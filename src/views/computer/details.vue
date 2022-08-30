@@ -101,20 +101,16 @@
 <script lang="ts" setup>
 import {onMounted, reactive, ref, watch} from "vue";
 import InstallBrowser from "@/components/installBrowser";
-import {PC_INSTALL_HELP_LIST} from "../../assets/constant/install"
-import {DONATE_LIST} from "../../assets/constant/donate"
-import {TEAM_LIST} from "../../assets/constant/team"
+import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
+import {DONATE_LIST} from "@/assets/constant/donate"
+import {TEAM_LIST} from "@/assets/constant/team"
 import BoxTitle from "@/components/boxTitle.vue";
 import Team from "@/components/team.vue";
 
 
 interface state {
   menu: Array<[string, string]>,
-  installInfo: Array<{
-    icon: string,
-    name: string,
-    help: object
-  }>,
+  installInfo: Array<any>,
   twoHeight: number,
   donateList: Array<any>,
   teamList: Array<any>,
