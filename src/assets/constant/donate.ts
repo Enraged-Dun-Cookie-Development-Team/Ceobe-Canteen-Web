@@ -1,4 +1,4 @@
-const DONATE_LIST = [
+const DONATE_LIST: object[] = [
     {
         img: 'qq.png',
         text: '加群聊天',

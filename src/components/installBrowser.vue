@@ -29,7 +29,7 @@
               v-for="(data, i) in carouselData.data"
               :key="i"
           >
-            <div class="flex flex-center-center flex-column h100 px-10 mx-15 relative">
+            <div class="flex flex-center-center flex-column h-100 px-10 mx-15 relative">
               <div class="flex carousel-content" :class="data.flex">
                 <div class="flex flex-start-center flex-column">
                   <h3 v-html="data.html"></h3>

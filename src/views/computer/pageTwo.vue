@@ -73,7 +73,7 @@
             <v-card>
               <img class="w-100" :src="require('@/assets/image/pageTwo/donate/'+donate.img)">
               <v-card-actions v-if="donate.link">
-                <v-btn block
+                <v-btn style="width:calc(100% - 16px)"
                        variant="outlined"
                        color="#D07D00"
                        @click="toLink(donate.link)">{{ donate.text }}
@@ -101,9 +101,9 @@
 <script lang="ts" setup>
 import {onMounted, reactive, ref, watch} from "vue";
 import InstallBrowser from "@/components/installBrowser";
-import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
-import {DONATE_LIST} from "@/assets/constant/donate"
-import {TEAM_LIST} from "@/assets/constant/team"
+import {PC_INSTALL_HELP_LIST} from "../../assets/constant/install"
+import {DONATE_LIST} from "../../assets/constant/donate"
+import {TEAM_LIST} from "../../assets/constant/team"
 import BoxTitle from "@/components/boxTitle.vue";
 import Team from "@/components/team.vue";
 

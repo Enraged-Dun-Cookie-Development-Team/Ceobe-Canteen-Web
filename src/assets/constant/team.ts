@@ -1,4 +1,4 @@
-const TEAM_LIST = [{
+const TEAM_LIST:object[] = [{
     coverImg: 'lzy.jpg',
     name: '蓝芷怡',
     link: [
