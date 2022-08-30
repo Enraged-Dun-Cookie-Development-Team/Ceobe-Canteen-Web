@@ -3,9 +3,9 @@
     <div class="h-100 menu ta-c pt-5">
       <div class="title">首页</div>
       <div class="pl-16">
-        <div v-for="item in state.menu" class="flex flex-start-center menu-item">
+        <div v-for="item in state.menu" class="flex flex-start-center menu-item" @click="toContent(item.id)">
           <span v-if="item.icon" class="xiaoke" :class="item.icon"></span>
-<!--          <span v-if="item.img!=null"><img :src="require('@/assets/image/detailsContent/menuIcon/'+item.img)"></span>-->
+          <!--          <span v-if="item.img!=null"><img :src="require('@/assets/image/detailsContent/menuIcon/'+item.img)"></span>-->
           <span class="ml-3">{{ item.text }}</span>
         </div>
       </div>
@@ -20,7 +20,7 @@
       <div class="back w-100 position-absolute">
         <img class="w-100" src="@/assets/image/detailsContent/page-bg.png">
       </div>
-      <div class="info flex">
+      <div class="info flex menu-js">
         <div class="flex flex1 flex-column flex-center-center flex-align-end">
           <div class="speak flex flex-column flex-center-center">
             <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
@@ -53,7 +53,7 @@
         </div>
 
       </div>
-      <div class="install pa-8">
+      <div class="install pa-8 menu-azzn">
         <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
         <div class="install-content pa-8 flex flex-around-center">
           <install-browser v-for="install in state.installInfo"
@@ -61,7 +61,7 @@
                            :browser="install"></install-browser>
         </div>
       </div>
-      <div class="donate pa-8">
+      <div class="donate pa-8 menu-zcst">
         <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
         <div class="mt-7">
           <h3>感谢大家对小刻食堂的支持</h3>
@@ -88,7 +88,7 @@
           <v-btn @click="toLink('')" class="color-fff" color="#D07D00">收支一览表</v-btn>
         </div>
       </div>
-      <div class="us pa-8">
+      <div class="us pa-8 menu-gywm">
         <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
         <div class="flex flex-row flex-wrap flex-between-center">
           <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
@@ -148,7 +148,14 @@ watch(pageHeight, (data: number, oldData: number) => {
 let toLink = (url: string) => {
   window.open(url, "_black")
 }
+let toContent = (className: string) => {
+  let dom = contentDom.value.querySelector('.' + className);
+  dom.scrollIntoView({
+    behavior: "smooth",  // 平滑过渡
+    block:    "start"  // 上边框与视窗顶部平齐。默认值
+  });
 
+}
 
 </script>
 

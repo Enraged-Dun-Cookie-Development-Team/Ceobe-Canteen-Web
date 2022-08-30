@@ -3,7 +3,7 @@ const MENU_LIST: Array<any> = [
         img: 'xk.png',
         icon: null,
         text: '介绍',
-        link: 'menu-js'
+        id: 'menu-js'
     },
     {
         img: null,
