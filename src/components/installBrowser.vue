@@ -9,7 +9,7 @@
             icon="mdi-chevron-right"
             @click="open"
         ></v-btn>
-        <img class="install-icon" :src="require('@/assets/image/pageTwo/logo/'+props.browser.icon)"/>
+        <img class="install-icon" :src="require('@/assets/image/detailsContent/logo/'+props.browser.icon)"/>
       </div>
     </div>
   </v-card>
@@ -42,7 +42,7 @@
                   </div>
                 </div>
                 <img :class="data.imageWidth||'w-100'" class="mt-5" v-if="data.image"
-                     :src="require('@/assets/image/pageTwo/install/'+data.image)">
+                     :src="require('@/assets/image/detailsContent/install/'+data.image)">
                 <v-chip class="mt-5" v-if="data.tag">{{ data.tag }}</v-chip>
               </div>
             </div>

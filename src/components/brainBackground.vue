@@ -9,12 +9,12 @@
       />
       <img
           class="brain-title"
-          src="@/assets/image/pageOne/load-success.png"
+          src="@/assets/image/introduce/load-success.png"
           width="700"
       />
       <img
           class="brain-popup"
-          src="@/assets/image/pageOne/bubble-find.png"
+          src="@/assets/image/introduce/bubble-find.png"
           width="150"
       />
       <span class="brain-sep"></span>

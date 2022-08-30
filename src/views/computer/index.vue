@@ -26,7 +26,7 @@ import "swiper/scss";
 
 
 import {onMounted, ref,} from "vue";
-import DetailsContent from "./details.vue";
+import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
 
 onMounted(() => {
