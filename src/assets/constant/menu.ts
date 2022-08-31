@@ -1,25 +1,21 @@
 const MENU_LIST: Array<any> = [
     {
-        img: 'xk.png',
-        icon: null,
+        icon: 'icon-xiaoke-xiaoke',
         text: '介绍',
         id: 'menu-js'
     },
     {
-        img: null,
-        icon: 'icon-xiaoke-a-lianhe1',
+        icon: 'icon-xiaoke-download',
         text: '安装指南',
         id: 'menu-azzn'
     },
     {
-        img: null,
-        icon: 'icon-xiaoke-a-lianhe2',
+        icon: 'icon-xiaoke-donate',
         text: '支持食堂',
         id: 'menu-zcst'
     },
     {
-        img: null,
-        icon: 'icon-xiaoke-a-lianhe3',
+        icon: 'icon-xiaoke-us',
         text: '关于我们',
         id: 'menu-gywm'
     }];

@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-export interface Args {
+interface Args {
   supportUsUri: string;
   aboutUsUri: string;
 }

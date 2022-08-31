@@ -1,21 +1,24 @@
 <template>
   <div id="full-page">
-    <swiper
-        @slideChange="onSlideChange"
-        @swiper="onSwiper"
-        :modules="modules"
-        direction="vertical"
-        :mousewheel="true"
-        class="main-swiper"
-        :noSwiping="true"
-    >
-      <swiper-slide class="swiper-slide-page page1">
-        <introduce/>
-      </swiper-slide>
-      <swiper-slide class="swiper-slide-page page2">
-        <details-content @heightToZero="heightToZero"/>
-      </swiper-slide>
-    </swiper>
+    <headers/>
+    <introduce/>
+    <details-content/>
+    <!--    <swiper-->
+    <!--        @slideChange="onSlideChange"-->
+    <!--        @swiper="onSwiper"-->
+    <!--        :modules="modules"-->
+    <!--        direction="vertical"-->
+    <!--        :mousewheel="true"-->
+    <!--        class="main-swiper"-->
+    <!--        :noSwiping="true"-->
+    <!--    >-->
+    <!--      <swiper-slide class="swiper-slide-page page1">-->
+    <!--        -->
+    <!--      </swiper-slide>-->
+    <!--      <swiper-slide class="swiper-slide-page page2">-->
+    <!--       -->
+    <!--      </swiper-slide>-->
+    <!--    </swiper>-->
   </div>
 </template>
 
@@ -28,6 +31,7 @@ import "swiper/scss";
 import {onMounted, ref,} from "vue";
 import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
+import Headers from "@/views/home/headers.vue";
 
 onMounted(() => {
 })

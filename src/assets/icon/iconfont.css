@@ -1,38 +1,47 @@
 @font-face {
   font-family: "xiaoke"; /* Project id 883053 */
-  src: url('iconfont.woff2?t=1660617744358') format('woff2'),
-       url('iconfont.woff?t=1660617744358') format('woff'),
-       url('iconfont.ttf?t=1660617744358') format('truetype');
+  src: url('iconfont.woff2?t=1661925172040') format('woff2'),
+       url('iconfont.woff?t=1661925172040') format('woff'),
+       url('iconfont.ttf?t=1661925172040') format('truetype');
 }
 
 .xiaoke {
   font-family: "xiaoke" !important;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xiaoke-xiayibu:before {
+.icon-xiaoke-download:before {
+  content: "\e855";
+}
+
+.icon-xiaoke-xiaoke:before {
+  content: "\e607";
+}
+
+.icon-xiaoke-next:before {
   content: "\e6ba";
 }
 
-.icon-xiaoke-fanhui:before {
+.icon-xiaoke-back:before {
   content: "\e6ff";
 }
 
-.icon-xiaoke-a-lianhe2:before {
+.icon-xiaoke-donate:before {
   content: "\e603";
 }
 
-.icon-xiaoke-a-lianhe1:before {
+.icon-xiaoke-pc:before {
   content: "\e604";
 }
 
-.icon-xiaoke-a-lianhe4:before {
+.icon-xiaoke-phone:before {
   content: "\e605";
 }
 
-.icon-xiaoke-a-lianhe3:before {
+.icon-xiaoke-us:before {
   content: "\e606";
 }
 
