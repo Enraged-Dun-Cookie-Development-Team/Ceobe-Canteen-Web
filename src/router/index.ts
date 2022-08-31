@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import ComputerView from '../views/computer/index.vue'
+import Home from '../views/home/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'web',
-    component: ComputerView
+    component: Home
   },
   // {
   //   path: '/about',
