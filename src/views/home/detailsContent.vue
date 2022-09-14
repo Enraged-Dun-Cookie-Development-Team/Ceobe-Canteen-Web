@@ -48,7 +48,7 @@
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
         <h3>感谢大家对小刻食堂的支持</h3>
-        <h4>由于捐助列表是程序自动生成，捐助的备注一定要以<span style="color: #D07D00">刻</span>字开头哦！</h4>
+        <h4>由于捐助列表是程序自动生成，捐助的备注一定要以<span style="color: #D07D00; font-size: 30px;">刻</span>字开头哦！</h4>
         未成年刀客塔请勿捐款，三连我们的账号就可以啦。<br/>
         如果在收支一览表内没有发现自己的捐助，那就是我们理智涣散，来群里面找我们添加！
       </div>
@@ -57,7 +57,7 @@
           <v-card>
             <img class="w-100" :src="require('@/assets/image/detailsContent/donate/'+donate.img)">
             <v-card-actions v-if="donate.link">
-              <v-btn style="width:calc(100% - 16px)"
+              <v-btn style="width:100%"
                      variant="outlined"
                      color="#D07D00"
                      @click="toLink(donate.link)">{{ donate.text }}
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="mt-7">
-        <v-btn @click="toLink('')" class="color-fff" color="#D07D00">收支一览表</v-btn>
+        <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
       </div>
     </div>
     <div class="us pa-8 menu-gywm">

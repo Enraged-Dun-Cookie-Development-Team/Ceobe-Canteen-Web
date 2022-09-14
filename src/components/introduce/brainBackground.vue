@@ -62,9 +62,9 @@ $ceobe_color: #ffffff;
     }
 
     .brain-popup {
-      top: 10px;
-      right: 70px;
-      width: 100px;
+      top: -60px;
+      right: 180px;
+      width: 150px;
     }
 
     .brain-sep {
