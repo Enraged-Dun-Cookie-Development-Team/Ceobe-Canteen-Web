@@ -6,7 +6,7 @@
     <div class="team-link position-absolute">
       <div v-for="link in info.link" :style="{left: link.x+'px', top: link.y+'px'}"
            class="rounded-circle position-absolute">
-        <i :class="link.iconName"></i>
+        <a :href="link.value"><i :class="link.iconName"></i></a>
       </div>
     </div>
     <div class="team-background w-100 h-100 position-absolute">
