@@ -7,10 +7,10 @@ const INSTALL_CHROME: Object = {
         btn: [
             {
                 text: '下载插件端压缩包',
-                link: 'http://www.baidu.com'
+                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
             }, {
-                text: '如果已经科学上网，点击这里跳转到Chrome应用商店',
-                link: 'http://www.baidu.com'
+                text: '或者如果已经科学上网，点击这里跳转到Chrome应用商店',
+                link: 'https://chrome.google.com/webstore/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknights-ce/gblmdllhbodefkmimbcjpflhjneagkkd?hl=zh-CN'
             }]
     },
         {
@@ -36,7 +36,7 @@ const INSTALL_CHROME: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'http://www.baidu.com'
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
             }]
         }
     ]
@@ -52,7 +52,7 @@ const INSTALL_EDGE: Object = {
                 text: '下载插件端压缩包',
                 link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
             }, {
-                text: '点击这里跳转edge应用商店',
+                text: '或者点击这里跳转edge应用商店',
                 link: 'https://microsoftedge.microsoft.com/addons/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknight/jimmfliacfpeabcifcghmdankmdnmfmn?hl=zh-CN+%E4%BD%9C%E8%80%85%EF%BC%9A%E6%B4%9B%E6%A2%A7%E8%97%A4+https%3A%2F%2Fwww.bilibili.com%2Fread%2Fcv13066589+%E5%87%BA%E5%A4%84%EF%BC%9Abilibili'
             }]
     },
@@ -78,7 +78,7 @@ const INSTALL_EDGE: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'http://www.baidu.com'
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
             }]
         }
     ]
@@ -87,7 +87,6 @@ const INSTALL_FIREFOX: Object = {
     name: 'Firefox浏览器',
     icon: 'firefox.png',
     help: [{
-        html: `地址栏输入<span>about:addons</span>，回车`,
         flex: 'flex-between-center',
         btn: [
             {
@@ -95,6 +94,10 @@ const INSTALL_FIREFOX: Object = {
                 link: 'https://addons.mozilla.org/zh-CN/firefox/addon/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknights-cookies/'
             }]
     },
+        {
+            html: `安装后，在地址栏输入about:config，进入配置页`,
+            flex: 'flex-around-center flex-column'
+        },
         {
             html: `点击“接受风险并继续”!`,
             flex: 'flex-around-center flex-column'
@@ -113,7 +116,7 @@ const INSTALL_FIREFOX: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'http://www.baidu.com'
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
             }]
         }
     ]
@@ -148,7 +151,7 @@ const INSTALL_QQ: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'http://www.baidu.com'
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
             }]
         }
     ]
@@ -183,7 +186,7 @@ const INSTALL_360: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'http://www.baidu.com'
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
             }]
         }
     ]
