@@ -10,7 +10,7 @@
         <span v-if="index>0" class="mx-3 user-select-none">/</span>
         <div class="flex flex-start-center menu-item h-100 overflow-hidden pointer" @click="toContent(item.id)">
           <span v-if="item.icon" class="xiaoke" :class="item.icon"></span>
-          <span class="ml-1 title transition-all-halfS">{{ item.text }}</span>
+          <span class="ml-1 title transition-all-halfS" @click="scrollIntoView('#'+item.link)">{{ item.text }}</span>
         </div>
       </template>
     </div>
@@ -25,6 +25,41 @@ let menuList = MENU_LIST
 const toContent = (id: string) => {
 
 }
+
+const scrollIntoView = (traget: string) => {
+      const tragetElem:Element | null = document.querySelector(traget);
+      const tragetElemPostition = tragetElem.offsetTop;
+
+      // 判断是否支持新特性
+      if (
+        typeof window.getComputedStyle(document.body).scrollBehavior ==
+        "undefined"
+      ) {
+        // 当前滚动高度
+        let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        // 滚动step方法
+        const step = function() {
+          // 距离目标滚动距离
+          let distance = tragetElemPostition - scrollTop;
+          
+          // 目标需要滚动的距离，也就是只走全部距离的五分之一
+          scrollTop = scrollTop + distance / 5;
+          if (Math.abs(distance) < 1) {
+            window.scrollTo(0, tragetElemPostition);
+          } else {
+            window.scrollTo(0, scrollTop);
+            setTimeout(step, 20);
+          }
+        };
+        step();
+      } else {
+        tragetElem.scrollIntoView({
+          behavior: "smooth",
+          inline: "nearest"
+        });
+      }
+    }
 </script>
 
 <style lang="scss">
