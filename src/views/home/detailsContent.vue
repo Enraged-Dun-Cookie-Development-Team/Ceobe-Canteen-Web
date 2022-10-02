@@ -3,7 +3,7 @@
     <div class="back w-100 position-absolute">
       <img class="w-100" src="@/assets/image/detailsContent/page-bg.png">
     </div>
-    <div class="info flex menu-js">
+    <div id="introduction" class="info flex pt-16 menu-js">
       <div class="flex flex1 flex-column flex-center-center flex-align-end">
         <div class="speak flex flex-column flex-center-center">
           <div class="line-1">24小时<span class="color-yellow">蹲饼</span></div>
@@ -36,7 +36,7 @@
       </div>
 
     </div>
-    <div class="install pa-8 menu-azzn">
+    <div id="install" class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="插件端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installInfo"
@@ -44,7 +44,7 @@
                          :browser="install"></install-browser>
       </div>
     </div>
-    <div class="donate pa-8 menu-zcst">
+    <div id="sponsor" class="donate pa-8 pt-16 menu-zcst">
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
         <h3>感谢大家对小刻食堂的支持</h3>
@@ -71,7 +71,7 @@
         <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
       </div>
     </div>
-    <div class="us pa-8 menu-gywm">
+    <div id="about-us" class="us pa-8 pt-16 menu-gywm">
       <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
       <div class="flex flex-row flex-wrap flex-between-center">
         <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
