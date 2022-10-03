@@ -18,7 +18,7 @@
       </div>
 
       <span class="brain-sep"></span>
-      <p class="brain-speck">用于实时抓取兔兔发的动态</p>
+      <p class="brain-speck">用于实时获取兔兔发的动态</p>
     </div>
   </div>
 </template>
