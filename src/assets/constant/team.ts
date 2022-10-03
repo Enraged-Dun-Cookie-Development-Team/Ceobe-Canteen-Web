@@ -191,10 +191,10 @@ const TEAM_LIST:object[] = [{
 
 const JOBS_ICON = [{
     type: 'bilibili',
-    iconName: 'fa-brands fa-bilibili'
+    iconName: 'link-icon fa-brands fa-bilibili'
 }, {
     type: 'github',
-    iconName: 'fa-brands fa-github'
+    iconName: 'link-icon fa-brands fa-github'
 }, {
     type: 'founder',
     iconName: 'mdi mdi-account-heart'
@@ -236,7 +236,7 @@ const JOBS_ICON = [{
     iconName: 'fa fa-people-carry-box'
 }, {
     type: 'personal',
-    iconName: 'mdi mdi-post'
+    iconName: 'link-icon mdi mdi-post'
 }, {
     type: 'application',
     iconName: 'mdi mdi-application-settings'

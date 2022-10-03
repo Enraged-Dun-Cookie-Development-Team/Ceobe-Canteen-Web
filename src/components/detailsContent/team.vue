@@ -5,7 +5,7 @@
     </div>
     <div class="team-link position-absolute">
       <div v-for="link in info.link" :style="{left: link.x+'px', top: link.y+'px'}"
-           class="rounded-circle position-absolute">
+        class="rounded-circle position-absolute">
         <a :href="link.value"><i :class="link.iconName"></i></a>
       </div>
     </div>
@@ -22,11 +22,11 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, defineProps, ref} from "vue";
-import {JOBS_ICON} from "@/assets/constant/team"
+import { computed, defineProps, ref } from "vue";
+import { JOBS_ICON } from "@/assets/constant/team"
 
 let props = defineProps({
-  teamInfo: {type: Object}
+  teamInfo: { type: Object }
 });
 let jobsIcon = JOBS_ICON;
 
@@ -35,7 +35,7 @@ let info = computed(() => {
   let teamInfo = {
     ...props.teamInfo,
     jobs: props.teamInfo && props.teamInfo.jobs.map((item: { type: string; }) => {
-      return {...item, iconName: jobsIcon.find((y: { type: string; }) => y.type == item.type).iconName};
+      return { ...item, iconName: jobsIcon.find((y: { type: string; }) => y.type == item.type).iconName };
     }),
     link: props.teamInfo && props.teamInfo.link.map((item: { type: string; }, index: number) => {
       let circlePosition: any = getCirclePosition(110, props.teamInfo?.link.length, index);
@@ -54,13 +54,14 @@ function getCirclePosition(r: number, num: number, index: number) {
   let angle = 90 / (num + 1) * (index + 1) * Math.PI / 180;
   let x = Math.cos(angle) * r;
   let y = Math.sin(angle) * r;
-  return {x, y};
+  return { x, y };
 }
 
 </script>
 
 <style lang="scss">
 $ceobe_color: #ffba4b;
+
 .team {
   width: 340px;
   height: 280px;
@@ -80,11 +81,34 @@ $ceobe_color: #ffba4b;
     top: 10px;
     z-index: 2;
 
-    & > div {
+    &>div {
       width: 40px;
       height: 40px;
       background: #ffffff;
       transform: translate(-50%, -50%);
+      text-align: center;
+      vertical-align: middle;
+
+      &>a {
+        height: 100%;
+        width: 100%;
+        border: 50%;
+        vertical-align: middle;
+
+        & .link-icon {
+          font-size: 28px;
+          line-height: 28px;
+        }
+      }
+
+      &>a:hover {
+        & .link-icon {
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+
+
     }
   }
 
