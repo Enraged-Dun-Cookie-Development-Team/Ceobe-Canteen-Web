@@ -48,9 +48,9 @@
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
         <h3>感谢大家对小刻食堂的支持</h3>
-        <h4>由于捐助列表是程序自动生成，捐助的备注一定要以<span style="color: #D07D00; font-size: 30px;">刻</span>字开头哦！</h4>
         未成年刀客塔请勿捐款，三连我们的账号就可以啦。<br/>
-        如果在收支一览表内没有发现自己的捐助，那就是我们理智涣散，来群里面找我们添加！
+        如果在收支一览表内没有发现自己的捐助，那就是我们理智涣散，来群里面找我们添加！ 
+        <h4>由于捐助列表是程序自动生成，捐助的备注一定要以<span style="color: #D07D00; font-size: 30px;">刻</span>字开头哦！</h4>
       </div>
       <div class="flex flex-around-center mt-7">
         <div class="donate-box" v-for="donate in state.donateList">
@@ -73,9 +73,12 @@
     </div>
     <div id="about-us" class="us pa-8 pt-16 menu-gywm">
       <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
-      <div class="flex flex-row flex-wrap flex-between-center">
+      <div class="flex flex-row flex-wrap">
         <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
       </div>
+    </div>
+    <div id="footers" class="">
+      <footers/>
     </div>
   </div>
 </template>
@@ -91,6 +94,7 @@ import {TEAM_LIST} from "@/assets/constant/team"
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import Team from "@/components/detailsContent/team.vue";
 
+import Footers from "@/views/home/footers.vue";
 
 interface state {
   installInfo: Array<any>,
