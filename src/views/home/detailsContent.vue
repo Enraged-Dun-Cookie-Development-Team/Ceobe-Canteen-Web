@@ -73,7 +73,7 @@
     </div>
     <div id="about-us" class="us pa-8 pt-16 menu-gywm">
       <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
-      <div class="flex flex-row flex-wrap">
+      <div class="flex flex-row flex-wrap flex-evenly-center">
         <team class="mt-10" :team-info="team" v-for="team in state.teamList"></team>
       </div>
     </div>
