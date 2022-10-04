@@ -3,18 +3,9 @@
     <div class="brain-background w-100 h-100"></div>
     <div class="brain-mask w-100 h-100 flex flex-column flex-center-center">
       <div class="flex flex-center-center position-relative w-100">
-        <img
-            class="brain-logo"
-            src="@/assets/image/all/icon.png"
-        />
-        <img
-            class="brain-title"
-            src="@/assets/image/all/title-yellow.png"
-        />
-        <img
-            class="brain-popup position-absolute"
-            src="@/assets/image/introduce/bubble-find.png"
-        />
+        <img class="brain-logo" src="@/assets/image/all/icon.png" />
+        <img class="brain-title" src="@/assets/image/all/title-yellow.png" />
+        <img class="brain-popup position-absolute" src="@/assets/image/introduce/bubble-find.png" />
       </div>
 
       <span class="brain-sep"></span>
@@ -28,6 +19,7 @@
 
 <style lang="scss">
 $ceobe_color: #ffffff;
+
 .brain-parent {
   width: 65vw;
   height: 80vh;
@@ -68,8 +60,10 @@ $ceobe_color: #ffffff;
     }
 
     .brain-sep {
-      width: 100%;
-      background: linear-gradient(to right, #ffbb4e, #ff8448);;
+      margin-left: 6%;
+      width: 94%;
+      background: linear-gradient(to right, #ffbb4e, #ff8448);
+      ;
       height: 2px;
     }
 
@@ -86,5 +80,4 @@ $ceobe_color: #ffffff;
     }
   }
 }
-
 </style>
