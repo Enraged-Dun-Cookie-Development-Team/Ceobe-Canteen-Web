@@ -187,7 +187,92 @@ const TEAM_LIST:object[] = [{
                 value: "产品"
             }
         ]
-    }];
+    },
+    {
+        coverImg: 'xmywz.jpg',
+        name: '西木野巫祝',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/20517834"
+            }
+        ],
+        jobs: [
+            {
+                type: "ios",
+                value: "视频剪辑"
+            }
+        ]
+    },
+    {
+        coverImg: 'huaji035.png',
+        name: 'huaji035',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/6908978"
+            }
+        ],
+        jobs: [
+            {
+                type: "android",
+                value: "安卓开发"
+            }
+        ]
+    },
+    {
+        coverImg: 'bs.jpg',
+        name: '薄生',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/640615"
+            }
+        ],
+        jobs: [
+            {
+                type: "ios",
+                value: "测试"
+            }
+        ]
+    },
+    {
+        coverImg: 'bulubulu.jpg',
+        name: 'Bulubulu',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/372347484"
+            }
+        ],
+        jobs: [
+            {
+                type: "ios",
+                value: "运营"
+            }
+        ]
+    },
+    {
+        coverImg: 'ss.jpg',
+        name: '水水',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/17732937"
+            },
+            {
+                type: "github",
+                value: "https://github.com/YoungHector"
+            }
+        ],
+        jobs: [
+            {
+                type: "ios",
+                value: "算法"
+            }
+        ]
+    }
+];
 
 const JOBS_ICON = [{
     type: 'bilibili',
