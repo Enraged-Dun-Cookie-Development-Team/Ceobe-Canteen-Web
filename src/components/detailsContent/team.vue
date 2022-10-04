@@ -6,7 +6,7 @@
     <div class="team-link position-absolute">
       <div v-for="link in info.link" :style="{left: link.x+'px', top: link.y+'px'}"
         class="rounded-circle position-absolute">
-        <a :href="link.value"><i :class="link.iconName"></i></a>
+        <a target="_blank" :href="link.value"><i :class="link.iconName"></i></a>
       </div>
     </div>
     <div class="team-background w-100 h-100 position-absolute">
@@ -89,26 +89,26 @@ $ceobe_color: #ffba4b;
       text-align: center;
       vertical-align: middle;
 
-      &>a {
+      & a {
         height: 100%;
         width: 100%;
         border: 50%;
         vertical-align: middle;
 
         & .link-icon {
-          font-size: 28px;
-          line-height: 28px;
+          color: #848488;
+          font-size: 30px;
+          line-height: 30px;
         }
       }
 
-      &>a:hover {
+      & a:hover {
         & .link-icon {
-          font-size: 32px;
-          line-height: 32px;
+          color: #303133;
+          font-size: 36px;
+          line-height: 36px;
         }
       }
-
-
     }
   }
 
