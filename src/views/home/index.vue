@@ -28,7 +28,7 @@ import {Mousewheel} from 'swiper';
 import "swiper/scss";
 
 
-import {onMounted, ref,} from "vue";
+import {onMounted, ref} from "vue";
 import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
 import Headers from "@/views/home/headers.vue";
