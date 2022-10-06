@@ -199,7 +199,7 @@ const TEAM_LIST:object[] = [{
         ],
         jobs: [
             {
-                type: "ios",
+                type: "video",
                 value: "视频剪辑"
             }
         ]
@@ -231,7 +231,7 @@ const TEAM_LIST:object[] = [{
         ],
         jobs: [
             {
-                type: "ios",
+                type: "test",
                 value: "测试"
             }
         ]
@@ -247,7 +247,7 @@ const TEAM_LIST:object[] = [{
         ],
         jobs: [
             {
-                type: "ios",
+                type: "yy",
                 value: "运营"
             }
         ]
@@ -267,7 +267,7 @@ const TEAM_LIST:object[] = [{
         ],
         jobs: [
             {
-                type: "ios",
+                type: "algorithm",
                 value: "算法"
             }
         ]
@@ -325,6 +325,18 @@ const JOBS_ICON = [{
 }, {
     type: 'application',
     iconName: 'mdi mdi-application-settings'
+}, {
+    type: 'test',
+    iconName: 'mdi mdi-application-settings'
+}, {
+    type: 'video',
+    iconName: 'mdi mdi-movie-open-star'
+}, {
+    type: 'yy',
+    iconName: 'mdi mdi-bullhorn'
+}, {
+    type: 'algorithm',
+    iconName: 'mdi mdi-electron-framework'
 }]
 
 export {TEAM_LIST, JOBS_ICON}
