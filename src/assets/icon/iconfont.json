@@ -6,44 +6,58 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "24859939",
+      "name": "下载-文件下载-06",
+      "font_class": "download",
+      "unicode": "e855",
+      "unicode_decimal": 59477
+    },
+    {
+      "icon_id": "31567497",
+      "name": "未命名作品(6)",
+      "font_class": "xiaoke",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "672037",
       "name": "下一步",
-      "font_class": "xiayibu",
+      "font_class": "next",
       "unicode": "e6ba",
       "unicode_decimal": 59066
     },
     {
       "icon_id": "687392",
       "name": "返回",
-      "font_class": "fanhui",
+      "font_class": "back",
       "unicode": "e6ff",
       "unicode_decimal": 59135
     },
     {
       "icon_id": "31262396",
       "name": "捐助",
-      "font_class": "a-lianhe2",
+      "font_class": "donate",
       "unicode": "e603",
       "unicode_decimal": 58883
     },
     {
       "icon_id": "31262397",
       "name": "pc端",
-      "font_class": "a-lianhe1",
+      "font_class": "pc",
       "unicode": "e604",
       "unicode_decimal": 58884
     },
     {
       "icon_id": "31262398",
       "name": "手机端",
-      "font_class": "a-lianhe4",
+      "font_class": "phone",
       "unicode": "e605",
       "unicode_decimal": 58885
     },
     {
       "icon_id": "31262399",
       "name": "关于我们",
-      "font_class": "a-lianhe3",
+      "font_class": "us",
       "unicode": "e606",
       "unicode_decimal": 58886
     }
