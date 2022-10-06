@@ -129,7 +129,7 @@ const TEAM_LIST:object[] = [{
         ],
         jobs: [
             {
-                type: "spokes",
+                type: "yy",
                 value: "B站运营"
             }
         ]
