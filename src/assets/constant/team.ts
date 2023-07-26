@@ -40,7 +40,7 @@ const TEAM_LIST:object[] = [{
             },
             {
                 type: "github",
-                value: "https://github.com/lwt-414"
+                value: "https://github.com/phidialam"
             }
         ],
         jobs: [
@@ -271,6 +271,74 @@ const TEAM_LIST:object[] = [{
                 value: "算法"
             }
         ]
+    },
+    {
+        coverImg: 'hq.jpg',
+        name: '黄泉',
+        link: [
+            {
+                type: "github",
+                value: "https://github.com/Raybors"
+            }
+        ],
+        jobs: [
+            {
+                type: "backend",
+                value: "后端开发"
+            }
+        ]
+    },
+    {
+        coverImg: 'yytx.jpg',
+        name: '杨颜同学',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/755824"
+            }
+        ],
+        jobs: [
+            {
+                type: "publicize",
+                value: "宣传"
+            }
+        ]
+    },
+    {
+        coverImg: 'azide.jpg',
+        name: 'Azide',
+        link: [
+            {
+                type: "github",
+                value: "https://github.com/AzideCupric"
+            }
+        ],
+        jobs: [
+            {
+                type: "operation",
+                value: "运维"
+            },
+            {
+                type: "backend",
+                value: "后端开发"
+            }
+        ]
+    },
+    {
+        coverImg: 'salmon.jpg',
+        name: '三文鱼',
+        link: [
+            {
+                type: "github",
+                value: "https://github.com/Left-Leaf"
+            }
+        ],
+        jobs: [
+            {
+                type: "backend",
+                value: "后端开发"
+            }
+        ]
     }
 ];
 
@@ -337,6 +405,9 @@ const JOBS_ICON = [{
 }, {
     type: 'algorithm',
     iconName: 'mdi mdi-electron-framework'
+}, {
+    type: 'publicize',
+    iconName: 'mdi mdi-bullhorn'
 }]
 
 export {TEAM_LIST, JOBS_ICON}

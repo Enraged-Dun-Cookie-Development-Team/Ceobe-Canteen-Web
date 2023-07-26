@@ -63,7 +63,6 @@ name: "pageTop";
   height: 100vh;
   min-width: 1200px;
   min-height: 700px;
-  max-width: 1920px;
   margin: 60px auto 0 auto;
   z-index: 1;
   position: relative;

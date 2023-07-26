@@ -30,6 +30,7 @@ $ceobe_color: #ffffff;
   top: 0;
   bottom: 0;
   margin: auto;
+  max-width: 1920px;
 
   .brain-background {
     position: absolute;
@@ -55,7 +56,7 @@ $ceobe_color: #ffffff;
 
     .brain-popup {
       top: -60px;
-      right: 180px;
+      right: calc(50% - 300px);
       width: 150px;
     }
 
