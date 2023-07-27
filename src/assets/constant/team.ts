@@ -189,6 +189,38 @@ const TEAM_LIST:object[] = [{
         ]
     },
     {
+        coverImg: 'hq.jpg',
+        name: '黄泉',
+        link: [
+            {
+                type: "github",
+                value: "https://github.com/Raybors"
+            }
+        ],
+        jobs: [
+            {
+                type: "backend",
+                value: "后端开发"
+            }
+        ]
+    },
+    {
+        coverImg: 'yytx.jpg',
+        name: '杨颜同学',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/755824"
+            }
+        ],
+        jobs: [
+            {
+                type: "publicize",
+                value: "协作"
+            }
+        ]
+    },
+    {
         coverImg: 'xmywz.jpg',
         name: '西木野巫祝',
         link: [
@@ -269,38 +301,6 @@ const TEAM_LIST:object[] = [{
             {
                 type: "algorithm",
                 value: "算法"
-            }
-        ]
-    },
-    {
-        coverImg: 'hq.jpg',
-        name: '黄泉',
-        link: [
-            {
-                type: "github",
-                value: "https://github.com/Raybors"
-            }
-        ],
-        jobs: [
-            {
-                type: "backend",
-                value: "后端开发"
-            }
-        ]
-    },
-    {
-        coverImg: 'yytx.jpg',
-        name: '杨颜同学',
-        link: [
-            {
-                type: "bilibili",
-                value: "https://space.bilibili.com/755824"
-            }
-        ],
-        jobs: [
-            {
-                type: "publicize",
-                value: "宣传"
             }
         ]
     },
