@@ -4,7 +4,8 @@
       <img src="@/assets/image/all/icon.png" class="h-100">
       <img src="@/assets/image/all/title-white.png" class="h-100">
     </div>
-    <div class="flex1">小刻食堂正常运行中</div>
+    <!-- h1标签为了SEO优化 -->
+    <div class="flex1"><h1 style="display: inline; font-size: 16px; font-weight: 500;">小刻食堂</h1>正常运行中</div>
     <div class="flex flex1 flex-end-center">
       <template v-for="(item,index) in menuList">
         <span v-if="index>0" class="mx-3 user-select-none">/</span>

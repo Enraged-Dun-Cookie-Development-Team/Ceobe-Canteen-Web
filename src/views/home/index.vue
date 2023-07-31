@@ -1,5 +1,4 @@
 <template>
-  <h1 style="display: none;">小刻食堂</h1>
   <div id="full-page">
     <headers/>
     <introduce/>
