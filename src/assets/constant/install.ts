@@ -191,6 +191,89 @@ const INSTALL_360: Object = {
         }
     ]
 }
+const INSTALL_DESKTOP_WINDOWS: Object = {
+    name: 'Windows系统',
+    icon: 'Windows.png',
+    help: [{
+        image: '',
+        btn: [
+            {
+                text: '下载桌面端安装包',
+                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
+            }]
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const INSTALL_DESKTOP_MACOS: Object = {
+    name: 'Mac系统',
+    icon: 'macos.png',
+    help: [{
+        image: '',
+        btn: [
+            {
+                text: '点击跳转到App Store下载安装',
+                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
+            }]
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const INSTALL_APP_ANDROID: Object = {
+    name: '安卓系统',
+    icon: 'Android.png',
+    help: [{
+        html: '打开应用商店搜索小刻食堂',
+        image: '',
+        btn: [
+            {
+                text: '或者点击这里下载手机安卓端安装包',
+                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Flutter/releases'
+            }]
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const INSTALL_APP_IOS: Object = {
+    name: 'IOS系统',
+    icon: 'macos.png',
+    help: [{
+        html: '打开App Store搜索小刻食堂下载安装',
+        image: '',
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
 const PC_INSTALL_HELP_LIST: Array<object> = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
+const DESKTOP_INSTALL_HELP_LIST: Array<object> = [INSTALL_DESKTOP_WINDOWS, INSTALL_DESKTOP_MACOS]
+const APP_INSTALL_HELP_LIST: Array<object> = [INSTALL_APP_ANDROID, INSTALL_APP_IOS]
 
-export {PC_INSTALL_HELP_LIST}
+export {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST}

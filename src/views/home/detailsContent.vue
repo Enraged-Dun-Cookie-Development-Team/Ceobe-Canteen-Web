@@ -44,6 +44,22 @@
                          :browser="install"></install-browser>
       </div>
     </div>
+    <div class="install pa-8 pt-16 menu-azzn">
+      <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
+      <div class="install-content pa-8 flex flex-around-center">
+        <install-browser v-for="install in state.installDesktopInfo"
+                         :key="install.name"
+                         :browser="install"></install-browser>
+      </div>
+    </div>
+    <div class="install pa-8 pt-16 menu-azzn">
+      <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
+      <div class="install-content pa-8 flex flex-around-center">
+        <install-browser v-for="install in state.installAppInfo"
+                         :key="install.name"
+                         :browser="install"></install-browser>
+      </div>
+    </div>
     <div id="sponsor" class="donate pa-8 pt-16 menu-zcst">
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
@@ -87,7 +103,7 @@
 import {onMounted, reactive, ref, watch} from "vue";
 import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 
-import {PC_INSTALL_HELP_LIST} from "@/assets/constant/install"
+import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
 
@@ -98,6 +114,8 @@ import Footers from "@/views/home/footers.vue";
 
 interface state {
   installInfo: Array<any>,
+  installDesktopInfo: Array<any>,
+  installAppInfo: Array<any>,
   twoHeight: number,
   donateList: Array<any>,
   teamList: Array<any>,
@@ -105,6 +123,8 @@ interface state {
 
 let state = reactive<state>({
   installInfo: PC_INSTALL_HELP_LIST,
+  installDesktopInfo: DESKTOP_INSTALL_HELP_LIST,
+  installAppInfo: APP_INSTALL_HELP_LIST,
   twoHeight: 0,
   donateList: DONATE_LIST,
   teamList: TEAM_LIST
