@@ -339,6 +339,26 @@ const TEAM_LIST:object[] = [{
                 value: "后端开发"
             }
         ]
+    },
+    {
+        coverImg: 'miao.jpg',
+        name: '别喵了',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/376816496"
+            },
+            {
+                type: "github",
+                value: "https://github.com/ablupi"
+            }
+        ],
+        jobs: [
+            {
+                type: "web",
+                value: "前端开发"
+            }
+        ]
     }
 ];
 
