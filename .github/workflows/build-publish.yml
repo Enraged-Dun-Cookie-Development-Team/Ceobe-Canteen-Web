@@ -30,6 +30,8 @@ jobs:
         bucket: ${{ secrets.TENCENT_BUCKET }}
         region: ap-nanjing
 
+    # https://github.com/marketplace/actions/tencent-cloud-cdn-purge-cache
+    # https://cloud.tencent.com/document/product/228/37871
     - name: Refresh Tencent Cloud CDN Purge Cache
       uses: izackwu/tencent-cloud-cdn-purge-cache@v1.0
       env:
