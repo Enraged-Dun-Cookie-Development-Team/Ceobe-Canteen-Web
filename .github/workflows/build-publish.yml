@@ -35,7 +35,7 @@ jobs:
     - name: Refresh Tencent Cloud CDN Purge Cache
       uses: izackwu/tencent-cloud-cdn-purge-cache@v1.0
       env:
-        SECRET_ID: ${{ secrets.TENCENT_SECRET_ID}}
+        SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
         SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
         PATHS: "https://www.ceobecanteen.top"
         FLUSH_TYPE: "flush" # optional
