@@ -42,6 +42,19 @@
           :txt_z="5"
       />
       <brain-background class="brain"/>
+      <div class="download">
+        <button 
+          v-for="item in downloadOptions" 
+          :style="{ background: item.background }" 
+          @click="download(item)">
+          <span class="xiaoke" :class="item.icon" ></span>
+          <span>{{ item.text }}</span>
+          <div class="link" v-if="item.isPopup">
+            <img :src="item.popup.img" alt="">
+            <span>请扫码下载</span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -52,8 +65,43 @@ import FunctionMessageBox from "@/components/introduce/functionMessageBox.vue";
 import MessageMessageBox from "@/components/introduce/messageMessageBox.vue";
 import BrainBackground from "@/components/introduce/brainBackground.vue";
 import Support from "@/components/introduce/support.vue";
+import { ref } from "vue";
 
 name: "pageTop";
+
+interface Download {
+  icon: string,
+  text: string,
+  background: string,
+  link: string,
+  isPopup?: boolean,
+  popup?: any,
+  isSlide?: boolean,
+}
+
+const downloadOptions = ref<Array<Download>>([
+  { icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
+  { icon: 'icon-xiaoke-xiaoke', text: '安卓下载', background: '#A52625', link: '', isPopup: true, popup: {
+    img: require('../../assets/image/detailsContent/donate/bilibili.png'),
+    link: []
+  }},
+  { icon: 'icon-xiaoke-xiaoke', text: '桌面端下载', background: '#4879ff', link: '', isPopup: true, popup: {
+    img: require('../../assets/image/detailsContent/donate/bilibili.png'),
+    link: []
+  } },
+  { icon: 'icon-xiaoke-xiaoke', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
+])
+
+const download = (option: Download) => {
+  if (option.isSlide)
+    window.scrollTo({
+        top: document.getElementById(option.link || '')?.offsetTop,
+        behavior: "smooth"
+    })
+  // 如果不是的话跳转到指定的的下载页面
+
+}
+
 </script>
 
 <style lang="scss">
@@ -111,6 +159,77 @@ name: "pageTop";
     }
   }
 }
-
+.download {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  position: absolute;
+  bottom: 200px;
+  right: 200px;
+  button {
+    outline: none;
+    border: none;
+    background: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: 2px 2px 5px  #0000006b;
+    &:focus {
+      overflow: initial;
+      .link {
+        top: -230px;
+        opacity: 1;
+      }
+    }
+    & > span {
+      color: #fff;
+      font-size: 20px;
+      line-height: 40px;
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
+    }
+    .link {
+      position: absolute;
+      background: #fff;
+      height: 220px;
+      top: -200px;
+      opacity: 0;
+      transition: .4s;
+      transform-origin: bottom;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 5px  #0000006b;
+      border-radius: 2px;
+      img {
+        height: 180px;
+      }
+      span {
+        color: #000;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        clip-path: polygon(0 0, 50% 50%, 100% 0);
+        background: inherit;
+        bottom: -20px;
+      }
+    }
+  }
+}
 
 </style>
