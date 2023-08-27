@@ -52,14 +52,14 @@
                          :browser="install"></install-browser>
       </div>
     </div>
-    <div class="install pa-8 pt-16 menu-azzn">
+    <!-- <div class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installAppInfo"
                          :key="install.name"
                          :browser="install"></install-browser>
       </div>
-    </div>
+    </div> -->
     <div id="sponsor" class="donate pa-8 pt-16 menu-zcst">
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
@@ -106,7 +106,7 @@ import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
-
+import { version_desktop, version_app } from '@/request/api'
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import Team from "@/components/detailsContent/team.vue";
 
@@ -140,6 +140,41 @@ onMounted(() => {
   // contentDom.value.addEventListener('scroll', () => {
   //   pageHeight.value = contentDom.value.scrollTop
   // })
+  
+  version_desktop({version: '0.9.9'}).then((res) => {
+    const data = res?.data || {}
+    const installItem = [{
+      key: 'exe',
+      text: 'Windows系统下载'
+    },
+    {
+      key: 'spare_exe',
+      text: 'Windows系统备用下载'
+    },
+    {
+      key: 'dmg',
+      text: 'MacOS系统下载'
+    },
+    {
+      key: 'spare_dmg',
+      text: 'MacOS系统备用下载'
+    },
+    {
+      key: 'baidu',
+      text: '网盘下载'
+    }]
+    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const downloadLinks = installItem.map(p => {
+      if (p.key === 'baidu')
+        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+      return { text: p.text, link: data[p.key] }
+    })
+    state.installDesktopInfo.forEach(p => {
+      p.help = [{image:'',btn:downloadLinks}, ...p.help]
+    })
+  }).catch((err) => {
+    console.log(err)
+  })
 })
 
 watch(pageHeight, (data: number, oldData: number) => {

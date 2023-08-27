@@ -36,15 +36,15 @@ import Introduce from './introduce.vue';
 import Headers from "@/views/home/headers.vue";
 
 const urlData = computed<{
-  topPath: Array<string>,
+  pathItem: Array<string>,
   anchor: string
 }>(() => {
   // 参考格式：/index#sponsor
   const fullPath = store.getters.getFullpath
-  const topPath = fullPath.split(/\/(\S*)\#/)
+  const pathItem = fullPath.split(/\/(\S*)\#/)
   const anchor = fullPath.split('#')[1]
   return {
-    topPath,
+    pathItem,
     anchor
   }
 })

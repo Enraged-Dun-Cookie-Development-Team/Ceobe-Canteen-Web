@@ -65,11 +65,13 @@ import FunctionMessageBox from "@/components/introduce/functionMessageBox.vue";
 import MessageMessageBox from "@/components/introduce/messageMessageBox.vue";
 import BrainBackground from "@/components/introduce/brainBackground.vue";
 import Support from "@/components/introduce/support.vue";
-import { ref } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { version_desktop, version_app } from '@/request/api'
 
 name: "pageTop";
 
 interface Download {
+  key: string,
   icon: string,
   text: string,
   background: string,
@@ -80,16 +82,16 @@ interface Download {
 }
 
 const downloadOptions = ref<Array<Download>>([
-  { icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
-  { icon: 'icon-xiaoke-xiaoke', text: '安卓下载', background: '#A52625', link: '', isPopup: true, popup: {
+  { key: 'ios', icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
+  { key: 'android', icon: 'icon-xiaoke-xiaoke', text: '安卓下载', background: '#A52625', link: '', isPopup: true, popup: {
     img: require('../../assets/image/detailsContent/donate/bilibili.png'),
     link: []
   }},
-  { icon: 'icon-xiaoke-xiaoke', text: '桌面端下载', background: '#4879ff', link: '', isPopup: true, popup: {
+  { key: 'desktop', icon: 'icon-xiaoke-xiaoke', text: '桌面端下载', background: '#4879ff', link: '', isPopup: true, popup: {
     img: require('../../assets/image/detailsContent/donate/bilibili.png'),
-    link: []
+    links: []
   } },
-  { icon: 'icon-xiaoke-xiaoke', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
+  { key: 'extension', icon: 'icon-xiaoke-xiaoke', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
 ])
 
 const download = (option: Download) => {
