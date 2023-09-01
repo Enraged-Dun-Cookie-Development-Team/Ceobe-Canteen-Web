@@ -40,7 +40,10 @@
 
 @font-face {
   font-family: 'sucai';
-  src: url('@/assets/font/素材集市社会体.otf');
+  src: url('https://cdn.jsdelivr.net/gh/Enraged-Dun-Cookie-Development-Team/Ceobe-Canteen-Web/src/assets/font/素材集市社会体.woff2'),
+  url('https://cdn.jsdelivr.net/gh/Enraged-Dun-Cookie-Development-Team/Ceobe-Canteen-Web/src/assets/font/素材集市社会体.woff'),
+  url('https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/font/素材集市社会体.woff2'),
+  url('https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/font/素材集市社会体.woff');
   font-weight: normal;
   font-style: normal;
 }
