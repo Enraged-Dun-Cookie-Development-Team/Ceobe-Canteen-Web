@@ -100,10 +100,10 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, reactive, ref, watch} from "vue";
+import {onMounted, reactive, ref, watch, computed} from "vue";
 import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 
-import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST} from "@/assets/constant/install"
+import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
 import { version_desktop, version_app } from '@/request/api'
@@ -119,6 +119,7 @@ interface state {
   twoHeight: number,
   donateList: Array<any>,
   teamList: Array<any>,
+  desktopStructure: Array<any>
 }
 
 let state = reactive<state>({
@@ -127,13 +128,15 @@ let state = reactive<state>({
   installAppInfo: APP_INSTALL_HELP_LIST,
   twoHeight: 0,
   donateList: DONATE_LIST,
-  teamList: TEAM_LIST
+  teamList: TEAM_LIST,
+  desktopStructure: DESKTOP_STRUCTURE
 })
 
 const emit = defineEmits(['heightToZero'])
 
 let contentDom: any = ref(null);
 let pageHeight = ref(0)
+
 
 onMounted(() => {
   state.twoHeight = window.innerHeight;
@@ -143,34 +146,15 @@ onMounted(() => {
   
   version_desktop({version: '0.9.9'}).then((res) => {
     const data = res?.data || {}
-    const installItem = [{
-      key: 'exe',
-      text: 'Windows系统下载'
-    },
-    {
-      key: 'spare_exe',
-      text: 'Windows系统备用下载'
-    },
-    {
-      key: 'dmg',
-      text: 'MacOS系统下载'
-    },
-    {
-      key: 'spare_dmg',
-      text: 'MacOS系统备用下载'
-    },
-    {
-      key: 'baidu',
-      text: '网盘下载'
-    }]
+
     const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
-    const downloadLinks = installItem.map(p => {
+    const downloadLinks = state.desktopStructure.map(p => {
       if (p.key === 'baidu')
         return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
       return { text: p.text, link: data[p.key] }
     })
     state.installDesktopInfo.forEach(p => {
-      p.help = [{image:'',btn:downloadLinks}, ...p.help]
+      p.help.unshift({image:'',btn:downloadLinks})
     })
   }).catch((err) => {
     console.log(err)
@@ -182,6 +166,11 @@ watch(pageHeight, (data: number, oldData: number) => {
     emit('heightToZero');
   }
 });
+
+watch(state.installDesktopInfo, (data, oldData) => {
+  console.log('运行')
+  console.log(data)
+})
 
 let toLink = (url: string) => {
   window.open(url, "_black")
