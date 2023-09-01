@@ -81,12 +81,13 @@ interface Download {
 }
 
 const downloadOptions = ref<Array<Download>>([
-  // { key: 'ios', icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
-  { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: '', popup: {
-    img: require('../../assets/image/detailsContent/donate/bilibili.png'),
-    link: []
-  }},
-  { key: 'desktop', icon: 'icon-xiaoke-download', text: '桌面端下载', background: '#4879ff', link: 'install-other', isSlide: true },
+  // 会考虑直接显示二维码再下拉跳转的情况
+  // { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: '', popup: {
+  //   img: require('../../assets/image/detailsContent/donate/bilibili.png'),
+  //   link: []
+  // }},
+  { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: 'install-app', isSlide: true},
+  { key: 'desktop', icon: 'icon-xiaoke-download', text: '桌面端下载', background: '#4879ff', link: 'install-desktop', isSlide: true },
   { key: 'extension', icon: 'icon-xiaoke-download', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
   { key: 'support', icon: 'icon-xiaoke-donate', text: '支持食堂', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: 'sponsor', isSlide: true },
 ])
