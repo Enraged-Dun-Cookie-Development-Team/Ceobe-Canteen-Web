@@ -49,7 +49,7 @@
           @click="download(item)">
           <span class="xiaoke" :class="item.icon" ></span>
           <span>{{ item.text }}</span>
-          <div class="link" v-if="item.isPopup">
+          <div class="link" v-if="item.popup">
             <img :src="item.popup.img" alt="">
             <span>请扫码下载</span>
           </div>
@@ -76,22 +76,19 @@ interface Download {
   text: string,
   background: string,
   link: string,
-  isPopup?: boolean,
   popup?: any,
   isSlide?: boolean,
 }
 
 const downloadOptions = ref<Array<Download>>([
-  { key: 'ios', icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
-  { key: 'android', icon: 'icon-xiaoke-xiaoke', text: '安卓下载', background: '#A52625', link: '', isPopup: true, popup: {
+  // { key: 'ios', icon: 'icon-xiaoke-download', text: 'App Store', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: '' },
+  { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: '', popup: {
     img: require('../../assets/image/detailsContent/donate/bilibili.png'),
     link: []
   }},
-  { key: 'desktop', icon: 'icon-xiaoke-xiaoke', text: '桌面端下载', background: '#4879ff', link: '', isPopup: true, popup: {
-    img: require('../../assets/image/detailsContent/donate/bilibili.png'),
-    links: []
-  } },
-  { key: 'extension', icon: 'icon-xiaoke-xiaoke', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
+  { key: 'desktop', icon: 'icon-xiaoke-download', text: '桌面端下载', background: '#4879ff', link: 'install-other', isSlide: true },
+  { key: 'extension', icon: 'icon-xiaoke-download', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
+  { key: 'support', icon: 'icon-xiaoke-donate', text: '支持食堂', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: 'sponsor', isSlide: true },
 ])
 
 const download = (option: Download) => {

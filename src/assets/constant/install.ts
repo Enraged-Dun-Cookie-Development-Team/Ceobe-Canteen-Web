@@ -192,7 +192,7 @@ const INSTALL_360: Object = {
     ]
 }
 const INSTALL_DESKTOP_WINDOWS: Object = {
-    name: 'Windows系统',
+    name: '桌面端下载',
     icon: 'Windows.png',
     help: [
         {
@@ -266,8 +266,30 @@ const DESKTOP_STRUCTURE: Array<any> = [
       text: '网盘下载'
     }
 ]
+const APP_STRUCTURE: Array<any> = [
+    {
+      key: 'exe',
+      text: 'Windows系统下载'
+    },
+    {
+      key: 'spare_exe',
+      text: 'Windows系统备用下载'
+    },
+    {
+      key: 'dmg',
+      text: 'MacOS系统下载'
+    },
+    {
+      key: 'spare_dmg',
+      text: 'MacOS系统备用下载'
+    },
+    {
+      key: 'baidu',
+      text: '网盘下载'
+    }
+]
 const PC_INSTALL_HELP_LIST: Array<object> = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
 const DESKTOP_INSTALL_HELP_LIST: Array<object> = [INSTALL_DESKTOP_WINDOWS]
 const APP_INSTALL_HELP_LIST: Array<object> = [INSTALL_APP_ANDROID, INSTALL_APP_IOS]
 
-export {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE}
+export {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE, APP_STRUCTURE}

@@ -44,7 +44,7 @@
                          :browser="install"></install-browser>
       </div>
     </div>
-    <div class="install pa-8 pt-16 menu-azzn">
+    <div id="install-other" class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installDesktopInfo"
@@ -103,7 +103,7 @@
 import {onMounted, reactive, ref, watch, computed} from "vue";
 import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 
-import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE} from "@/assets/constant/install"
+import {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE, APP_STRUCTURE} from "@/assets/constant/install"
 import {DONATE_LIST} from "@/assets/constant/donate"
 import {TEAM_LIST} from "@/assets/constant/team"
 import { version_desktop, version_app } from '@/request/api'
@@ -119,7 +119,8 @@ interface state {
   twoHeight: number,
   donateList: Array<any>,
   teamList: Array<any>,
-  desktopStructure: Array<any>
+  desktopStructure: Array<any>,
+  appStructure: Array<any>
 }
 
 let state = reactive<state>({
@@ -129,7 +130,8 @@ let state = reactive<state>({
   twoHeight: 0,
   donateList: DONATE_LIST,
   teamList: TEAM_LIST,
-  desktopStructure: DESKTOP_STRUCTURE
+  desktopStructure: DESKTOP_STRUCTURE,
+  appStructure: APP_STRUCTURE
 })
 
 const emit = defineEmits(['heightToZero'])
@@ -145,8 +147,7 @@ onMounted(() => {
   // })
   
   version_desktop({version: '0.9.9'}).then((res) => {
-    const data = res?.data || {}
-
+    const data = res?.data
     const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
     const downloadLinks = state.desktopStructure.map(p => {
       if (p.key === 'baidu')
@@ -166,11 +167,6 @@ watch(pageHeight, (data: number, oldData: number) => {
     emit('heightToZero');
   }
 });
-
-watch(state.installDesktopInfo, (data, oldData) => {
-  console.log('运行')
-  console.log(data)
-})
 
 let toLink = (url: string) => {
   window.open(url, "_black")
