@@ -3,7 +3,9 @@
   <banber/>
   <download/>
   <donate/> 
+  <team/>
   <footers/>
+  
   <div class="bg"></div>
 </template>
 
@@ -11,6 +13,7 @@
 import download from './download.vue';
 import donate from './donate.vue';
 import banber from './banber.vue';
+import team from './team.vue'
 import footers from './footers.vue'
 </script>
 
