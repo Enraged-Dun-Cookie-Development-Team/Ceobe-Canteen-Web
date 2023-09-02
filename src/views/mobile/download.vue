@@ -1,6 +1,5 @@
 <template>
     <div class="download">
-        <div class="brain">
             <div class="mask">
                 <div class="box">
                     <img src="@/assets/logo.png" class="logo"/>
@@ -8,18 +7,33 @@
                 </div>
                 <div class="splitLine1"></div>
                 <div class="splitLine2"></div>
-                <span>哒哒哒，博士，小刻将藏起来的饼都找出来了噢</span>
-                <div class=""><span>24小时蹲饼</span><span>活动资源提示</span><span>合理规划理智</span><span>各类常用工具</span><span>便捷使用，提高养成效率</span><span>活动攻略在线推</span></div>
+                <span>哒哒哒，博士<br/>小刻将藏起来的饼都找出来了噢</span>
+                <div class="info">
+                    <div class="line-1">24小时<span>蹲饼</span></div>
+                    <div class="line-2">活动资源提示</div>
+                    <div class="line-3">合理规划<span>理智</span></div>
+                    <div class="line-4 info-tips" style="transform: translateX(20%);">
+                        博士，理智还没有耗完<br/>现在还不可以休息哦
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="line-1">各类<span>常用工具</span></div>
+                    <div class="line-2">便捷使用，提高养成效率</div>
+                    <div class="line-3"><span>活动攻略</span>在线推送</div>
+                    <div class="line-4 info-tips" style="transform: translateX(-20%);">
+                        再也不用担心打不过杰斯顿了
+                    </div>
+                </div>
+                <!-- <div class=""><span>24小时蹲饼</span><span>活动资源提示</span><span>合理规划理智</span><span>各类常用工具</span><span>便捷使用，提高养成效率</span><span>活动攻略在线推</span></div> -->
                 <div class="show">
                     <img src="@/assets/image/detailsContent/interface/1.jpg" alt="chajianduan" style="width: 40%;margin: 5%;">
                     <img src="@/assets/image/detailsContent/interface/2.jpg" alt="chajinduan" style="width: 40%;margin: 5%;"> 
                 </div>
                 <div class="button">
-                    <a href="www.baidu.com"><button><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓" style="width: 100%;"></button></a>
-                    <a href="www.baidu.com"><button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果" style="width: 100%;"></button></a>
+                    <button><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
+                    <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button>
                 </div>
             </div>
-        </div>
     </div>
     
 </template>
@@ -27,7 +41,6 @@
 <style lang="scss" scoped>
 .download{
     background-image: linear-gradient(90deg,#ffbb4e,#ff8448);
-    height: 80vh;
     margin: 60px 10% 0 10%;
     z-index: 1;
     position: relative;
@@ -41,13 +54,11 @@
     position: absolute;
 }
 .mask{
-    position: absolute;
     left: 0;
     margin: 10% 0;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
 }
 .box{
     position: relative!important;
@@ -78,10 +89,10 @@
 }
 span{
     color: #fefefe;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 400;
     width: fit-content;
-    line-height: 2rem;
+    line-height: 22px;
     width: 100%;
 }
 .show{
@@ -89,17 +100,57 @@ span{
 }
 
 .button{
-    margin-top: 10%;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    margin-top: 24px;
+    align-content: center;
+    justify-items: center;
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    position: relative;
+    margin: 0 8px 0 12px;
 }
 
 button{
     position: relative;
-    width: 90%;
+    img {
+        width: 100%;
+    }
+}
+.info {
+    font-family: 'sucai';
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .line-1, .line-3 {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    .line-2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 2px 0;
+      letter-spacing: 3px;
+    }
+    .line-4 {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: normal;
+      margin: 5px 0;
+    }
+    span {
+        font-size: 32px;
+    }
+    .info-tips {
+        color: #c2ffc1;
+        text-align: right;
+    }
+  img {
+    width: 80%;
+  }
 }
 </style>
 

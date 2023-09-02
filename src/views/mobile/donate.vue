@@ -13,7 +13,7 @@
     <div class="p-box">
       <div class="donate-box" v-for="donate in state.donateList">
         <v-card>
-          <img class="w-100" src="require('@/assets/image/detailsContent/donate/'+donate.img)">
+          <img class="w-100" :src="require('@/assets/image/detailsContent/donate/'+donate.img)">
           <v-card-actions v-if="donate.link">
             <v-btn style="width:100%"
               variant="outlined"
@@ -50,15 +50,13 @@ let toLink = (url: string) => {
 
 <style lang="scss" scoped>
 .donate{
-  height: 70vh;
-  z-index: 1;
   position: relative;
   .p-box{
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10% 0 10%;
+    margin: 0 10% 34px 10%;
     flex-wrap: wrap;
     .donate-box {
     width: 40%;
@@ -70,7 +68,7 @@ let toLink = (url: string) => {
 
 .thanks{
   background-image: linear-gradient(90deg,#ffbb4e,#ff8448);
-  opacity: calc(0.8);
+  opacity: 0.8;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
@@ -81,12 +79,13 @@ let toLink = (url: string) => {
     padding-bottom: 10%;
     margin-left: 10%;
     margin-right: 10%;
+    box-sizing: border-box;
     .splitline{
       display: block;
     }
     .word{
       color: white;
-      font-size: 8px;
+      font-size: 12px;
       font-weight: 400;
       width: fit-content;
     }

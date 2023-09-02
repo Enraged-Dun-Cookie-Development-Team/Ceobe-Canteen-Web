@@ -1,12 +1,10 @@
 <template> 
   <h1 style="display: none;">小刻食堂</h1>
   <banber/>
-  <div class="bg">
-     <download/>
-     <donate/> 
-
-  </div>
+  <download/>
+  <donate/> 
   <footers/>
+  <div class="bg"></div>
 </template>
 
 <script lang="ts" setup>
