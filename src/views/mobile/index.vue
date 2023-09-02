@@ -6,13 +6,14 @@
      <donate/> 
 
   </div>
-  
+  <footers/>
 </template>
 
 <script lang="ts" setup>
 import download from './download.vue';
 import donate from './donate.vue';
 import banber from './banber.vue';
+import footers from './footers.vue'
 </script>
 
 <style lang="scss" scoped>

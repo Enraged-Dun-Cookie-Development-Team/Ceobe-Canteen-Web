@@ -16,6 +16,9 @@
     height: 80px;
     background: linear-gradient(to right, #ffbb4e, #ff8448);
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     a {
         font-weight: 300;
         text-decoration: none;
