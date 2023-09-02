@@ -202,7 +202,7 @@ const getVersionApp = (params?: any) => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .details-content {
   min-width: 1200px;
   min-height: 700px;

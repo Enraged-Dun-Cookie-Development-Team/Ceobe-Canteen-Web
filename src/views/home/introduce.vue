@@ -104,7 +104,7 @@ const download = (option: Download) => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .introduce {
   background-image: linear-gradient(to right, #ffbb4e, #ff8448);

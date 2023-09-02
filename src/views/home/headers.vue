@@ -63,7 +63,7 @@ const scrollIntoView = (traget: string) => {
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .headers {
   height: 60px;
   background: linear-gradient(to right, #ffbb4e, #ff8448);

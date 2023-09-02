@@ -80,7 +80,7 @@ const goAnchor = (anchor: string) => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-swiper {
   height: 100vh;
 
