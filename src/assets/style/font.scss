@@ -39,115 +39,12 @@
 
 
 @font-face {
-  font-family: 'douyu';
-  src: url('@/assets/font/DOUYUfont.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'chuangke';
-  src: url('@/assets/font/创客贴金刚体.otf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'sucai';
-  src: url('@/assets/font/素材集市社会体.otf');
+  src: url('https://cdn.jsdelivr.net/gh/Enraged-Dun-Cookie-Development-Team/Ceobe-Canteen-Web/src/assets/font/素材集市社会体.woff2'),
+  url('https://cdn.jsdelivr.net/gh/Enraged-Dun-Cookie-Development-Team/Ceobe-Canteen-Web/src/assets/font/素材集市社会体.woff'),
+  url('https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/font/素材集市社会体.woff2'),
+  url('https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/font/素材集市社会体.woff');
   font-weight: normal;
   font-style: normal;
 }
 
-//SourceHanSansCN
-
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-ExtraLight.otf');
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-Light.otf');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-Normal.otf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-Medium.otf');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-Bold.otf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SourceHanSansCN';
-  src: url('@/assets/font/SourceHanSansCN-Heavy.otf');
-  font-weight: 900;
-  font-style: normal;
-}
-
-
-
-
-//Xiaomi
-
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Thin.ttf');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-ExtraLight.ttf');
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Light.ttf');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Medium.ttf');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Demibold.ttf');
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'xiaomi';
-  src: url('@/assets/font/MiSans-Heavy.ttf');
-  font-weight: 900;
-  font-style: normal;
-}

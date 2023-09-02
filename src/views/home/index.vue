@@ -1,5 +1,4 @@
 <template>
-  <h1 style="display: none;">小刻食堂</h1>
   <div id="full-page">
     <headers/>
     <introduce/>
@@ -24,9 +23,11 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/vue'
 import {Mousewheel} from 'swiper';
 import "swiper/scss";
+import store from '@/store';
 
 
 import {onMounted, ref} from "vue";
@@ -34,7 +35,23 @@ import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
 import Headers from "@/views/home/headers.vue";
 
+const urlData = computed<{
+  pathItem: Array<string>,
+  anchor: string
+}>(() => {
+  // 参考格式：/index#sponsor
+  const fullPath = store.getters.getFullpath
+  const pathItem = fullPath.split(/\/(\S*)\#/)
+  const anchor = fullPath.split('#')[1]
+  return {
+    pathItem,
+    anchor
+  }
+})
+
+
 onMounted(() => {
+  goAnchor(urlData.value.anchor)
 })
 
 let swiperData: any = null;
@@ -50,6 +67,17 @@ const heightToZero = () => {
   swiperData.mousewheel.enable();
 }
 const modules = [Mousewheel]
+
+const goAnchor = (anchor: string) => {
+  // 页面缓冲给个延迟时间
+  setTimeout(() => {
+    window.scrollTo({
+      top: document.getElementById(anchor || '')?.offsetTop,
+      behavior: "smooth"
+    })
+  }, 1000);
+  
+}
 </script>
 
 <style lang="scss">

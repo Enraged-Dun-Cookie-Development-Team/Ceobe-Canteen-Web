@@ -1,0 +1,42 @@
+name: build & publish
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.20.1
+
+    - name: Build
+      run: |
+        npm install
+        npm run build
+  
+    - name: Upload COS
+      uses: zkqiang/tencent-cos-action@v0.1.0
+      with:
+        args: delete -r -f / && upload -r ./dist/ /
+        secret_id: ${{ secrets.TENCENT_SECRET_ID }}
+        secret_key: ${{ secrets.TENCENT_SECRET_KEY }}
+        bucket: ${{ secrets.TENCENT_BUCKET }}
+        region: ap-nanjing
+
+    # https://github.com/marketplace/actions/tencent-cloud-cdn-purge-cache
+    # https://cloud.tencent.com/document/product/228/37871
+    - name: Refresh Tencent Cloud CDN Purge Cache
+      uses: izackwu/tencent-cloud-cdn-purge-cache@v1.0
+      env:
+        SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+        SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+        PATHS: "https://www.ceobecanteen.top"
+        FLUSH_TYPE: "flush" # optional
+        

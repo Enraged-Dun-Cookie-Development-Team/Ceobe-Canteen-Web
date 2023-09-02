@@ -4,7 +4,7 @@
 
 <style lang="scss">
 #app {
-  font-family: xiaomi;
+  font-family: MiSans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

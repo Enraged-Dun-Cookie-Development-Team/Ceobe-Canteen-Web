@@ -42,6 +42,19 @@
           :txt_z="5"
       />
       <brain-background class="brain"/>
+      <div class="download">
+        <button 
+          v-for="item in downloadOptions" 
+          :style="{ background: item.background }" 
+          @click="download(item)">
+          <span class="xiaoke" :class="item.icon" ></span>
+          <span>{{ item.text }}</span>
+          <div class="link" v-if="item.popup">
+            <img :src="item.popup.img" alt="">
+            <span>请扫码下载</span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -52,8 +65,43 @@ import FunctionMessageBox from "@/components/introduce/functionMessageBox.vue";
 import MessageMessageBox from "@/components/introduce/messageMessageBox.vue";
 import BrainBackground from "@/components/introduce/brainBackground.vue";
 import Support from "@/components/introduce/support.vue";
+import { ref, onMounted, computed } from "vue";
+import { version_desktop, version_app } from '@/request/api'
 
 name: "pageTop";
+
+interface Download {
+  key: string,
+  icon: string,
+  text: string,
+  background: string,
+  link: string,
+  popup?: any,
+  isSlide?: boolean,
+}
+
+const downloadOptions = ref<Array<Download>>([
+  // 会考虑直接显示二维码再下拉跳转的情况
+  // { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: '', popup: {
+  //   img: require('../../assets/image/detailsContent/donate/bilibili.png'),
+  //   link: []
+  // }},
+  { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: 'install-app', isSlide: true},
+  { key: 'desktop', icon: 'icon-xiaoke-download', text: '桌面端下载', background: '#4879ff', link: 'install-desktop', isSlide: true },
+  { key: 'extension', icon: 'icon-xiaoke-download', text: '插件端下载', background: 'linear-gradient(to right, #ffbb4e, #ff8448)', link: 'install', isSlide: true },
+  { key: 'support', icon: 'icon-xiaoke-donate', text: '支持食堂', background: 'linear-gradient(to right, #5f5f5f, #333333)', link: 'sponsor', isSlide: true },
+])
+
+const download = (option: Download) => {
+  if (option.isSlide)
+    window.scrollTo({
+        top: document.getElementById(option.link || '')?.offsetTop,
+        behavior: "smooth"
+    })
+  // 如果不是的话跳转到指定的的下载页面
+
+}
+
 </script>
 
 <style lang="scss">
@@ -111,6 +159,77 @@ name: "pageTop";
     }
   }
 }
-
+.download {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  position: absolute;
+  bottom: 200px;
+  right: 200px;
+  button {
+    outline: none;
+    border: none;
+    background: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: 2px 2px 5px  #0000006b;
+    &:focus {
+      overflow: initial;
+      .link {
+        top: -230px;
+        opacity: 1;
+      }
+    }
+    & > span {
+      color: #fff;
+      font-size: 20px;
+      line-height: 40px;
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
+    }
+    .link {
+      position: absolute;
+      background: #fff;
+      height: 220px;
+      top: -200px;
+      opacity: 0;
+      transition: .4s;
+      transform-origin: bottom;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 5px  #0000006b;
+      border-radius: 2px;
+      img {
+        height: 180px;
+      }
+      span {
+        color: #000;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        clip-path: polygon(0 0, 50% 50%, 100% 0);
+        background: inherit;
+        bottom: -20px;
+      }
+    }
+  }
+}
 
 </style>

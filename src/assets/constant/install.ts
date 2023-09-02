@@ -191,6 +191,97 @@ const INSTALL_360: Object = {
         }
     ]
 }
+const INSTALL_DESKTOP_WINDOWS: Object = {
+    name: '桌面端下载',
+    icon: 'Windows.png',
+    help: [
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const INSTALL_APP_ANDROID: Object = {
+    name: '安卓系统',
+    icon: 'Android.png',
+    help: [{
+        html: '打开应用商店搜索小刻食堂',
+        image: '',
+        btn: [
+            {
+                text: '或者点击这里下载手机安卓端安装包',
+                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Flutter/releases'
+            }]
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const INSTALL_APP_IOS: Object = {
+    name: 'IOS系统',
+    icon: 'macos.png',
+    help: [{
+        html: '打开App Store搜索小刻食堂下载安装',
+        image: '',
+    },
+        {
+            html: `还是不会？加群带你飞！`,
+            flex: 'flex-around-center flex-column',
+            btn: [{
+                text: '现在就加入蹲饼群！',
+                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+            }]
+        }
+    ]
+}
+const DESKTOP_STRUCTURE: Array<any> = [
+    {
+      key: 'exe',
+      text: 'Windows系统下载'
+    },
+    {
+      key: 'spare_exe',
+      text: 'Windows系统备用下载'
+    },
+    {
+      key: 'dmg',
+      text: 'MacOS系统下载'
+    },
+    {
+      key: 'spare_dmg',
+      text: 'MacOS系统备用下载'
+    },
+    {
+      key: 'baidu',
+      text: '网盘下载'
+    }
+]
+const APP_STRUCTURE: Array<any> = [
+    {
+      key: 'apk',
+      text: '安卓系统下载'
+    },
+    {
+      key: 'spare_apk',
+      text: '安卓系统备用下载'
+    },
+    {
+      key: 'baidu',
+      text: '网盘下载'
+    }
+]
 const PC_INSTALL_HELP_LIST: Array<object> = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
+const DESKTOP_INSTALL_HELP_LIST: Array<object> = [INSTALL_DESKTOP_WINDOWS]
+const APP_INSTALL_HELP_LIST: Array<object> = [INSTALL_APP_ANDROID]
 
-export {PC_INSTALL_HELP_LIST}
+export {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE, APP_STRUCTURE}
