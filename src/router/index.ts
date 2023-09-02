@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory,createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/home/index.vue'
+import Mobile from '../views/mobile/index.vue'
 import store from '../store/index'
 
 const routes: Array<RouteRecordRaw> = [
@@ -7,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'web',
     component: Home
+  },
+  {
+    path:'/mobile',
+    name: 'mobile',
+    component: Mobile
   },
   // {
   //   path: '/about',
