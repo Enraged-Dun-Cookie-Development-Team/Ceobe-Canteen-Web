@@ -166,8 +166,8 @@ const download = (option: Download) => {
   grid-column-gap: 20px;
   grid-row-gap: 15px;
   position: absolute;
-  bottom: 200px;
-  right: 200px;
+  bottom: 130px;
+  right: 100px;
   button {
     outline: none;
     border: none;

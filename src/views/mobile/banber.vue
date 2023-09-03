@@ -5,7 +5,7 @@
           <img src="@/assets/image/all/title-white.png" alt="logo-xiaoke"  style="height: 100%;">
         </div>         
          <ul>
-          <li><a @click="linkTo('install')">下载</a></li>
+          <li><a @click="linkTo('mo-install')">下载</a></li>
          </ul>
       </div>
   </nav>

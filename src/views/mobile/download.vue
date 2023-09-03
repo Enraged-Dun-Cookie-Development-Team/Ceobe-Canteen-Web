@@ -30,10 +30,11 @@
                     <img src="@/assets/image/detailsContent/interface/app-2.jpg" alt="chajinduan" style="width: 40%;margin: 0 5% 0 5%;"> 
                 </div>
                 <!-- <div class="app-title">APP下载</div> -->
-                <div class="button" id="install">
+                <div class="button" id="mo-install">
                     <button @click="showModal = true"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
                     <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
                 </div>
+                <span>插件端与桌面端打开电脑官网进行下载</span>
             </div>
     </div>
     <mo-modal :open="showModal" @close="showModal = false" :title="'下载链接'">

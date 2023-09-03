@@ -208,15 +208,7 @@ const INSTALL_DESKTOP_WINDOWS: Object = {
 const INSTALL_APP_ANDROID: Object = {
     name: '安卓系统',
     icon: 'Android.png',
-    help: [{
-        html: '打开应用商店搜索小刻食堂',
-        image: '',
-        btn: [
-            {
-                text: '或者点击这里下载手机安卓端安装包',
-                link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Flutter/releases'
-            }]
-    },
+    help: [
         {
             html: `还是不会？加群带你飞！`,
             flex: 'flex-around-center flex-column',
