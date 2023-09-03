@@ -24,12 +24,13 @@
                         再也不用担心打不过杰斯顿了
                     </div>
                 </div>
-                <!-- <div class=""><span>24小时蹲饼</span><span>活动资源提示</span><span>合理规划理智</span><span>各类常用工具</span><span>便捷使用，提高养成效率</span><span>活动攻略在线推</span></div> -->
+                <!-- <div class="app-title">APP局内展示</div> -->
                 <div class="show">
-                    <img src="@/assets/image/detailsContent/interface/1.jpg" alt="chajianduan" style="width: 40%;margin: 5%;">
-                    <img src="@/assets/image/detailsContent/interface/2.jpg" alt="chajinduan" style="width: 40%;margin: 5%;"> 
+                    <img src="@/assets/image/detailsContent/interface/app-1.jpg" alt="chajianduan" style="width: 40%;margin: 0 5% 0 5%;">
+                    <img src="@/assets/image/detailsContent/interface/app-2.jpg" alt="chajinduan" style="width: 40%;margin: 0 5% 0 5%;"> 
                 </div>
-                <div class="button">
+                <!-- <div class="app-title">APP下载</div> -->
+                <div class="button" id="install">
                     <button><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
                     <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button>
                 </div>
@@ -96,11 +97,10 @@ span{
     width: 100%;
 }
 .show{
-    margin-top: 10%;
+    margin-top: 24px;
 }
 
 .button{
-    margin-top: 24px;
     align-content: center;
     justify-items: center;
     width: calc(100% - 20px);
@@ -108,7 +108,7 @@ span{
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
     position: relative;
-    margin: 0 8px 0 12px;
+    margin: 40px 8px 0 12px;
 }
 
 button{
