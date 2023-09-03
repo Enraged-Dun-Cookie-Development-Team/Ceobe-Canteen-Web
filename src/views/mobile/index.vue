@@ -1,17 +1,20 @@
 <template> 
   <h1 style="display: none;">小刻食堂</h1>
   <banber/>
-  <div class="bg">
-     <download/>
-     <donate/> 
-  </div>
+  <download/>
+  <donate/> 
+  <team/>
+  <footers/>
   
+  <div class="bg"></div>
 </template>
 
 <script lang="ts" setup>
 import download from './download.vue';
 import donate from './donate.vue';
 import banber from './banber.vue';
+import team from './team.vue'
+import footers from './footers.vue'
 </script>
 
 <style lang="scss" scoped>

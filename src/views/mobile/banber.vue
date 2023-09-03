@@ -5,11 +5,20 @@
           <img src="@/assets/image/all/title-white.png" alt="logo-xiaoke"  style="height: 100%;">
         </div>         
          <ul>
-          <li><a href="#download">下载</a></li>
+          <li><a @click="linkTo('mo-install')">下载</a></li>
          </ul>
       </div>
   </nav>
 </template>
+
+<script lang="ts" setup>
+  const linkTo = (el: string) => {
+    window.scrollTo({
+        top: document.getElementById(el || '')?.offsetTop,
+        behavior: "smooth"
+    })
+  }
+</script>
 
 <style lang="scss" scoped>
 .headers{

@@ -44,7 +44,7 @@
                          :browser="install"></install-browser>
       </div>
     </div>
-    <div id="install-desktop" class="install pa-8 pt-16 menu-azzn">
+    <!-- <div id="install-desktop" class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installDesktopInfo"
@@ -59,7 +59,7 @@
                          :key="install.name"
                          :browser="install"></install-browser>
       </div>
-    </div>
+    </div> -->
     <div id="sponsor" class="donate pa-8 pt-16 menu-zcst">
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
@@ -202,7 +202,7 @@ const getVersionApp = (params?: any) => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .details-content {
   min-width: 1200px;
   min-height: 700px;
