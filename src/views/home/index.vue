@@ -1,5 +1,5 @@
 <template>
-  <div id="full-page">
+  <div id="full-page" class="pc">
     <headers/>
     <introduce/>
     <details-content/>
@@ -20,6 +20,10 @@
     <!--      </swiper-slide>-->
     <!--    </swiper>-->
   </div>
+  <div class="mobile">
+    <mobile></mobile>
+  </div>
+  
 </template>
 
 <script lang="ts" setup>
@@ -28,6 +32,7 @@ import {Swiper, SwiperSlide, useSwiper} from 'swiper/vue'
 import {Mousewheel} from 'swiper';
 import "swiper/scss";
 import store from '@/store';
+import mobile from '@/views/mobile/index.vue'
 
 
 import {onMounted, ref} from "vue";
@@ -85,6 +90,17 @@ const goAnchor = (anchor: string) => {
   height: 100vh;
 
   .swiper-slide-page {
+  }
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width:800px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
   }
 }
 </style>

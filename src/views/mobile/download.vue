@@ -74,7 +74,6 @@ const getVersionApp = (params?: any) => {
       return { text: p.text, link: data[p.key] }
     })
     state.installAppInfo = downloadLinks
-    console.log(downloadLinks)
   }).catch((err) => {
     console.log(err)
   })
