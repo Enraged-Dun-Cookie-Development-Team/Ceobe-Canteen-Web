@@ -31,13 +31,60 @@
                 </div>
                 <!-- <div class="app-title">APP下载</div> -->
                 <div class="button" id="install">
-                    <button><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
-                    <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button>
+                    <button @click="showModal = true"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
+                    <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
                 </div>
             </div>
     </div>
-    
+    <mo-modal :open="showModal" @close="showModal = false" :title="'下载链接'">
+        <div class="install-bar">
+            <v-btn color="#FCDDAB" style="color: #D07D00" class="mt-2" @click="toLink(btn.link)"
+                   v-for="btn in state.installAppInfo">{{
+                btn.text
+              }}
+            </v-btn>
+        </div>
+    </mo-modal>
 </template>
+
+<script lang="ts" setup>
+import { ref, reactive, onMounted } from "vue"
+import MoModal from '@/components/mobile/modal.vue'
+import { version_app } from '@/request/api'
+import { APP_STRUCTURE } from "@/assets/constant/install"
+
+const state = reactive({
+    appStructure: APP_STRUCTURE,
+    installAppInfo: [] as any
+})
+
+const showModal = ref(false)
+
+onMounted(() => {
+    getVersionApp()
+})
+
+const getVersionApp = (params?: any) => {
+  version_app(params).then((res) => {
+    const data = res?.data
+    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const downloadLinks = state.appStructure.map(p => {
+      if (p.key === 'baidu')
+        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+      return { text: p.text, link: data[p.key] }
+    })
+    state.installAppInfo = downloadLinks
+    console.log(downloadLinks)
+  }).catch((err) => {
+    console.log(err)
+  })
+}
+
+let toLink = (url: string) => {
+  window.open(url, "_black")
+}
+
+</script>
 
 <style lang="scss" scoped>
 .download{
@@ -105,16 +152,17 @@ span{
     justify-items: center;
     width: calc(100% - 20px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-    position: relative;
-    margin: 40px 8px 0 12px;
+    // grid-template-columns: 1fr 1fr;
+    // grid-column-gap: 20px;
+    // position: relative;
+    margin: 30px 8px 0 12px;
 }
 
 button{
     position: relative;
     img {
-        width: 100%;
+        // width: 100%;
+        width: 60%;
     }
 }
 .info {
@@ -151,6 +199,13 @@ button{
   img {
     width: 80%;
   }
+}
+.install-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 </style>
 
