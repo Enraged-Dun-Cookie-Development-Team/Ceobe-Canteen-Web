@@ -158,7 +158,8 @@ onMounted(() => {
     position: absolute;
     top: 170px;
     left: calc(50% - 337px);
-    transition: all 0.3s
+    transition: all 0.3s;
+    transform: translate(182px, -10px) scale(0.75);
   }
 
   &.two {
@@ -177,6 +178,8 @@ onMounted(() => {
 
     .main-area-img-list {
       opacity: 1;
+      transition: all 0.3s !important;
+      transform: translate(0, 0) scale(1);
       z-index: 6;
     }
   }
