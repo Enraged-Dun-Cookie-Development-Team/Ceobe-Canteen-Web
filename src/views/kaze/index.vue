@@ -27,9 +27,15 @@ const handleMainImage = reactive({
     handleMainImage.mouseOverContainer = document.querySelector('.main-area');
     handleMainImage.element = pageOneImage.value;
     handleMainImage.mouseOverContainer.addEventListener('mousemove', (e) => {
-      window.requestAnimationFrame(function () {
-        handleMainImage.transformElement(e.clientX, e.clientY);
-      });
+      if (eventListener.scroll == 0) {
+        handleMainImage.element.style.transition = "all .1s"
+        window.requestAnimationFrame(function () {
+          handleMainImage.transformElement(e.clientX, e.clientY);
+        });
+      } else {
+        handleMainImage.element.style.transition = "all 1s"
+        handleMainImage.element.style.transform = "rotateX(0) rotateY(0)";
+      }
     });
 
     handleMainImage.mouseOverContainer.addEventListener('mouseleave', (e) => {
@@ -45,9 +51,18 @@ const handleMainImage = reactive({
     handleMainImage.element.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`;
   }
 })
+const eventListener = reactive({
+  scroll: 0,
+  init() {
+    window.addEventListener('scroll', () => {
+      eventListener.scroll = document.documentElement.scrollTop || document.body.scrollTop;
 
+    }, true)
+  }
+})
 onMounted(() => {
   handleMainImage.init();
+  eventListener.init();
 })
 </script>
 
