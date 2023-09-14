@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer flex flex-column flex-center-center">
+    <footer class="footer flex flex-column flex-center-center" id="footers">
         <div><a href="https://beian.miit.gov.cn" target="_blank">闽ICP备2021013932号-1</a></div> 
         <div>Power By: <a href="https://github.com/Enraged-Dun-Cookie-Development-Team" target="_blank">Ceobe Canteen</a></div>
     </footer>
