@@ -40,21 +40,23 @@ import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
 import Headers from "@/views/home/headers.vue";
 
-const props = defineProps(['type'])
+const props = defineProps(['type', 'position'])
 
 provide('type', props.type)
 
 const urlData = computed<{
   pathItem: Array<string>,
-  anchor: string
+  anchor: string | any
 }>(() => {
   // 参考格式：/index#sponsor
   const fullPath = store.getters.getFullpath
   const pathItem = fullPath.split(/\/(\S*)\#/)
   const anchor = fullPath.split('#')[1]
+  // 考虑到移动端的url对符号比较敏感可能识别不到#号的情况，需做特殊化
+  const moAnchor = props.position
   return {
     pathItem,
-    anchor
+    anchor: anchor || moAnchor
   }
 })
 

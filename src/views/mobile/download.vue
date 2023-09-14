@@ -8,7 +8,7 @@
             <div class="splitLine1"></div>
             <div class="splitLine2"></div>
             <span>哒哒哒，博士<br/>小刻将藏起来的饼都找出来了噢</span>
-            <div class="info" id="mo-install">
+            <div class="info">
                 <div class="line-1">24小时<span>蹲饼</span></div>
                 <div class="line-2">活动资源提示</div>
                 <div class="line-3">合理规划<span>理智</span></div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <!-- <div class="app-title">APP局内展示</div> -->
-            <div class="show">
+            <div class="show" id="mo-install">
                 <img src="@/assets/image/detailsContent/interface/app-1.jpg" alt="chajianduan" style="width: 40%;margin: 0 5% 0 5%;">
                 <img src="@/assets/image/detailsContent/interface/app-2.jpg" alt="chajinduan" style="width: 40%;margin: 0 5% 0 5%;"> 
             </div>
