@@ -1,19 +1,17 @@
 import { createRouter, createWebHistory,createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/home/index.vue'
-import Mobile from '../views/mobile/index.vue'
 import store from '../store/index'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'web',
-    component: Home
+    component: Home,
+    props: route => ({ 
+      type: route.query.version,
+      position: route.query.position
+    })
   },
-  // {
-  //   path:'/mobile',
-  //   name: 'mobile',
-  //   component: Mobile
-  // },
   // {
   //   path: '/about',
   //   name: 'about',
@@ -25,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 

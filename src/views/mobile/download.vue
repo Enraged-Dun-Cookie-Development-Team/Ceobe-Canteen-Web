@@ -1,41 +1,41 @@
 <template>
     <div class="download">
-            <div class="mask">
-                <div class="box">
-                    <img src="@/assets/logo.png" class="logo"/>
-                    <img src="@/assets/image/all/title-white.png" class="title"/>
-                </div>
-                <div class="splitLine1"></div>
-                <div class="splitLine2"></div>
-                <span>哒哒哒，博士<br/>小刻将藏起来的饼都找出来了噢</span>
-                <div class="info">
-                    <div class="line-1">24小时<span>蹲饼</span></div>
-                    <div class="line-2">活动资源提示</div>
-                    <div class="line-3">合理规划<span>理智</span></div>
-                    <div class="line-4 info-tips" style="transform: translateX(20%);">
-                        博士，理智还没有耗完<br/>现在还不可以休息哦
-                    </div>
-                </div>
-                <div class="info">
-                    <div class="line-1">各类<span>常用工具</span></div>
-                    <div class="line-2">便捷使用，提高养成效率</div>
-                    <div class="line-3"><span>活动攻略</span>在线推送</div>
-                    <div class="line-4 info-tips" style="transform: translateX(-20%);">
-                        再也不用担心打不过杰斯顿了
-                    </div>
-                </div>
-                <!-- <div class="app-title">APP局内展示</div> -->
-                <div class="show">
-                    <img src="@/assets/image/detailsContent/interface/app-1.jpg" alt="chajianduan" style="width: 40%;margin: 0 5% 0 5%;">
-                    <img src="@/assets/image/detailsContent/interface/app-2.jpg" alt="chajinduan" style="width: 40%;margin: 0 5% 0 5%;"> 
-                </div>
-                <!-- <div class="app-title">APP下载</div> -->
-                <div class="button" id="mo-install">
-                    <button @click="showModal = true"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
-                    <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
-                </div>
-                <span>插件端与桌面端打开电脑官网进行下载</span>
+        <div class="mask">
+            <div class="box">
+                <img src="@/assets/logo.png" class="logo"/>
+                <img src="@/assets/image/all/title-white.png" class="title"/>
             </div>
+            <div class="splitLine1"></div>
+            <div class="splitLine2"></div>
+            <span>哒哒哒，博士<br/>小刻将藏起来的饼都找出来了噢</span>
+            <div class="info">
+                <div class="line-1">24小时<span>蹲饼</span></div>
+                <div class="line-2">活动资源提示</div>
+                <div class="line-3">合理规划<span>理智</span></div>
+                <div class="line-4 info-tips" style="transform: translateX(20%);">
+                    博士，理智还没有耗完<br/>现在还不可以休息哦
+                </div>
+            </div>
+            <div class="info">
+                <div class="line-1">各类<span>常用工具</span></div>
+                <div class="line-2">便捷使用，提高养成效率</div>
+                <div class="line-3"><span>活动攻略</span>在线推送</div>
+                <div class="line-4 info-tips" style="transform: translateX(-20%);">
+                    再也不用担心打不过杰斯顿了
+                </div>
+            </div>
+            <!-- <div class="app-title">APP局内展示</div> -->
+            <div class="show" id="mo-install">
+                <img src="@/assets/image/detailsContent/interface/app-1.jpg" alt="chajianduan" style="width: 40%;margin: 0 5% 0 5%;">
+                <img src="@/assets/image/detailsContent/interface/app-2.jpg" alt="chajinduan" style="width: 40%;margin: 0 5% 0 5%;"> 
+            </div>
+            <!-- <div class="app-title">APP下载</div> -->
+            <div class="button">
+                <button @click="showModal = true"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
+                <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
+            </div>
+            <span>插件端与桌面端打开电脑官网进行下载</span>
+        </div>
     </div>
     <mo-modal :open="showModal" @close="showModal = false" :title="'下载链接'">
         <div class="install-bar">

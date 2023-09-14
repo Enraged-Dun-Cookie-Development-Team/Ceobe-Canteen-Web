@@ -3,7 +3,7 @@
     <div class="thanks">
       <div class="thanks-box">
         <div class="splitline"></div>
-        <span class="word">
+        <span class="word" id="mo-sponsor">
           感谢大家对小刻食堂的支持<br/> 
           未成年刀客塔请勿捐款，三连我们的账号就可以啦。<br/> 
           如果在收支一览表内没有发现自己的捐助，那就是我们理智涣散，来群里面找我们添加!<br/> 
@@ -26,20 +26,21 @@
       </div>
     </div>
   </div>
-  <div class="footer"><footer/></div>  
 </template>
 
 <script lang="ts" setup>
-import {onMounted, reactive, ref, watch} from "vue";
-import {DONATE_LIST} from "@/assets/constant/donate";
-import footer from './footer.vue';
+import {onMounted, reactive, ref, watch, inject} from "vue";
+import {DONATE_LIST, FOLLOW_LIST} from "@/assets/constant/donate";
+// import footer from './footer.vue';
 
 interface state {
   donateList: Array<any>,
 }
 
+const type =  inject('type')
+
 let state = reactive<state>({
-  donateList: DONATE_LIST,
+  donateList: type === 'audit' ? FOLLOW_LIST : DONATE_LIST,
 })
 
 let toLink = (url: string) => {

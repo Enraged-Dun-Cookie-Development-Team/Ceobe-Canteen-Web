@@ -1,6 +1,6 @@
 <template>
-  <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
-  <div class="team-bar">
+  <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们" ></box-title>
+  <div class="team-bar" id="mo-about-us">
     <div class="member" v-for="(member, index) in teamData" :key="index">
       <div class="head">
         <img :src="require('@/assets/image/detailsContent/team/'+member.coverImg)" alt="">
