@@ -7,13 +7,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'web',
-    component: Home
+    alias: '/index',
+    component: Home,
+    props: true,
   },
-  // {
-  //   path:'/mobile',
-  //   name: 'mobile',
-  //   component: Mobile
-  // },
   // {
   //   path: '/about',
   //   name: 'about',
@@ -31,6 +28,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   store.commit('setFullpath', to.fullPath)
+  if (to.fullPath === '/index') {
+    to.params = { type: 'audit' }
+  }
   next()
 })
 

@@ -21,7 +21,7 @@
     <!--    </swiper>-->
   </div>
   <div class="mobile">
-    <mobile></mobile>
+    <mobile :type="type"></mobile>
   </div>
   
 </template>
@@ -35,10 +35,14 @@ import store from '@/store';
 import mobile from '@/views/mobile/index.vue'
 
 
-import {onMounted, ref} from "vue";
+import {onMounted, ref, defineProps, provide} from "vue";
 import DetailsContent from "./detailsContent.vue";
 import Introduce from './introduce.vue';
 import Headers from "@/views/home/headers.vue";
+
+const props = defineProps(['type'])
+
+provide('type', props.type)
 
 const urlData = computed<{
   pathItem: Array<string>,
