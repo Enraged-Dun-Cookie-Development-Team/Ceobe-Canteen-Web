@@ -43,11 +43,6 @@ let state = reactive<state>({
   donateList: type === 'audit' ? FOLLOW_LIST : DONATE_LIST,
 })
 
-onMounted(() => {
-  console.log('在捐赠页面')
-  console.log(type)
-})
-
 let toLink = (url: string) => {
   window.open(url, "_black")
 }
