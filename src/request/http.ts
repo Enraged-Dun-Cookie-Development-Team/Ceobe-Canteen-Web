@@ -1,12 +1,11 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 if (process.env.NODE_ENV == 'development') {
-  // 做了代理处理接口服务器的跨域问题，地址根据自己的环境更改，保留/api/v1
-  axios.defaults.baseURL = 'http://localhost:8080/api/v1' 
+  // 做了代理处理接口服务器的跨域问题
+  axios.defaults.baseURL = '/development' 
 }
 else if (process.env.NODE_ENV == 'production') {
-  // axios.defaults.baseURL = 'https://server-dev.ceobecanteen.top/api/v1'  // 测试服务器
-  axios.defaults.baseURL = 'https://server.ceobecanteen.top/api/v1'         // 正式服务器
+  axios.defaults.baseURL = '/production'       
 }
 
 axios.defaults.timeout = 10000

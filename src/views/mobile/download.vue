@@ -31,7 +31,7 @@
             </div>
             <!-- <div class="app-title">APP下载</div> -->
             <div class="button">
-                <button @click="showModal = true"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
+                <button @click="showDownload"><img src="@/assets/image/detailsContent/menuIcon/androidDown.png" alt="安卓"></button>
                 <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
             </div>
             <span>插件端与桌面端打开电脑官网进行下载</span>
@@ -61,17 +61,13 @@ const state = reactive({
 
 const showModal = ref(false)
 
-onMounted(() => {
-    getVersionApp()
-})
-
 const getVersionApp = (params?: any) => {
   version_app(params).then((res) => {
     const data = res?.data
-    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.appStructure.map(p => {
       if (p.key === 'baidu')
-        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+        return { text: p.text, link: `${data[p.key]}?pwd=${baiduCryp}` }
       return { text: p.text, link: data[p.key] }
     })
     state.installAppInfo = downloadLinks
@@ -82,6 +78,11 @@ const getVersionApp = (params?: any) => {
 
 let toLink = (url: string) => {
   window.open(url, "_black")
+}
+
+const showDownload = () => {
+    showModal.value = true
+    getVersionApp()
 }
 
 </script>

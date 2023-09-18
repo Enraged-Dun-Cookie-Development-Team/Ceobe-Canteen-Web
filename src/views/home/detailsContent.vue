@@ -51,8 +51,8 @@
                          :key="install.name"
                          :browser="install"></install-browser>
       </div>
-    </div>
-    <div id="install-app" class="install pa-8 pt-16 menu-azzn">
+    </div> -->
+    <!-- <div id="install-app" class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="App端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installAppInfo"
@@ -170,10 +170,10 @@ let toContent = (className: string) => {
 const getVersionDesktop = (params?: any) => {
   version_desktop(params).then((res) => {
     const data = res?.data
-    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.desktopStructure.map(p => {
       if (p.key === 'baidu')
-        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+        return { text: p.text, link: `${data[p.key]}?pwd=${baiduCryp}` }
       return { text: p.text, link: data[p.key] }
     })
     state.installDesktopInfo.forEach(p => {
@@ -187,10 +187,10 @@ const getVersionDesktop = (params?: any) => {
 const getVersionApp = (params?: any) => {
   version_app(params).then((res) => {
     const data = res?.data
-    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.appStructure.map(p => {
       if (p.key === 'baidu')
-        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+        return { text: p.text, link: `${data[p.key]}?pwd=${baiduCryp}` }
       return { text: p.text, link: data[p.key] }
     })
     state.installAppInfo.forEach(p => {
