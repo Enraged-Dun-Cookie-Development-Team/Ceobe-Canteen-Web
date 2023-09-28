@@ -54,9 +54,11 @@
 </template>
 
 <script lang="ts" setup>
-import {defineProps, reactive, ref} from "vue";
+import {defineProps, reactive, ref, defineEmits} from "vue";
 
 const props = defineProps({browser: {type: Object}});
+
+const emit = defineEmits(['open'])
 
 let state = reactive({
   windowIsOpen: false,
@@ -69,6 +71,7 @@ let carouselData = reactive({
 })
 
 let open = () => {
+  emit('open')
   state.windowIsOpen = true;
   carouselData.carouselIndex = 0;
 }

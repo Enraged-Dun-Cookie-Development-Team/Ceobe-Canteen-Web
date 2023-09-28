@@ -5,7 +5,8 @@ if (process.env.NODE_ENV == 'development') {
   axios.defaults.baseURL = '/development' 
 }
 else if (process.env.NODE_ENV == 'production') {
-  axios.defaults.baseURL = '/production'       
+  axios.defaults.baseURL = '/development'   
+  // axios.defaults.baseURL = '/production'  // 正式服    
 }
 
 axios.defaults.timeout = 10000
