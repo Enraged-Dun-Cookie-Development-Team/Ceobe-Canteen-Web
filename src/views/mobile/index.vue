@@ -124,13 +124,14 @@ import { APP_STRUCTURE } from '@/assets/constant/install'
 import {DONATE_LIST, FOLLOW_LIST} from "@/assets/constant/donate";
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import { TEAM_LIST } from "@/assets/constant/team"
+const version = require('@/assets/constant/version.json') 
 
 const type =  inject('type')
 
 const state = reactive({
   appStructure: APP_STRUCTURE,
   installAppInfo: [] as any,
-  donateList: type === 'audit' ? FOLLOW_LIST : DONATE_LIST as Array<any>
+  donateList: type === version.version ? FOLLOW_LIST : DONATE_LIST as Array<any>
 })
 
 const showModal = ref(false)
