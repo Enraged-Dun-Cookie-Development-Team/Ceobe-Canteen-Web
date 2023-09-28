@@ -44,12 +44,13 @@
                          :browser="install"></install-browser>
       </div>
     </div>
-    <!-- <div id="install-desktop" class="install pa-8 pt-16 menu-azzn">
+    <div id="install-desktop" class="install pa-8 pt-16 menu-azzn">
       <box-title icon="icon-xiaoke-a-lianhe1" title="桌面端安装指南"></box-title>
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installDesktopInfo"
                          :key="install.name"
-                         :browser="install"></install-browser>
+                         :browser="install"
+                         @open="openInstallDesktop"></install-browser>
       </div>
     </div>
     <div id="install-app" class="install pa-8 pt-16 menu-azzn">
@@ -57,9 +58,10 @@
       <div class="install-content pa-8 flex flex-around-center">
         <install-browser v-for="install in state.installAppInfo"
                          :key="install.name"
-                         :browser="install"></install-browser>
+                         :browser="install"
+                         @open="openInstallApp"></install-browser>
       </div>
-    </div> -->
+    </div>
     <div id="sponsor" class="donate pa-8 pt-16 menu-zcst">
       <box-title icon="icon-xiaoke-a-lianhe2" title="支持食堂"></box-title>
       <div class="mt-7">
@@ -125,7 +127,7 @@ interface state {
 
 let state = reactive<state>({
   installInfo: PC_INSTALL_HELP_LIST,
-  installDesktopInfo: DESKTOP_INSTALL_HELP_LIST,
+  installDesktopInfo: JSON.parse(JSON.stringify(DESKTOP_INSTALL_HELP_LIST)),
   installAppInfo: APP_INSTALL_HELP_LIST,
   twoHeight: 0,
   donateList: DONATE_LIST,
@@ -145,8 +147,6 @@ onMounted(() => {
   // contentDom.value.addEventListener('scroll', () => {
   //   pageHeight.value = contentDom.value.scrollTop
   // })
-  getVersionDesktop()
-  getVersionApp()
 })
 
 watch(pageHeight, (data: number, oldData: number) => {
@@ -170,10 +170,10 @@ let toContent = (className: string) => {
 const getVersionDesktop = (params?: any) => {
   version_desktop(params).then((res) => {
     const data = res?.data
-    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.desktopStructure.map(p => {
       if (p.key === 'baidu')
-        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+        return { text: p.text, link: `${data[p.key]}?pwd=${baiduCryp}` }
       return { text: p.text, link: data[p.key] }
     })
     state.installDesktopInfo.forEach(p => {
@@ -187,18 +187,35 @@ const getVersionDesktop = (params?: any) => {
 const getVersionApp = (params?: any) => {
   version_app(params).then((res) => {
     const data = res?.data
-    const baiduCryp = data.baidu_text.match(/（(.*?)）/)[1]
+    const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.appStructure.map(p => {
       if (p.key === 'baidu')
-        return { text: `${p.text} ${baiduCryp}`, link: data[p.key] }
+        return { text: p.text, link: `${data[p.key]}?pwd=${baiduCryp}` }
       return { text: p.text, link: data[p.key] }
     })
+    
     state.installAppInfo.forEach(p => {
       p.help.unshift({image:'',btn:downloadLinks})
     })
   }).catch((err) => {
     console.log(err)
   })
+}
+
+const openInstallDesktop = () => {
+  state.installDesktopInfo.forEach(p => {
+    if (p.help.length>1)
+      p.help.shift()
+  })
+  getVersionDesktop()
+}
+
+const openInstallApp = () => {
+  state.installAppInfo.forEach(p => {
+    if (p.help.length>1)
+      p.help.shift()
+  })
+  getVersionApp()
 }
 </script>
 
