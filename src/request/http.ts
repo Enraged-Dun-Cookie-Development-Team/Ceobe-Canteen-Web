@@ -5,8 +5,8 @@ if (process.env.NODE_ENV == 'development') {
   axios.defaults.baseURL = '/development' 
 }
 else if (process.env.NODE_ENV == 'production') {
-  axios.defaults.baseURL = '/development'   
-  // axios.defaults.baseURL = '/production'  // 正式服    
+  axios.defaults.baseURL = 'https://server.ceobecanteen.top/api/v1'   
+  // axios.defaults.baseURL = '/production'  // 正式服代理    
 }
 
 axios.defaults.timeout = 10000
