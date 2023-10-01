@@ -37,6 +37,6 @@ jobs:
       env:
         SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
         SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-        PATHS: "https://www.ceobecanteen.top"
+        PATHS: "https://www.ceobecanteen.top, https://ceobecanteen.top"
         FLUSH_TYPE: "flush" # optional
         
