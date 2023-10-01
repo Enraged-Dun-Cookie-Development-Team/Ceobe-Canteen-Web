@@ -58,7 +58,9 @@
             alt="安卓"
           />
         </button>
-        <!-- <button><img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果"></button> -->
+        <button @click="toLink('https://apps.apple.com/cn/app/id1629917304')">
+          <img src="@/assets/image/detailsContent/menuIcon/appleDown.png" alt="苹果">
+        </button>
       </div>
       <span>插件端与桌面端打开电脑官网进行下载</span>
     </div>
@@ -124,7 +126,8 @@ import { APP_STRUCTURE } from '@/assets/constant/install'
 import {DONATE_LIST, FOLLOW_LIST} from "@/assets/constant/donate";
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import { TEAM_LIST } from "@/assets/constant/team"
-const version = require('@/assets/constant/version.json') 
+const version = require('@/assets/constant/version.json')
+// import {version} from 'https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/version.js'
 
 const type =  inject('type')
 
@@ -293,15 +296,15 @@ const linkTo = (el: string) => {
       justify-items: center;
       width: calc(100% - 20px);
       display: grid;
-      // grid-template-columns: 1fr 1fr;
-      // grid-column-gap: 20px;
-      // position: relative;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      position: relative;
       margin: 30px 8px 0 12px;
       button {
         position: relative;
         img {
-          // width: 100%;
-          width: 60%;
+          width: 100%;
+          // width: 60%;
         }
       }
     }
@@ -352,7 +355,7 @@ const linkTo = (el: string) => {
   margin: 0 10% 40px 10%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 50px);
-  grid-column-gap: 12px;
+  grid-column-gap: 8px;
   grid-row-gap: 20px;
   .member {
     .head {

@@ -86,7 +86,7 @@ const goAnchor = (anchor: string) => {
       top: document.getElementById(anchor || '')?.offsetTop,
       behavior: "smooth"
     })
-  }, 1000);
+  }, 1200);
   
 }
 </script>
