@@ -11,6 +11,9 @@ const INSTALL_CHROME: Object = {
             }, {
                 text: '或者如果已经科学上网，点击这里跳转到Chrome应用商店',
                 link: 'https://chrome.google.com/webstore/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknights-ce/gblmdllhbodefkmimbcjpflhjneagkkd?hl=zh-CN'
+            }, {
+                text: '实在不行，百度云盘（提取码 jzq9）',
+                link: 'https://pan.baidu.com/s/1kzY6kpfYqLcGpuaiwQOGoA?pwd=jzq9'
             }]
     },
         {
@@ -54,6 +57,9 @@ const INSTALL_EDGE: Object = {
             }, {
                 text: '或者点击这里跳转edge应用商店',
                 link: 'https://microsoftedge.microsoft.com/addons/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknight/jimmfliacfpeabcifcghmdankmdnmfmn?hl=zh-CN+%E4%BD%9C%E8%80%85%EF%BC%9A%E6%B4%9B%E6%A2%A7%E8%97%A4+https%3A%2F%2Fwww.bilibili.com%2Fread%2Fcv13066589+%E5%87%BA%E5%A4%84%EF%BC%9Abilibili'
+            }, {
+                text: '实在不行，百度云盘（提取码 jzq9）',
+                link: 'https://pan.baidu.com/s/1kzY6kpfYqLcGpuaiwQOGoA?pwd=jzq9'
             }]
     },
         {
@@ -131,6 +137,9 @@ const INSTALL_QQ: Object = {
             {
                 text: '下载插件端压缩包',
                 link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
+            }, {
+                text: '实在不行，百度云盘（提取码 jzq9）',
+                link: 'https://pan.baidu.com/s/1kzY6kpfYqLcGpuaiwQOGoA?pwd=jzq9'
             }]
     },
         {
@@ -166,6 +175,9 @@ const INSTALL_360: Object = {
             {
                 text: '下载插件端压缩包',
                 link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
+            }, {
+                text: '实在不行，百度云盘（提取码 jzq9）',
+                link: 'https://pan.baidu.com/s/1kzY6kpfYqLcGpuaiwQOGoA?pwd=jzq9'
             }]
     },
         {
@@ -225,7 +237,12 @@ const INSTALL_APP_IOS: Object = {
     help: [{
         html: '打开App Store搜索小刻食堂下载安装',
         image: '',
-    },
+        btn: [
+            {
+                text: '或直接点击跳转App Store',
+                link: 'https://apps.apple.com/cn/app/id1629917304'
+            }]
+        },
         {
             html: `还是不会？加群带你飞！`,
             flex: 'flex-around-center flex-column',
@@ -274,6 +291,6 @@ const APP_STRUCTURE: Array<any> = [
 ]
 const PC_INSTALL_HELP_LIST: Array<object> = [INSTALL_CHROME, INSTALL_EDGE, INSTALL_FIREFOX, INSTALL_QQ, INSTALL_360];
 const DESKTOP_INSTALL_HELP_LIST: Array<object> = [INSTALL_DESKTOP_WINDOWS]
-const APP_INSTALL_HELP_LIST: Array<object> = [INSTALL_APP_ANDROID]
+const APP_INSTALL_HELP_LIST: Array<object> = [INSTALL_APP_ANDROID, INSTALL_APP_IOS]
 
 export {PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE, APP_STRUCTURE}

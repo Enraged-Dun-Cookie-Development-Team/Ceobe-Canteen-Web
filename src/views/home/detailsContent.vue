@@ -194,7 +194,8 @@ const getVersionApp = (params?: any) => {
       return { text: p.text, link: data[p.key] }
     })
     
-    state.installAppInfo.forEach(p => {
+    state.installAppInfo.forEach((p, index) => {
+      if (index > 0) return false;
       p.help.unshift({image:'',btn:downloadLinks})
     })
   }).catch((err) => {
@@ -211,7 +212,8 @@ const openInstallDesktop = () => {
 }
 
 const openInstallApp = () => {
-  state.installAppInfo.forEach(p => {
+  state.installAppInfo.forEach((p, index) => {
+    if (index > 0) return false;
     if (p.help.length>1)
       p.help.shift()
   })
