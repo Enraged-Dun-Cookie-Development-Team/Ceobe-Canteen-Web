@@ -16,12 +16,12 @@
         </div>
       </div>
       <div class="flex1">
-        <img src="@/assets/image/detailsContent/interface/1.jpg">
+        <img src="@/assets/image/detailsContent/interface/1.png">
       </div>
     </div>
     <div class="info flex">
       <div class="flex1">
-        <img src="@/assets/image/detailsContent/interface/2.jpg">
+        <img src="@/assets/image/detailsContent/interface/2.png">
       </div>
       <div class="flex1 flex flex-column flex-center-center flex-align-start">
         <div class=" speak flex flex-column flex-center-center">
@@ -168,8 +168,8 @@ let toContent = (className: string) => {
 }
 
 const getVersionDesktop = (params?: any) => {
-  version_desktop(params).then((res) => {
-    const data = res?.data
+  version_desktop(params).then((res: any) => {
+    const data = res.data
     const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.desktopStructure.map(p => {
       if (p.key === 'baidu')
@@ -185,8 +185,8 @@ const getVersionDesktop = (params?: any) => {
 }
 
 const getVersionApp = (params?: any) => {
-  version_app(params).then((res) => {
-    const data = res?.data
+  version_app(params).then((res: any) => {
+    const data = res.data
     const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
     const downloadLinks = state.appStructure.map(p => {
       if (p.key === 'baidu')

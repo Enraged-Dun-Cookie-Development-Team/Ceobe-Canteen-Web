@@ -144,8 +144,8 @@ const teamData = ref<Array<any>>(TEAM_LIST)
 
 const getVersionApp = (params?: any) => {
   version_app(params)
-    .then((res) => {
-      const data = res?.data
+    .then((res: any) => {
+      const data = res.data
       const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
       const downloadLinks = state.appStructure.map((p) => {
         if (p.key === 'baidu')
