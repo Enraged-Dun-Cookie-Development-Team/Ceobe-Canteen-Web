@@ -90,7 +90,9 @@
           <v-card-text v-else>{{ donate.text }}</v-card-text>
         </v-card>
       </div>
+      
     </div>
+    <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
   </div>
   <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们" ></box-title>
   <div class="team-bar" id="mo-about-us">
@@ -312,6 +314,7 @@ const linkTo = (el: string) => {
 }
 .donate {
   position: relative;
+  margin-bottom: 20px;
   .thanks {
     background-image: linear-gradient(90deg, #ffbb4e, #ff8448);
     opacity: 0.8;
@@ -342,7 +345,7 @@ const linkTo = (el: string) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10% 34px 10%;
+    margin: 0 10% 24px 10%;
     flex-wrap: wrap;
     .donate-box {
       width: 40%;
