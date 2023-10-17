@@ -119,22 +119,6 @@ const TEAM_LIST:object[] = [{
         ]
     },
     {
-        coverImg: 'chh.png',
-        name: '新田rabbit',
-        link: [
-            {
-                type: "bilibili",
-                value: "https://space.bilibili.com/672914"
-            }
-        ],
-        jobs: [
-            {
-                type: "yy",
-                value: "B站运营"
-            }
-        ]
-    },
-    {
         coverImg: 'mao.jpg',
         name: '98年生的猫',
         link: [
