@@ -90,7 +90,9 @@
           <v-card-text v-else>{{ donate.text }}</v-card-text>
         </v-card>
       </div>
+      
     </div>
+    <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
   </div>
   <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们" ></box-title>
   <div class="team-bar" id="mo-about-us">
@@ -126,15 +128,13 @@ import { APP_STRUCTURE } from '@/assets/constant/install'
 import {DONATE_LIST, FOLLOW_LIST} from "@/assets/constant/donate";
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import { TEAM_LIST } from "@/assets/constant/team"
-const version = require('@/assets/constant/version.json')
-// import {version} from 'https://cdn.jsdelivr.net/gh/ablupi/scjssht-font/version.js'
 
 const type =  inject('type')
 
 const state = reactive({
   appStructure: APP_STRUCTURE,
   installAppInfo: [] as any,
-  donateList: type === version.version ? FOLLOW_LIST : DONATE_LIST as Array<any>
+  donateList: type === window.version ? FOLLOW_LIST : DONATE_LIST as Array<any>
 })
 
 const showModal = ref(false)
@@ -142,8 +142,8 @@ const teamData = ref<Array<any>>(TEAM_LIST)
 
 const getVersionApp = (params?: any) => {
   version_app(params)
-    .then((res) => {
-      const data = res?.data
+    .then((res: any) => {
+      const data = res.data
       const baiduCryp = data.baidu_text.match(/ (.*?)）/)[1]
       const downloadLinks = state.appStructure.map((p) => {
         if (p.key === 'baidu')
@@ -312,6 +312,7 @@ const linkTo = (el: string) => {
 }
 .donate {
   position: relative;
+  margin-bottom: 20px;
   .thanks {
     background-image: linear-gradient(90deg, #ffbb4e, #ff8448);
     opacity: 0.8;
@@ -342,7 +343,7 @@ const linkTo = (el: string) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10% 34px 10%;
+    margin: 0 10% 24px 10%;
     flex-wrap: wrap;
     .donate-box {
       width: 40%;
