@@ -77,7 +77,7 @@
       </div>
     </div>
     <div class="p-box">
-      <div class="donate-box" v-for="donate in state.donateList">
+      <div class="donate-box" v-for="donate in donateList">
         <v-card>
           <img class="w-100" :src="require('@/assets/image/detailsContent/donate/'+donate.img)">
           <v-card-actions v-if="donate.link">
@@ -121,7 +121,8 @@
 
 <script lang="ts" setup>
 import footers from './footers.vue'
-import { ref, reactive, inject } from 'vue'
+import { ref, reactive, inject, onMounted } from 'vue'
+import axios from 'axios'
 import MoModal from '@/components/mobile/modal.vue'
 import { version_app } from '@/request/api'
 import { APP_STRUCTURE } from '@/assets/constant/install'
@@ -134,11 +135,24 @@ const type =  inject('type')
 const state = reactive({
   appStructure: APP_STRUCTURE,
   installAppInfo: [] as any,
-  donateList: type === window.version ? FOLLOW_LIST : DONATE_LIST as Array<any>
 })
 
 const showModal = ref(false)
 const teamData = ref<Array<any>>(TEAM_LIST)
+const donateList = ref<Array<any>>(DONATE_LIST)
+
+onMounted(() => {
+  if (type) {
+    donateList.value = []
+    axios({
+        method: 'get',
+        url: `https://unpkg.com/ceobe-canteen-static/version.json`
+    }).then((res: any) => {
+      const version = res.data.version
+      donateList.value = type === version ? FOLLOW_LIST : DONATE_LIST as Array<any>
+    })
+  }
+})
 
 const getVersionApp = (params?: any) => {
   version_app(params)

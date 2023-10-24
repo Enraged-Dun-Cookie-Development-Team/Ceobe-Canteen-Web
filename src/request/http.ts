@@ -30,7 +30,7 @@ axios.interceptors.response.use(
     // }
     if (response.status === 200) {
       // 请求状态码为200，但接口状态码不为0或者其他正常响应码时可以在这里做一层过滤
-      switch (response.data?.code) {
+      switch (response.data?.code || '00000') {
         case '00000':
           // 有需要可以使用resetType(response)将所有字段类型全部转成string。
           // return resetType(response)
