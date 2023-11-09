@@ -97,7 +97,7 @@
   <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们" ></box-title>
   <div class="team-bar" id="mo-about-us">
     <div class="member" v-for="(member, index) in teamData" :key="index">
-      <div class="head">
+      <div class="head" @click="toLink(member.link.length>0?member.link[0].value:'')">
         <img :src="require('@/assets/image/detailsContent/team/'+member.coverImg)" alt="">
       </div>
       <span>{{ member.name }}</span>
