@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="mt-7">
-        <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
+        <v-btn @click="toLink('https://docs.qq.com/sheet/DZXZObGZuZmtRaXlv?tab=nzfrjv')" class="color-fff" color="#D07D00">收支一览表</v-btn>
       </div>
     </div>
     <div id="about-us" class="us pa-8 pt-16 menu-gywm">
