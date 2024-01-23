@@ -92,7 +92,7 @@
       </div>
       
     </div>
-    <v-btn @click="toLink('https://shimo.im/sheets/NJkbEgRmQRtpQ7qR/MODOC')" class="color-fff" color="#D07D00">收支一览表</v-btn>
+    <v-btn @click="toLink('https://docs.qq.com/sheet/DZXZObGZuZmtRaXlv?tab=nzfrjv')" class="color-fff" color="#D07D00">收支一览表</v-btn>
   </div>
   <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们" ></box-title>
   <div class="team-bar" id="mo-about-us">
