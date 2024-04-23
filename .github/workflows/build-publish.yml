@@ -20,6 +20,15 @@ jobs:
       run: |
         npm install
         npm run build
+
+    - name: Build link
+      run: |
+        pnpm install
+        pnpm build
+      working-directory: ./Ceobe-Link
+
+    - name: merge
+      run: cp -r ./Ceobe-Link/dist ./dist/link
   
     - name: Upload COS
       uses: zkqiang/tencent-cos-action@v0.1.0
