@@ -21,6 +21,11 @@ jobs:
         npm install
         npm run build
 
+    - uses: pnpm/action-setup@v3
+      working-directory: ./Ceobe-Link
+      with:
+        version: 8
+
     - name: Build link
       run: |
         pnpm install
