@@ -22,9 +22,10 @@ jobs:
         npm run build
 
     - uses: pnpm/action-setup@v3
-      working-directory: ./Ceobe-Link
       with:
         version: 8
+        run_install: |
+          - cwd: ./Ceobe-Link
 
     - name: Build link
       run: |
