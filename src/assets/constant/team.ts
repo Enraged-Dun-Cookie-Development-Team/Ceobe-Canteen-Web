@@ -289,6 +289,22 @@ const TEAM_LIST:object[] = [{
         ]
     },
     {
+        coverImg: 'gscl.jpg',
+        name: '公孙长乐',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/22606843"
+            }
+        ],
+        jobs: [
+            {
+                type: "publicize",
+                value: "协作"
+            },
+        ]
+    },
+    {
         coverImg: 'azide.jpg',
         name: 'Azide',
         link: [
