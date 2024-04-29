@@ -372,6 +372,7 @@ const linkTo = (el: string) => {
   grid-template-columns: repeat(auto-fill, 50px);
   grid-column-gap: 8px;
   grid-row-gap: 20px;
+  justify-content: center;
   .member {
     .head {
       height: 50px;
