@@ -341,7 +341,7 @@ const TEAM_LIST:object[] = [{
         ]
     },
     {
-        coverImg: 'miao.jpg',
+        coverImg: 'miao.png',
         name: '别喵了',
         link: [
             {
@@ -357,6 +357,17 @@ const TEAM_LIST:object[] = [{
             {
                 type: "web",
                 value: "前端开发"
+            }
+        ]
+    },
+    {
+        coverImg: 'ruohan.jpg',
+        name: '若寒',
+        link: [],
+        jobs: [
+            {
+                type: "yy",
+                value: "运营"
             }
         ]
     }
