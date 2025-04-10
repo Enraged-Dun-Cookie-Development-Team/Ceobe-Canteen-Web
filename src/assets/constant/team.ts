@@ -370,7 +370,27 @@ const TEAM_LIST:object[] = [{
                 value: "运营"
             }
         ]
-    }
+    },
+    {
+        coverImg: 'Yul.png',
+        name: 'Yul',
+        link: [
+            {
+                type: "bilibili",
+                value: "https://space.bilibili.com/6232631"
+            },
+            {
+                type: "github",
+                value: "https://github.com/HessTina-YuI"
+            }
+        ],
+        jobs: [
+            {
+                type: "backend",
+                value: "后端开发"
+            }
+        ]
+    },
 ];
 
 const JOBS_ICON = [{
