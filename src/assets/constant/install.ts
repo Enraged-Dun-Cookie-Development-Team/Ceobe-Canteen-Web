@@ -56,7 +56,7 @@ const INSTALL_EDGE: Object = {
                 link: 'https://github.com/Enraged-Dun-Cookie-Development-Team/Dun-Cookie-Vue/releases'
             }, {
                 text: '或者点击这里跳转edge应用商店',
-                link: 'https://microsoftedge.microsoft.com/addons/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknight/jimmfliacfpeabcifcghmdankmdnmfmn?hl=zh-CN+%E4%BD%9C%E8%80%85%EF%BC%9A%E6%B4%9B%E6%A2%A7%E8%97%A4+https%3A%2F%2Fwww.bilibili.com%2Fread%2Fcv13066589+%E5%87%BA%E5%A4%84%EF%BC%9Abilibili'
+                link: 'https://microsoftedge.microsoft.com/addons/detail/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknight/jimmfliacfpeabcifcghmdankmdnmfmn?hl=zh-CN'
             }, {
                 text: '实在不行，百度云盘（提取码 jzq9）',
                 link: 'https://pan.baidu.com/s/1kzY6kpfYqLcGpuaiwQOGoA?pwd=jzq9'
