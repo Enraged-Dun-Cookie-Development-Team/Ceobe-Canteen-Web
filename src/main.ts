@@ -9,7 +9,8 @@ import '@/assets/icon/iconfont.css'
 import '@/assets/style/font.scss'
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'vuetify/dist/vuetify.css'
-
+import 'slidePage/slidePage.css'
+import 'animate.css';
 
 import * as components from 'vuetify/lib/components/index'
 import * as directives from 'vuetify/lib/directives/index'

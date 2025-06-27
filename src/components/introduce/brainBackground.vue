@@ -34,7 +34,7 @@ $ceobe_color: #ffffff;
 
   .brain-background {
     position: absolute;
-    z-index: -1;
+    // z-index: -1;
     background: $ceobe_color;
     clip-path: polygon(50% 0, 86% 18%, 100% 46%, 89% 65%, 55% 64%, 9% 100%, 21% 71%, 0 68%, 9% 55%, 5% 39%, 8% 20%, 20% 8%);
     background: #ffffff;
