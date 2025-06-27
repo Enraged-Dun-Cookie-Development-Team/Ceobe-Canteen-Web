@@ -1,7 +1,7 @@
 <template>
   <headers />
   <div class="slide-container" id="home-container">
-    <div class="slide-page page1">
+    <div class="slide-page page1" ref="page1El">
       <div class="container">
         <div class="introduce w-100">
           <div class="header-body">
@@ -14,7 +14,19 @@
               :mask_x="50" :mask_y="15" :txt_x="71" :txt_y="30" :txt_z="5" />
             <message-message-box class="message-message-box" line1="博士，理智" line2="又满了哦" :block_x="0" :block_y="0"
               :mask_w="170" :mask_x="22" :mask_y="10" :txt_x="56" :txt_y="31" :txt_z="5" />
-            <brain-background class="brain" />
+            <div class="brain-parent position-absolute">
+              <div class="brain-background w-100 h-100" :style="{ transform: brainBgTransform }"></div>
+              <div class="brain-mask w-100 h-100 flex flex-column flex-center-center" :style="{ transform: brainMaskTransform }">
+                <div class="flex flex-center-center position-relative w-100">
+                  <img class="brain-logo" src="@/assets/image/all/icon.png" />
+                  <img class="brain-title" src="@/assets/image/all/title-yellow.png" />
+                  <img class="brain-popup position-absolute" src="@/assets/image/introduce/bubble-find.png" />
+                </div>
+
+                <span class="brain-sep"></span>
+                <h1 class="brain-speck">用于实时获取兔兔发的动态</h1>
+              </div>
+            </div>
             <div class="download">
               <button v-for="item in downloadOptions" :style="{ background: item.background }" @click="download(item)">
                 <span class="xiaoke" :class="item.icon"></span>
@@ -143,7 +155,6 @@
 <script lang="ts" setup>
 import FunctionMessageBox from "@/components/introduce/functionMessageBox.vue";
 import MessageMessageBox from "@/components/introduce/messageMessageBox.vue";
-import BrainBackground from "@/components/introduce/brainBackground.vue";
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 import Team from "@/components/detailsContent/team.vue";
@@ -182,6 +193,7 @@ const state = reactive({
 
 })
 
+const page1El = ref()
 const downloadOptions = ref<Array<Download>>([
   // 会考虑直接显示二维码再下拉跳转的情况
   // { key: 'app', icon: 'icon-xiaoke-download', text: 'APP下载', background: '#A52625', link: '', popup: {
@@ -195,6 +207,8 @@ const downloadOptions = ref<Array<Download>>([
 ])
 const isInfo = ref(true)
 const prevTime = ref()
+const brainBgTransform = ref()
+const brainMaskTransform = ref()
 
 onMounted(() => {
   state.slidepage = new slidePage({
@@ -204,6 +218,7 @@ onMounted(() => {
     refresh: true,
     before: slidePageEventBefore
   })
+  page1El.value.addEventListener('mousemove', transformMove)
 })
 
 onBeforeUnmount(() => {
@@ -244,6 +259,15 @@ const page2mousewheel = (e: any) => {
     }
     isInfo.value = true
   }
+}
+
+const transformMove = (e: any) => {
+  const brainMoveX = (window.innerWidth/2 - e.clientX) / 10
+  const brainMoveY = (window.innerHeight/2 - e.clientY) / 10
+  brainBgTransform.value = `translateX(${-brainMoveX}px) translateY(${-brainMoveY}px)`
+  const brainMaskMoveX = (window.innerWidth/2 - e.clientX) / 5
+  const brainMaskMoveY = (window.innerHeight/2 - e.clientY) / 5
+  brainMaskTransform.value = `translateX(${-brainMaskMoveX}px) translateY(${-brainMaskMoveY}px)`
 }
 
 const download = (option: Download) => {
@@ -349,7 +373,65 @@ let toLink = (url: string) => {
 
 }
 
-.page4 {}
+.brain-parent {
+  width: 65vw;
+  height: 80vh;
+  min-width: 650px;
+  min-height: 650px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 1920px;
+
+  .brain-background {
+    position: absolute;
+    clip-path: polygon(50% 0, 86% 18%, 100% 46%, 89% 65%, 55% 64%, 9% 100%, 21% 71%, 0 68%, 9% 55%, 5% 39%, 8% 20%, 20% 8%);
+    background: #ffffff;
+  }
+
+  .brain-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-bottom: 100px;
+
+    .brain-logo {
+      width: 100px
+    }
+
+    .brain-title {
+      width: 500px;
+    }
+
+    .brain-popup {
+      top: -60px;
+      right: calc(50% - 300px);
+      width: 150px;
+    }
+
+    .brain-sep {
+      margin-left: 6%;
+      width: 94%;
+      background: linear-gradient(to right, #ffbb4e, #ff8448);
+      ;
+      height: 2px;
+    }
+
+    .brain-speck {
+      color: #ffd28a;
+      font-size: 50px;
+      font-weight: 400;
+      width: fit-content;
+    }
+
+    .brain-ads {
+      font-size: 67px;
+      color: white;
+    }
+  }
+}
 
 
 .introduce {
