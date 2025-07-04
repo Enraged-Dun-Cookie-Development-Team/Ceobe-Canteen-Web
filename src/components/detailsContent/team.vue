@@ -65,7 +65,7 @@ $ceobe_color: #ffba4b;
 .team {
   width: 340px;
   height: 280px;
-
+  // transform: scale(0.8);
   .team-cover {
     border: 1px solid #ffffff;
     top: -20px;
