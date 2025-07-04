@@ -141,6 +141,14 @@
 
     <div class="slide-page page5">
       <div class="container details-content">
+        <o-spine 
+          v-for="spine in spineList"
+          :key="spine.index"
+          :skel-path="spine.skelPath" 
+          :atlas-path="spine.atlasPath" 
+          :anim-action="spine.animAction"
+          :index="spine.index"
+        ></o-spine>
         <div id="about-us" class="us pa-8 pt-16 menu-gywm">
           <box-title icon="icon-xiaoke-a-lianhe3" title="关于我们"></box-title>
           <div class="flex flex-row flex-wrap flex-evenly-center">
@@ -158,6 +166,7 @@ import MessageMessageBox from "@/components/introduce/messageMessageBox.vue";
 import BoxTitle from "@/components/detailsContent/boxTitle.vue";
 import InstallBrowser from "@/components/detailsContent/installBrowser.vue";
 import Team from "@/components/detailsContent/team.vue";
+import OSpine, { Spine } from "@/components/spine/index.vue"
 import Headers from "@/views/home/headers.vue";
 
 import { PC_INSTALL_HELP_LIST, DESKTOP_INSTALL_HELP_LIST, APP_INSTALL_HELP_LIST, DESKTOP_STRUCTURE, APP_STRUCTURE } from "@/assets/constant/install"
@@ -209,6 +218,7 @@ const isInfo = ref(true)
 const prevTime = ref()
 const brainBgTransform = ref()
 const brainMaskTransform = ref()
+const spineList: Spine[] = ref([])
 
 onMounted(() => {
   state.slidepage = new slidePage({
@@ -218,11 +228,24 @@ onMounted(() => {
     refresh: true,
     before: slidePageEventBefore
   })
+  // spineList.value.push({
+  //   index: 1,
+  //   skelPath: 'spine/cerber-summer-build/build_char_2013_cerber_summer_4.skel',
+  //   atlasPath: 'spine/cerber-summer-build/build_char_2013_cerber_summer_4.atlas',
+  //   animAction: 'Move'
+  // })
+  // spineList.value.push({
+  //   index: 1,
+  //   skelPath: 'spine/cerber-summer-build-2/build_char_2013_cerber_summer.skel',
+  //   atlasPath: 'spine/cerber-summer-build-2/build_char_2013_cerber_summer.atlas',
+  //   animAction: 'Move'
+  // })
   page1El.value.addEventListener('mousemove', transformMove)
 })
 
 onBeforeUnmount(() => {
   state.slidepage.destroy()
+  page1El.value.removeEventListener('mousemove', transformMove)
 })
 
 const slidePageEventBefore = (origin: string, direction: string, target: string) => {
