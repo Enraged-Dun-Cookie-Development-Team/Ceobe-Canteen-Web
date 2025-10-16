@@ -39,7 +39,7 @@ const INSTALL_CHROME: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -84,7 +84,7 @@ const INSTALL_EDGE: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -122,7 +122,7 @@ const INSTALL_FIREFOX: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -160,7 +160,7 @@ const INSTALL_QQ: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -198,7 +198,7 @@ const INSTALL_360: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -212,7 +212,7 @@ const INSTALL_DESKTOP_WINDOWS: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -226,7 +226,7 @@ const INSTALL_APP_ANDROID: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]
@@ -248,7 +248,7 @@ const INSTALL_APP_IOS: Object = {
             flex: 'flex-around-center flex-column',
             btn: [{
                 text: '现在就加入蹲饼群！',
-                link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+                link: 'https://qm.qq.com/q/O5A22niEam'
             }]
         }
     ]

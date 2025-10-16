@@ -2,7 +2,7 @@ const DONATE_LIST: object[] = [
     {
         img: 'qq.png',
         text: '加群聊天',
-        link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+        link: 'https://qm.qq.com/q/O5A22niEam'
     },
     {
         img: 'bilibili.png',
@@ -21,7 +21,7 @@ const FOLLOW_LIST: object[] = [
     {
         img: 'qq.png',
         text: '加群聊天',
-        link: 'https://jq.qq.com/?_wv=1027&k=EOxqu7FL'
+        link: 'https://qm.qq.com/q/O5A22niEam'
     },
     {
         img: 'bilibili.png',
